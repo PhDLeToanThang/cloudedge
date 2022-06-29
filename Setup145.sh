@@ -19,7 +19,7 @@
 #You can change the Guacamole source file download link here.
 #Check https://guacamole.apache.org/releases/ for the latest stable version.
 
-GUACAMOLE_DOWNLOAD_LINK="https://apache.org/dyn/closer.lua/guacamole/1.4.0/source/guacamole-server-1.4.0.tar.gz?action=download"
+GUACAMOLE_DOWNLOAD_LINK="https://dlcdn.apache.org/guacamole/1.4.0/source/guacamole-server-1.4.0.tar.gz"
 GUACAMOLE_VERSION="1.4.0"
 
 #By default, this script only works on Ubuntu 18/20, Debian 10, and CentOS 7/8.
