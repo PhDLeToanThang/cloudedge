@@ -228,7 +228,7 @@ function install_guacamole_ubuntu_debian
 	if [ "$OS" = "DEBIAN10" ] ; then
 		apt-get install libjpeg62-turbo-dev -y
 	else
-		apt-get install libjpeg-turbo8-dev language-pack-ja language-pack-zh* language-pack-ko -y
+		apt-get install libjpeg-turbo8-dev language-pack-vi language-pack-it language-pack-de language-pack-ru language-pack-es language-pack-ja language-pack-zh* language-pack-ko -y
 	fi
 	wget $GUACAMOLE_DOWNLOAD_LINK
 	tar zxf guacamole-server-${GUACAMOLE_VERSION}.tar.gz
