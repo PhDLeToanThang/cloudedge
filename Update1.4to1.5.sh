@@ -9,6 +9,20 @@
 sudo systemctl stop tomcat9
 # Step 4. Extract the downloaded Guacamole archive and copy guacamole.war to Tomcat's webapps directory:
 cd /opt
+rm /opt/guacamole-server-1.5.0.tar.gz
+rm /opt/guacamole-client-1.5.0.tar.gz
+rm /opt/guacamole-auth-duo-1.5.0.tar.gz
+rm /opt/guacamole-auth-header-1.5.0.tar.gz
+rm /opt/guacamole-auth-jdbc-1.5.0.tar.gz
+rm /opt/guacamole-auth-json-1.5.0.tar.gz
+rm /opt/guacamole-auth-ldap-1.5.0.tar.gz
+rm /opt/guacamole-auth-quickconnect-1.5.0.tar.gz
+rm /opt/guacamole-auth-sso-1.5.0.tar.gz
+rm /opt/guacamole-auth-totp-1.5.0.tar.gz
+rm /opt/guacamole-history-recording-storage-1.5.0.tar.gz
+rm /opt/guacamole-vault-1.5.0.tar.gz
+rm /opt/guacamole-1.5.0.war
+
 wget https://dlcdn.apache.org/guacamole/1.5.0/source/guacamole-server-1.5.0.tar.gz
 wget https://dlcdn.apache.org/guacamole/1.5.0/source/guacamole-client-1.5.0.tar.gz
 wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-auth-duo-1.5.0.tar.gz
@@ -21,11 +35,11 @@ wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-auth-sso-1.5.0.ta
 wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-auth-totp-1.5.0.tar.gz
 wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-history-recording-storage-1.5.0.tar.gz
 wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-vault-1.5.0.tar.gz
-tar -xzf guacamole-1.5.0.war.gz
+wget https://apache.org/dyn/closer.lua/guacamole/1.5.0/binary/guacamole-1.5.0.war?action=download
 
 sudo cp /var/lib/tomcat9/webapps/guacamole.war /var/lib/tomcat9/webapps/guacamole145war
 sudo rm /var/lib/tomcat9/webapps/guacamole.war
-sudo cp guacamole.war /var/lib/tomcat9/webapps/
+sudo cp guacamole-1.5.0.war /var/lib/tomcat9/webapps/guacamole.war
 
 # Step 5. Remove old extensions by deleting all files in `/etc/guacamole/extensions` directory:
 tar -xzf guacamole-client-1.5.0.tar.gz
