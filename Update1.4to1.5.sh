@@ -35,7 +35,7 @@ wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-auth-sso-1.5.0.ta
 wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-auth-totp-1.5.0.tar.gz
 wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-history-recording-storage-1.5.0.tar.gz
 wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-vault-1.5.0.tar.gz
-wget https://apache.org/dyn/closer.lua/guacamole/1.5.0/binary/guacamole-1.5.0.war?action=download
+wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-1.5.0.war
 
 sudo cp /var/lib/tomcat9/webapps/guacamole.war /var/lib/tomcat9/webapps/guacamole145war
 sudo rm /var/lib/tomcat9/webapps/guacamole.war
