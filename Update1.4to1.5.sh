@@ -6,7 +6,7 @@
 # Step 2. Download the latest version of Guacamole from the official website.
 # Step 3. Stop the Tomcat service using the following command:
 
-sudo systemctl stop tomcat
+sudo systemctl stop tomcat9
 # Step 4. Extract the downloaded Guacamole archive and copy guacamole.war to Tomcat's webapps directory:
 cd /opt
 wget https://dlcdn.apache.org/guacamole/1.5.0/source/guacamole-server-1.5.0.tar.gz
@@ -22,6 +22,7 @@ wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-auth-totp-1.5.0.t
 wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-history-recording-storage-1.5.0.tar.gz
 wget https://dlcdn.apache.org/guacamole/1.5.0/binary/guacamole-vault-1.5.0.tar.gz
 tar -xzf guacamole-1.5.0.war.gz
+
 sudo cp /var/lib/tomcat9/webapps/guacamole.war /var/lib/tomcat9/webapps/guacamole145war
 sudo rm /var/lib/tomcat9/webapps/guacamole.war
 sudo cp guacamole.war /var/lib/tomcat9/webapps/
@@ -37,26 +38,25 @@ tar -xzf guacamole-auth-quickconnect-1.5.0.tar.gz
 tar -xzf guacamole-auth-sso-1.5.0.tar.gz
 tar -xzf guacamole-auth-totp-1.5.0.tar.gz
 tar -xzf guacamole-history-recording-storage-1.5.0.tar.gz
-tar -xzf uacamole-vault-1.5.0.tar.gz
+tar -xzf guacamole-vault-1.5.0.tar.gz
 
 sudo rm /etc/guacamole/extensions/*
 
 # Step 6. Copy all `.jar` files from `guacamole-1.5.0.war` archive to `/etc/guacamole/extensions/` directory:
 sudo mkdir /etc/guacamole/extensions/
-sudo cp guacamole-auth-jdbc-mysql-1.5.0.jar /etc/guacamole/extensions/
-sudo cp guacamole-auth-ldap-1.5.0.jar /etc/guacamole/extensions/
-sudo cp guacamole-auth-json-1.5.0.jar /etc/guacamole/extensions/
-sudo cp guacamole-auth-totp-1.5.0.jar /etc/guacamole/extensions/
-sudo cp guacamole-auth-quickconnect-1.5.0.jar /etc/guacamole/extensions/
-sudo cp guacamole-auth-header-1.5.0.jar /etc/guacamole/extensions/
-sudo cp guacamole-auth-duo-1.5.0.jar /etc/guacamole/extensions/
-sudo cp guacamole-history-recording-storage-1.5.0.jar /etc/guacamole/extensions/
-sudo cp guacamole-auth-sso-openid-1.5.0.jar /etc/guacamole/extensions/
-sudo cp guacamole-auth-sso-saml-1.5.0.jar /etc/guacamole/extensions/
-sudo cp guacamole-auth-sso-cas-1.5.0.jar /etc/guacamole/extensions/
-sudo cp guacamole-vault-ksm-1.5.0.jar /etc/guacamole/extensions/
-
+sudo cp /opt/guacamole-auth-jdbc-1.5.0/mysql/guacamole-auth-jdbc-mysql-1.5.0.jar /etc/guacamole/extensions/
+sudo cp /opt/guacamole-auth-ldap-1.5.0/guacamole-auth-ldap-1.5.0.jar /etc/guacamole/extensions/
+sudo cp /opt/guacamole-auth-json-1.5.0/guacamole-auth-json-1.5.0.jar /etc/guacamole/extensions/
+sudo cp /opt/guacamole-auth-totp-1.5.0/guacamole-auth-totp-1.5.0.jar /etc/guacamole/extensions/
+sudo cp /opt/guacamole-auth-quickconnect-1.5.0/guacamole-auth-quickconnect-1.5.0.jar /etc/guacamole/extensions/
+sudo cp /opt/guacamole-auth-header-1.5.0/guacamole-auth-header-1.5.0.jar /etc/guacamole/extensions/
+sudo cp /opt/guacamole-history-recording-storage-1.5.0/guacamole-history-recording-storage-1.5.0.jar /etc/guacamole/extensions/
+sudo cp /opt/guacamole-auth-sso-1.5.0/openid/guacamole-auth-sso-openid-1.5.0.jar /etc/guacamole/extensions/
+sudo cp /opt/guacamole-auth-sso-1.5.0/saml/guacamole-auth-sso-saml-1.5.0.jar /etc/guacamole/extensions/
+sudo cp /opt/guacamole-auth-sso-1.5.0/cas/guacamole-auth-sso-cas-1.5.0.jar /etc/guacamole/extensions/
+sudo cp /opt/guacamole-vault-1.5.0/ksm/guacamole-vault-ksm-1.5.0.jar /etc/guacamole/extensions/
+sudo cp /opt/guacamole-auth-duo-1.5.0/guacamole-auth-duo-1.5.0.jar  /etc/guacamole/extensions/
 #7. Update `guacamole.properties` file in `/etc/guacamole/` directory with your previous settings.
 
 #8. Restart Tomcat service:
-sudo systemctl start tomcat
+sudo systemctl start tomcat9
