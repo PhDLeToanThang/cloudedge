@@ -44,7 +44,17 @@ sudo rm /etc/guacamole/extensions/*
 # Step 6. Copy all `.jar` files from `guacamole-1.5.0.war` archive to `/etc/guacamole/extensions/` directory:
 sudo mkdir /etc/guacamole/extensions/
 sudo cp guacamole-auth-jdbc-mysql-1.5.0.jar /etc/guacamole/extensions/
-sudo cp mysql-connector-java-8.x.x.jar /etc/guacamole/extensions/
+sudo cp guacamole-auth-ldap-1.5.0.jar /etc/guacamole/extensions/
+sudo cp guacamole-auth-json-1.5.0.jar /etc/guacamole/extensions/
+sudo cp guacamole-auth-totp-1.5.0.jar /etc/guacamole/extensions/
+sudo cp guacamole-auth-quickconnect-1.5.0.jar /etc/guacamole/extensions/
+sudo cp guacamole-auth-header-1.5.0.jar /etc/guacamole/extensions/
+sudo cp guacamole-auth-duo-1.5.0.jar /etc/guacamole/extensions/
+sudo cp guacamole-history-recording-storage-1.5.0.jar /etc/guacamole/extensions/
+sudo cp guacamole-auth-sso-openid-1.5.0.jar /etc/guacamole/extensions/
+sudo cp guacamole-auth-sso-saml-1.5.0.jar /etc/guacamole/extensions/
+sudo cp guacamole-auth-sso-cas-1.5.0.jar /etc/guacamole/extensions/
+sudo cp guacamole-vault-ksm-1.5.0.jar /etc/guacamole/extensions/
 
 #7. Update `guacamole.properties` file in `/etc/guacamole/` directory with your previous settings.
 
