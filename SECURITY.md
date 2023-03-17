@@ -5,12 +5,15 @@
 Use this section to tell people about which versions of your project are
 currently being supported with security updates.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.5.1   | :white_check_mark: |
-| 1.5.0.x | :x:                |
-| 1.4.5   | :white_check_mark: |
-| < 1.4.0 | :x:                |
+| Version | Supported          | Link Install  |
+| ------- | ------------------ |---------------|
+| 1.5.0   | :white_check_mark: | sudo wget: https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/setup150.sh
+|
+|-1.5.0   | :x:                | sudo wget: https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/Update1.4to1.5.sh
+|         |                    | 
+|=1.4.0   | :white_check_mark: | sudo wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/Setup145.sh 
+|         |                    | sudo bash Setup145.sh 
+| < 1.4.0 | :x:                | N/A 
 
 ## Reporting a Vulnerability
 
