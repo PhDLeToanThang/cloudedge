@@ -14,3 +14,11 @@ TLS 1.2/1.3
 Gõ lệnh trên thông qua màn PuTTy đã kết nối thành công tới ipv4 của Ubuntu 20.04:
 
 wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/Setup145.sh && sudo bash Setup145.sh
+
+#
+# Guacamole Update from version 1.4 to 1.5
+#Run:
+ Download và chạy code cài guac
+Gõ lệnh trên thông qua màn PuTTy đã kết nối thành công tới ipv4 của Ubuntu 20.04:
+cd /opt
+wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/upgrade15.sh && bash upgrade15.sh
