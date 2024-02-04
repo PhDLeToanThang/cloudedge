@@ -18,9 +18,9 @@
 
 #You can change the Guacamole source file download link here.
 #Check https://guacamole.apache.org/releases/ for the latest stable version.
-# fixed 07.12.2023 change to link old: https://dlcdn.apache.org/guacamole/1.5.0/source/guacamole-server-1.5.4.tar.gz
+# fixed 07.12.2023 change to link old: https://dlcdn.apache.org/guacamole/1.5.4/source/guacamole-server-1.5.4.tar.gz
 # change to Archive URL:
-GUACAMOLE_DOWNLOAD_LINK="https://archive.apache.org/dist/guacamole/1.5.0/source/guacamole-server-1.5.4.tar.gz"
+GUACAMOLE_DOWNLOAD_LINK="https://archive.apache.org/dist/guacamole/1.5.4/source/guacamole-server-1.5.4.tar.gz"
 GUACAMOLE_VERSION="1.5.4"
 
 #By default, this script only works on Ubuntu 18/20/22, Debian 10, and CentOS 7/8.
@@ -229,7 +229,25 @@ function install_guacamole_ubuntu_debian
 	echo 
 	say @B"Setting up dependencies..." yellow
 	echo 
-	apt-get update && apt-get upgrade -y
+#================== Bước 1: bổ sung các công cụ quan trọng ================
+# cai them cac tools trong Ubuntu:
+# Lưu ý: Không dùng Ubuntu-desktop
+sudo apt-get update -y 
+sudo apt list --upgradable
+sudo apt autoremove -y
+sudo apt-get upgrade -y
+sudo apt install xrdp -y
+sudo systemctl enable xrdp
+sudo apt install ufw -y
+sudo apt install net-tools -y
+sudo apt install gparted -y
+# Cách cấu hình điều khiển HĐH Linux qua Web HTML 5
+# https://thangletoan.wordpress.com/2022/05/22/cach-cau-hinh-dieu-khien-hdh-linux-qua-web-html-5/
+. /etc/os-release
+sudo apt install -t ${VERSION_CODENAME}-backports cockpit -y
+# After you already have Cockpit on your server, point your web browser to: https://ip-address-of-machine:9090
+#sudo apt install ubuntu-desktop -y  (khong dung do se bị reboot không cho cài tiếp Guacamole )
+#==============================================
 	apt-get install wget curl sudo zip unzip tar perl expect build-essential libcairo2-dev libpng-dev libtool-bin libossp-uuid-dev libvncserver-dev freerdp2-dev libssh2-1-dev libtelnet-dev libwebsockets-dev libpulse-dev libvorbis-dev libwebp-dev libssl-dev libpango1.0-dev libswscale-dev libavcodec-dev libavutil-dev libavformat-dev tomcat9 tomcat9-admin tomcat9-common tomcat9-user japan* chinese* korean* fonts-arphic-ukai fonts-arphic-uming fonts-ipafont-mincho fonts-ipafont-gothic fonts-unfonts-core -y
 	if [ "$OS" = "DEBIAN10" ] ; then
 		apt-get install libjpeg62-turbo-dev -y
@@ -734,7 +752,7 @@ function display_license
 	echo 
 	echo '*******************************************************************'
 	echo '*       Base Edge Cloud & Browser Access Setup Script             *'
-	echo '*       Version v1.4.5                                            *'
+	echo '*       Version v1.5.4                                            *'
 	echo '*       Author: (https://thangletoan.wordpress.com)               *'
 	echo '*       https://github.com/PhDLeToanThang/guacamole               *'
 	echo '* Thank you for using this script.  E-mail: thang.le@hotmail.com  *'
@@ -834,7 +852,7 @@ function main
 		if [ "x$install_nginx" != "xn" ] && [ "x$install_nginx" != "xN" ] ; then
 			install_reverse_proxy
 		else
-			say @B"You can now access your desktop at http://$(curl -s icanhazip.com):8080/guacamole!" green
+			say @B"You can now access your desktop at http://$(curl -s labs.edu.vn):8080/guacamole!" green
 			say @B"Your Guacamole username is $guacamole_username and your password is $guacamole_password_prehash." green
 		fi
 		if [ $choice_rdpvnc = 1 ] ; then
