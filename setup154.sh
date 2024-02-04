@@ -240,6 +240,7 @@ sudo apt install xrdp -y
 sudo systemctl enable xrdp
 sudo apt install ufw -y
 sudo apt install net-tools -y
+sudo apt-get install openvswitch-switch -y
 sudo apt install gparted -y
 # Cách cấu hình điều khiển HĐH Linux qua Web HTML 5
 # https://thangletoan.wordpress.com/2022/05/22/cach-cau-hinh-dieu-khien-hdh-linux-qua-web-html-5/
@@ -248,6 +249,7 @@ sudo apt install -t ${VERSION_CODENAME}-backports cockpit -y
 # After you already have Cockpit on your server, point your web browser to: https://ip-address-of-machine:9090
 #sudo apt install ubuntu-desktop -y  (khong dung do se bị reboot không cho cài tiếp Guacamole )
 #==============================================
+ 
 	apt-get install wget curl sudo zip unzip tar perl expect build-essential libcairo2-dev libpng-dev libtool-bin libossp-uuid-dev libvncserver-dev freerdp2-dev libssh2-1-dev libtelnet-dev libwebsockets-dev libpulse-dev libvorbis-dev libwebp-dev libssl-dev libpango1.0-dev libswscale-dev libavcodec-dev libavutil-dev libavformat-dev tomcat9 tomcat9-admin tomcat9-common tomcat9-user japan* chinese* korean* fonts-arphic-ukai fonts-arphic-uming fonts-ipafont-mincho fonts-ipafont-gothic fonts-unfonts-core -y
 	if [ "$OS" = "DEBIAN10" ] ; then
 		apt-get install libjpeg62-turbo-dev -y
