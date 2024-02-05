@@ -17,6 +17,21 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
+####################################################################################################### 
+# bổ sung đoạn check mysql đã được cài chưa, nếu chưa sẽ cài trước khi cấu hình tạo DB cho guacamole
+# Check if MySQL is installed
+#######################################################################################################
+if ! command -v mysql &> /dev/null; then
+    echo "MySQL is not installed. Installing MySQL..."
+    apt-get update
+    apt-get install -y mysql-server
+fi
+
+# Check if MySQL service is running
+if ! service mysql status &> /dev/null; then
+    echo "MySQL service is not running. Starting MySQL service..."
+    service mysql start
+fi
 
 # Try to get host and database from /etc/guacamole/guacamole.properties
 mysqlHost=$(grep -oP 'mysql-hostname:\K.*' /etc/guacamole/guacamole.properties | awk '{print $1}')
