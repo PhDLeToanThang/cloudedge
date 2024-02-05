@@ -30,7 +30,22 @@ fi
 # Check if MySQL service is running
 if ! service mysql status &> /dev/null; then
     echo "MySQL service is not running. Starting MySQL service..."
-    service mysql start
+    sudo systemctl start mysql.service 
+    sudo systemctl enable mysql.service
+    
+    #Run the following command to secure MariaDB installation.
+    sudo mysql_secure_installation
+
+    #You will see the following prompts asking to allow/disallow different type of logins. Enter Y as shown.
+    # Enter current password for root (enter for none): Just press the Enter
+    # Set root password? [Y/n]: Y
+    # New password: Enter password
+    # Re-enter new password: Repeat password
+    # Remove anonymous users? [Y/n]: Y
+    # Disallow root login remotely? [Y/n]: N
+    # Remove test database and access to it? [Y/n]:  Y
+    # Reload privilege tables now? [Y/n]:  Y
+    # After you enter response for these questions, your MariaDB installation will be secured.
 fi
 
 # Try to get host and database from /etc/guacamole/guacamole.properties
