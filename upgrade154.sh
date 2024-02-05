@@ -99,11 +99,7 @@ if [ -z "$mysqlPort" ]; then
         mysqlPort="3306"
     fi
 fi
-mysql -uroot -prootpassword -e "CREATE DATABASE $dbname CHARACTER SET utf8 COLLATE utf8_unicode_ci";
-mysql -uroot -prootpassword -e "CREATE USER '$dbuser'@'$dbhost' IDENTIFIED BY '$dbpass'";
-mysql -uroot -prootpassword -e "GRANT ALL PRIVILEGES ON $dbname.* TO '$dbuser'@'$dbhost'";
-mysql -uroot -prootpassword -e "FLUSH PRIVILEGES";
-mysql -uroot -prootpassword -e "SHOW DATABASES";
+
 if [ -n "$mysqlRootPwd" ]; then
     export MYSQL_PWD=${mysqlRootPwd}
     mysql -u root -h ${mysqlHost} -P ${mysqlPort} -e "CREATE DATABASE IF NOT EXISTS ${guacDb};"
