@@ -46,6 +46,18 @@ if ! service mysql status &> /dev/null; then
     # Remove test database and access to it? [Y/n]:  Y
     # Reload privilege tables now? [Y/n]:  Y
     # After you enter response for these questions, your MariaDB installation will be secured.
+
+echo "dbname: e.g: guacDb"   # Tên DBNane
+read -e guacDb
+echo "dbuser: e.g: userdb"   # Tên User access DB
+read -e dbuser
+echo "Database Password: e.g: P@$$w0rd-1.22"
+read -s dbpass
+echo "dbtype name: e.g: mysql"   # Tên kiểu Database
+read -e dbtype
+echo "dbhost name: e.g: localhost"   # Tên Db host connector
+read -e mysqlHost
+    
 fi
 
 # Try to get host and database from /etc/guacamole/guacamole.properties
@@ -89,11 +101,15 @@ if [ -z "$mysqlPort" ]; then
         mysqlPort="3306"
     fi
 fi
-
+mysql -uroot -prootpassword -e "CREATE DATABASE $dbname CHARACTER SET utf8 COLLATE utf8_unicode_ci";
+mysql -uroot -prootpassword -e "CREATE USER '$dbuser'@'$dbhost' IDENTIFIED BY '$dbpass'";
+mysql -uroot -prootpassword -e "GRANT ALL PRIVILEGES ON $dbname.* TO '$dbuser'@'$dbhost'";
+mysql -uroot -prootpassword -e "FLUSH PRIVILEGES";
+mysql -uroot -prootpassword -e "SHOW DATABASES";
 if [ -n "$mysqlRootPwd" ]; then
     export MYSQL_PWD=${mysqlRootPwd}
     mysql -u root -h ${mysqlHost} -P ${mysqlPort} -e "CREATE DATABASE IF NOT EXISTS ${guacDb};"
-    mysql -u root -h ${mysqlHost} -P ${mysqlPort} -e "GRANT SELECT,INSERT,UPDATE,DELETE ON ${guacDb}.* TO 'guacamole'@'localhost' IDENTIFIED BY 'guacamole_password';"
+    mysql -u root -h ${mysqlHost} -P ${mysqlPort} -e "GRANT SELECT,INSERT,UPDATE,DELETE ON ${guacDb}.* TO '${dbuser}'@'${dbhost}' IDENTIFIED BY '${dbpass}';"
 else
     # Get MySQL root password
     echo
@@ -103,7 +119,7 @@ else
         export MYSQL_PWD=${mysqlRootPwd}
         echo
         mysql -u root -h ${mysqlHost} -P ${mysqlPort} -e "CREATE DATABASE IF NOT EXISTS ${guacDb};"
-        mysql -u root -h ${mysqlHost} -P ${mysqlPort} -e "GRANT SELECT,INSERT,UPDATE,DELETE ON ${guacDb}.* TO 'guacamole'@'localhost' IDENTIFIED BY 'guacamole_password';" && break
+        mysql -u root -h ${mysqlHost} -P ${mysqlPort} -e "GRANT SELECT,INSERT,UPDATE,DELETE ON ${guacDb}.* TO '${dbuser}'@'${dbhost}' IDENTIFIED BY '${dbpass}';" && break
         echo
     done
     echo
