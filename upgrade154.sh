@@ -3,7 +3,16 @@
 # Đồng thời cài bổ sung các mysql DB hoặc postgreesql hoặc MS-SQL                     #
 #######################################################################################
 #!/bin/bash
-
+echo "dbname: e.g: guacDb"   # Tên DBNane
+read -e guacDb
+echo "dbuser: e.g: userdb"   # Tên User access DB
+read -e dbuser
+echo "Database Password: e.g: P@$$w0rd-1.22"
+read -s dbpass
+echo "dbtype name: e.g: mysql"   # Tên kiểu Database
+read -e dbtype
+echo "dbhost name: e.g: localhost"   # Tên Db host connector
+read -e mysqlHost
 # Check if user is root or sudo
 if ! [ $(id -u) = 0 ]; then echo "Please run this script as sudo or root"; exit 1 ; fi
 
@@ -46,18 +55,7 @@ if ! service mysql status &> /dev/null; then
     # Remove test database and access to it? [Y/n]:  Y
     # Reload privilege tables now? [Y/n]:  Y
     # After you enter response for these questions, your MariaDB installation will be secured.
-
-echo "dbname: e.g: guacDb"   # Tên DBNane
-read -e guacDb
-echo "dbuser: e.g: userdb"   # Tên User access DB
-read -e dbuser
-echo "Database Password: e.g: P@$$w0rd-1.22"
-read -s dbpass
-echo "dbtype name: e.g: mysql"   # Tên kiểu Database
-read -e dbtype
-echo "dbhost name: e.g: localhost"   # Tên Db host connector
-read -e mysqlHost
-    
+   
 fi
 
 # Try to get host and database from /etc/guacamole/guacamole.properties
