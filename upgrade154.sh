@@ -92,7 +92,8 @@ fi
 
 if [ -n "$mysqlRootPwd" ]; then
     export MYSQL_PWD=${mysqlRootPwd}
-    mysql -u root -D ${guacDb} -h ${mysqlHost} -P ${mysqlPort} -e"quit" || exit 1
+    mysql -u root -h ${mysqlHost} -P ${mysqlPort} -e "CREATE DATABASE IF NOT EXISTS ${guacDb};"
+    mysql -u root -h ${mysqlHost} -P ${mysqlPort} -e "GRANT SELECT,INSERT,UPDATE,DELETE ON ${guacDb}.* TO 'guacamole'@'localhost' IDENTIFIED BY 'guacamole_password';"
 else
     # Get MySQL root password
     echo
@@ -101,7 +102,8 @@ else
         read -s -p "Enter MySQL ROOT Password: " mysqlRootPwd
         export MYSQL_PWD=${mysqlRootPwd}
         echo
-        mysql -u root -D ${guacDb} -h ${mysqlHost} -P ${mysqlPort} -e"quit" && break
+        mysql -u root -h ${mysqlHost} -P ${mysqlPort} -e "CREATE DATABASE IF NOT EXISTS ${guacDb};"
+        mysql -u root -h ${mysqlHost} -P ${mysqlPort} -e "GRANT SELECT,INSERT,UPDATE,DELETE ON ${guacDb}.* TO 'guacamole'@'localhost' IDENTIFIED BY 'guacamole_password';" && break
         echo
     done
     echo
