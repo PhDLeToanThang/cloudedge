@@ -787,13 +787,13 @@ fi
 # Apply self signed TLS certificates to Nginx reverse proxy if option is selected
 if [[ "${INSTALL_NGINX}" = true ]] && [[ "${SELF_SIGN}" = true ]] && [[ "${LETS_ENCRYPT}" != true ]]; then
     # Using -E to keep all exported variables and outputs within the current shell
-    sudo -E ./4a-install-tls-self-signed-nginx.sh ${PROXY_SITE} ${CERT_DAYS} ${DEFAULT_IP} | tee -a ${INSTALL_LOG} # Logged to capture client cert import instructions
+    sudo -E ./s4a-install-tls-self-signed-nginx.sh ${PROXY_SITE} ${CERT_DAYS} ${DEFAULT_IP} | tee -a ${INSTALL_LOG} # Logged to capture client cert import instructions
     echo -e "${LGREEN}Self signed certificate configured for Nginx \n${LYELLOW}https:${LGREEN}//${PROXY_SITE}  - login user/pass: guacadmin/guacadmin\n${LYELLOW}***Be sure to change the password***${GREY}"
 fi
 
 # Apply Let's Encrypt TLS certificates to Nginx reverse proxy if option is selected
 if [[ "${INSTALL_NGINX}" = true ]] && [[ "${LETS_ENCRYPT}" = true ]] && [[ "${SELF_SIGN}" != true ]]; then
-    sudo -E ./4b-install-tls-letsencrypt-nginx.sh # Using -E to keep all exported variables and outputs within the current shell
+    sudo -E ./s4b-install-tls-letsencrypt-nginx.sh # Using -E to keep all exported variables and outputs within the current shell
     echo -e "${LGREEN}Let's Encrypt TLS configured for Nginx \n${LYELLOW}https:${LGREEN}//${LE_DNS_NAME}  - login user/pass: guacadmin/guacadmin\n${LYELLOW}***Be sure to change the password***${GREY}"
 fi
 
