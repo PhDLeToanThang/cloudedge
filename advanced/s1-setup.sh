@@ -173,7 +173,7 @@ wget -q --show-progress ${GITHUB}/guac-features/add-xtra-histrecstor.sh -O add-x
 wget -q --show-progress ${GITHUB}/guac-features/add-smtp-relay-o365.sh -O add-smtp-relay-o365.sh
 wget -q --show-progress ${GITHUB}/guac-features/add-tls-guac-daemon.sh -O add-tls-guac-daemon.sh
 wget -q --show-progress ${GITHUB}/guac-features/add-fail2ban.sh -O add-fail2ban.sh
-wget -q --show-progress ${GITHUB}/guac-management/backup-guac.sh -O backup-guac.sh
+wget -q --show-progress ${GITHUB}/guac-man/backup-guac.sh -O backup-guac.sh
 wget -q --show-progress ${GITHUB}/upgrade-guac.sh -O upgrade-guac.sh
 
 # Download the (customisable) dark theme & branding template
