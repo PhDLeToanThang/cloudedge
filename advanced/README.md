@@ -3,7 +3,7 @@ Script guacamole 1.5.4 for Linux e.g: ubuntu 22.04 LTS OpenvSwitch 25Gbps, Tomca
 
 1. Bước 1. Run: Download và chạy code cài guac Gõ lệnh trên thông qua màn PuTTy đã kết nối thành công tới ipv4 của Ubuntu 20.04:
    
-wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/s1-setup.s) 
+wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/s1-setup.s
 
 ![image](https://github.com/PhDLeToanThang/guacamole/assets/106635733/b4d3fc85-aaaa-41e0-ab3b-fc56258ac77f)
 
