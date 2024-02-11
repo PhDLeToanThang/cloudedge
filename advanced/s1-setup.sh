@@ -3,7 +3,7 @@
 # Guacamole appliance setup script
 # For Ubuntu / Debian / Raspbian
 # Guacamole 1.5.4
-# April 2023
+# Feb 2024
 ##############################################
 
 # To install the latest code snapshot:
@@ -79,7 +79,7 @@ mkdir -p $DOWNLOAD_DIR
 mkdir -p $DB_BACKUP_DIR
 
 # GitHub download branch
-GITHUB="https://raw.githubusercontent.com/itiligent/Guacamole-Install/main"
+GITHUB="https://raw.githubusercontent.com/phdletoanthang/guacamole/advanced/main"
 
 # Version of Guacamole to install
 GUAC_VERSION="1.5.4"
@@ -130,11 +130,11 @@ INSTALL_NGINX=""                # Install and configure Nginx and reverse proxy 
 PROXY_SITE=""                   # Local DNS name for reverse proxy site and/or self signed TLS certificates
 SELF_SIGN=""                    # Add self signed TLS support to Nginx (Let's Encrypt not available with this option, true/false)
 RSA_KEYLENGTH="2048"            # Self signed RSA TLS key length. At least 2048, must not be blank.
-CERT_COUNTRY="AU"               # Self signed cert setup, 2 character country code only, must not be blank.
-CERT_STATE="Victoria"           # Self signed cert setup, must not be blank
-CERT_LOCATION="Melbourne"       # Self signed cert setup, must not be blank
-CERT_ORG="Itiligent"            # Self signed cert setup, must not be blank
-CERT_OU="I.T."                  # Self signed cert setup, must not be blank
+CERT_COUNTRY="VN"               # Self signed cert setup, 2 character country code only, must not be blank.
+CERT_STATE="CauGiay"            # Self signed cert setup, must not be blank
+CERT_LOCATION="Hanoi"           # Self signed cert setup, must not be blank
+CERT_ORG="ATCOM"                # Self signed cert setup, must not be blank
+CERT_OU="IT-BA."                # Self signed cert setup, must not be blank
 CERT_DAYS=""                    # Self signed cert setup, days until self signed TLS cert expiry, blank = default 3650
 LETS_ENCRYPT=""                 # Add Lets Encrypt public TLS cert for Nginx (self signed TLS not available with this option) true/false)
 LE_DNS_NAME=""                  # Public DNS name for Lets Encrypt certificates
@@ -152,7 +152,7 @@ RDP_PRINTER_LABEL="RDP Printer" # Customise RDP printer name shown in Windows
 # Script branding header
 echo
 echo -e "${GREYB}Guacamole ${GUAC_VERSION} Auto Installer."
-echo -e "              ${LGREEN}Powered by Itiligent"
+echo -e "              ${LGREEN}Powered by ATCOM R&D"
 echo
 echo
 
@@ -251,9 +251,9 @@ elif [[ $OS_NAME == "debian" ]] || [[ $OS_NAME == "raspbian" ]]; then # expand d
     LIBPNG="libpng-dev"
 fi
 
-#######################################################################################################################
-# DO NOT EDIT PAST THIS POINT! ########################################################################################
-#######################################################################################################################
+##############################################
+# DO NOT EDIT PAST THIS POINT! ###############
+##############################################
 
 # An intitial dns suffix is needed as a starting value for the script prompts.
 get_domain_suffix() {
@@ -284,9 +284,9 @@ else
     DOMAIN_SUFFIX="local"
 fi
 
-#######################################################################################################################
-# Begin install menu prompts ##########################################################################################
-#######################################################################################################################
+###############################################
+# Begin install menu prompts ##################
+###############################################
 
 # Consistent /etc/hosts and domain suffix values are needed for TLS implementation. The below approach
 # allows the user to either hit enter at the prompt to keep current values, or enter new values for both. Silent install
@@ -627,14 +627,14 @@ if [[ -z ${LE_EMAIL} ]] && [[ "${LETS_ENCRYPT}" = true ]] && [[ "${SELF_SIGN}" =
     done
 fi
 
-#######################################################################################################################
-# Start global setup actions  #########################################################################################
-#######################################################################################################################
+########################################################
+# Start global setup actions  ##########################
+########################################################
 
 clear
 echo
 echo -e "${GREYB}Guacamole ${GUAC_VERSION} Auto Installer."
-echo -e "              ${LGREEN}Powered by Itiligent"
+echo -e "              ${LGREEN}Powered by ATCOM R&D"
 echo
 echo
 
@@ -774,9 +774,9 @@ echo "0 0 * * 1-5 ${DB_BACKUP_DIR}/backup-guac.sh # backup guacamole" >>cron_1
 crontab cron_1
 rm cron_1
 
-#######################################################################################################################
-# Start optional setup actions   ######################################################################################
-#######################################################################################################################
+######################################################
+# Start optional setup actions   #####################
+######################################################
 
 # Install Nginx reverse proxy front end to Guacamole if option is selected
 if [[ "${INSTALL_NGINX}" = true ]]; then
