@@ -1,10 +1,10 @@
 #!/bin/bash
-######################################################################################################################
+##############################################
 # Guacamole appliance setup script
 # For Ubuntu / Debian / Raspbian
 # Guacamole 1.5.4
 # April 2023
-#######################################################################################################################
+##############################################
 
 # To install the latest code snapshot:
 # wget wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/s1-setup.sh && chmod +x s1-setup.sh && ./s1-setup.sh
@@ -165,14 +165,14 @@ wget -q --show-progress ${GITHUB}/s4a-install-tls-self-signed-nginx.sh -O s4a-in
 wget -q --show-progress ${GITHUB}/s4b-install-tls-letsencrypt-nginx.sh -O s4b-install-tls-letsencrypt-nginx.sh
 
 # Download the Guacamole optional feature scripts
-wget -q --show-progress ${GITHUB}/guac-optional-features/add-auth-duo.sh -O add-auth-duo.sh
-wget -q --show-progress ${GITHUB}/guac-optional-features/add-auth-ldap.sh -O add-auth-ldap.sh
-wget -q --show-progress ${GITHUB}/guac-optional-features/add-auth-totp.sh -O add-auth-totp.sh
-wget -q --show-progress ${GITHUB}/guac-optional-features/add-xtra-quickconnect.sh -O add-xtra-quickconnect.sh
-wget -q --show-progress ${GITHUB}/guac-optional-features/add-xtra-histrecstor.sh -O add-xtra-histrecstor.sh
-wget -q --show-progress ${GITHUB}/guac-optional-features/add-smtp-relay-o365.sh -O add-smtp-relay-o365.sh
-wget -q --show-progress ${GITHUB}/guac-optional-features/add-tls-guac-daemon.sh -O add-tls-guac-daemon.sh
-wget -q --show-progress ${GITHUB}/guac-optional-features/add-fail2ban.sh -O add-fail2ban.sh
+wget -q --show-progress ${GITHUB}/guac-features/add-auth-duo.sh -O add-auth-duo.sh
+wget -q --show-progress ${GITHUB}/guac-features/add-auth-ldap.sh -O add-auth-ldap.sh
+wget -q --show-progress ${GITHUB}/guac-features/add-auth-totp.sh -O add-auth-totp.sh
+wget -q --show-progress ${GITHUB}/guac-features/add-xtra-quickconnect.sh -O add-xtra-quickconnect.sh
+wget -q --show-progress ${GITHUB}/guac-features/add-xtra-histrecstor.sh -O add-xtra-histrecstor.sh
+wget -q --show-progress ${GITHUB}/guac-features/add-smtp-relay-o365.sh -O add-smtp-relay-o365.sh
+wget -q --show-progress ${GITHUB}/guac-features/add-tls-guac-daemon.sh -O add-tls-guac-daemon.sh
+wget -q --show-progress ${GITHUB}/guac-features/add-fail2ban.sh -O add-fail2ban.sh
 wget -q --show-progress ${GITHUB}/guac-management/backup-guac.sh -O backup-guac.sh
 wget -q --show-progress ${GITHUB}/upgrade-guac.sh -O upgrade-guac.sh
 
@@ -181,7 +181,7 @@ wget -q --show-progress ${GITHUB}/branding.jar -O branding.jar
 chmod +x *.sh
 
 # Pause here to optionally customise downloaded scripts before any actual install actions have began
-echo -e "${LYELLOW}Ctrl+Z now to exit now if you wish to customise 1-setup.sh options or create an unattended install."
+echo -e "${LYELLOW}Ctrl+Z now to exit now if you wish to customise s1-setup.sh options or create an unattended install."
 echo
 
 # This first sudo command is a trigger to pause for setup script customisation shown above, or continue as sudo where needed.
@@ -812,7 +812,7 @@ if [[ $INSTALL_LDAP == "true" ]]; then
 fi
 
 # Tidy up
-mv $USER_HOME_DIR/1-setup.sh $DOWNLOAD_DIR
+mv $USER_HOME_DIR/s1-setup.sh $DOWNLOAD_DIR
 apt-get -y autoremove &>>${INSTALL_LOG}
 
 # Done
