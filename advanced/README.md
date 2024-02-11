@@ -7,6 +7,8 @@ wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/s1
 
 ![image](https://github.com/PhDLeToanThang/guacamole/assets/106635733/e4dd4678-65d8-44d1-be4e-da97a5c0de9d)
 
+![image](https://github.com/PhDLeToanThang/guacamole/assets/106635733/b12004e7-1bcb-4ef5-9f89-a5c6b20216f3)
+
 - LƯU Ý: SSH không hoạt động với Ubuntu 22.04:
 Guacamole chỉ hỗ trợ ssh-dss và ssh-rsa và cả hai đều đã bị tắt trong Ubuntu 22.04.
 Trong thời gian chờ đợi, giải pháp thay thế là thêm HostKeyAlgorithms +ssh-rsa vào cuối /etc/ssh/sshd_config trên máy Ubuntu và khởi động lại sshd.
