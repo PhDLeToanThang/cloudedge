@@ -5,7 +5,7 @@ Script guacamole 1.5.4 for Linux e.g: ubuntu 22.04 LTS OpenvSwitch 25Gbps, Tomca
    
 wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/s1-setup.s
 
-![image](https://github.com/PhDLeToanThang/guacamole/assets/106635733/b4d3fc85-aaaa-41e0-ab3b-fc56258ac77f)
+![image](https://github.com/PhDLeToanThang/guacamole/assets/106635733/e4dd4678-65d8-44d1-be4e-da97a5c0de9d)
 
 - LƯU Ý: SSH không hoạt động với Ubuntu 22.04:
 Guacamole chỉ hỗ trợ ssh-dss và ssh-rsa và cả hai đều đã bị tắt trong Ubuntu 22.04.
