@@ -3,12 +3,13 @@ Script guacamole 1.5.4 for Linux e.g: ubuntu 22.04 LTS OpenvSwitch 25Gbps, Tomca
 
 1. Bước 1. Run: Download và chạy code cài guac Gõ lệnh trên thông qua màn PuTTy đã kết nối thành công tới ipv4 của Ubuntu 20.04:
    
-wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/setup154.sh && sudo bash setup154.sh
+wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/s1-setup.s) 
+
+![image](https://github.com/PhDLeToanThang/guacamole/assets/106635733/b4d3fc85-aaaa-41e0-ab3b-fc56258ac77f)
 
 - LƯU Ý: SSH không hoạt động với Ubuntu 22.04:
 Guacamole chỉ hỗ trợ ssh-dss và ssh-rsa và cả hai đều đã bị tắt trong Ubuntu 22.04.
 Trong thời gian chờ đợi, giải pháp thay thế là thêm HostKeyAlgorithms +ssh-rsa vào cuối /etc/ssh/sshd_config trên máy Ubuntu và khởi động lại sshd.
 
-2. Bước 2. Upgrade 1.5.4: Download và chạy code cài Upgrade Gõ lệnh trên thông qua màn PuTTy đã kết nối thành công tới ipv4 của Ubuntu 20.04:
-
-wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/upgrade154.sh && sudo bash upgrade154.sh
+2. Bước 2. Cấp quyền chạy và dùng lệnh chạy: 
+chmod +x s1-setup.sh && bash ./s1-setup.sh
