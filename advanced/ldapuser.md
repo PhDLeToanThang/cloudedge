@@ -1,4 +1,4 @@
-Integrating Guacamole With Active Directory LDAP user:
+Integrating Guacamole With Active Directory
 🔃 Step 1: Ensure two-way LDAP traffic is available to the Guacamole application server
 If Guacamole is operating in a separate network from your Active Directory Servers, allow TCP 389 between all Guacamole application servers and all Active Directory Domain Controllers nominated in the config script settings below.
 🔑 Step 2: Establish the required accounts to bind with Active Directory
