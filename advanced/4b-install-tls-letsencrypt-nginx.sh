@@ -3,8 +3,8 @@
 # Add Let's Encrypt TLS Certificates to Guacamole with Nginx reverse proxy
 # For Ubuntu / Debian / Raspbian
 # 4b of 4
-# David Harrop
-# April 2023
+# Le Toan Thang
+# Guacamole 1.5.4 Feb 2024
 #######################################################################################################################
 
 # If run as standalone and not from the main installer script, check the below variables are correct.

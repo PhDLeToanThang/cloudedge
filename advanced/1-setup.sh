@@ -2,8 +2,8 @@
 ######################################################################################################################
 # Guacamole appliance setup script
 # For Ubuntu / Debian / Raspbian
-# David Harrop
-# April 2023
+# Le Toan Thang
+# Guacamole 1.5.4 Feb 2024
 #######################################################################################################################
 
 # To install the latest code snapshot:
@@ -130,11 +130,11 @@ INSTALL_NGINX=""                # Install and configure Nginx and reverse proxy 
 PROXY_SITE=""                   # Local DNS name for reverse proxy site and/or self signed TLS certificates
 SELF_SIGN=""                    # Add self signed TLS support to Nginx (Let's Encrypt not available with this option, true/false)
 RSA_KEYLENGTH="2048"            # Self signed RSA TLS key length. At least 2048, must not be blank.
-CERT_COUNTRY="AU"               # Self signed cert setup, 2 character country code only, must not be blank.
-CERT_STATE="Victoria"           # Self signed cert setup, must not be blank
-CERT_LOCATION="Melbourne"       # Self signed cert setup, must not be blank
-CERT_ORG="Itiligent"            # Self signed cert setup, must not be blank
-CERT_OU="I.T."                  # Self signed cert setup, must not be blank
+CERT_COUNTRY="VN"               # Self signed cert setup, 2 character country code only, must not be blank.
+CERT_STATE="CauGiay"           # Self signed cert setup, must not be blank
+CERT_LOCATION="Hanoi"       # Self signed cert setup, must not be blank
+CERT_ORG="ATCOM"                # Self signed cert setup, must not be blank
+CERT_OU="R.D."                  # Self signed cert setup, must not be blank
 CERT_DAYS=""                    # Self signed cert setup, days until self signed TLS cert expiry, blank = default 3650
 LETS_ENCRYPT=""                 # Add Lets Encrypt public TLS cert for Nginx (self signed TLS not available with this option) true/false)
 LE_DNS_NAME=""                  # Public DNS name for Lets Encrypt certificates
@@ -152,7 +152,7 @@ RDP_PRINTER_LABEL="RDP Printer" # Customise RDP printer name shown in Windows
 # Script branding header
 echo
 echo -e "${GREYB}Guacamole ${GUAC_VERSION} Auto Installer."
-echo -e "              ${LGREEN}Powered by Itiligent"
+echo -e "              ${LGREEN}Powered by ATCOM"
 echo
 echo
 
@@ -634,7 +634,7 @@ fi
 clear
 echo
 echo -e "${GREYB}Guacamole ${GUAC_VERSION} Auto Installer."
-echo -e "              ${LGREEN}Powered by Itiligent"
+echo -e "              ${LGREEN}Powered by ATCOM"
 echo
 echo
 

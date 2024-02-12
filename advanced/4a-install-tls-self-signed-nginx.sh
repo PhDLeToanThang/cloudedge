@@ -3,8 +3,8 @@
 # Add self-signed TLS certificates to Guacamole with Nginx reverse proxy
 # For Ubuntu / Debian / Raspbian
 # 4a of 4
-# David Harrop
-# April 2023
+# ATCOM
+# Guacamole 1.5.4 Feb 2024
 #######################################################################################################################
 
 # This script can be run multiple times to either install or update TLS settings and certificates.

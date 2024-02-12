@@ -3,8 +3,8 @@
 # Add Nginx reverse proxy front end to default Guacamole install
 # For Ubuntu / Debian / Raspbian
 # 3 of 4
-# David Harrop
-# August 2023
+# Le Toan Thang
+# Guacamole 1.5.4 Feb 2024
 #######################################################################################################################
 
 # If run as standalone and not from the main installer script, check the below variables are correct.
