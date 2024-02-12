@@ -72,7 +72,7 @@ clear
 # Script branding header
 echo
 echo -e "${GREYB}Guacamole Backend MySQL Schema UPGRADE."
-echo -e "                      ${LGREEN}Powered by Itiligent${GREY}"
+echo -e "                      ${LGREEN}Powered by ATCOM R&D${GREY}"
 echo
 echo
 

@@ -36,7 +36,7 @@ DIR_SSL_CERT="/etc/nginx/ssl/cert"
 DIR_SSL_KEY="/etc/nginx/ssl/private"
 
 TOMCAT_VERSION=$(ls /etc/ | grep tomcat)
-# Below variables are automatically updated by the 1-setup.sh script with the respective values given at install (manually update if blank)
+# Below variables are automatically updated by the s1-setup.sh script with the respective values given at install (manually update if blank)
 DOWNLOAD_DIR=
 CERT_COUNTRY=
 CERT_STATE=

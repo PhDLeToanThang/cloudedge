@@ -79,7 +79,7 @@ MYSQL_ROOT_PWD=
 # Script branding header
 echo
 echo -e "${GREYB}Guacamole Appliance Auto Upgrade Script."
-echo -e "                             ${LGREEN}Powered by Itiligent"
+echo -e "                             ${LGREEN}Powered by ATCOM R&D"
 echo
 
 ###########################################
