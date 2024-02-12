@@ -160,26 +160,26 @@ echo
 # Download the set of config scripts from GitHub
 cd $DOWNLOAD_DIR
 echo -e "${GREY}Downloading the Guacamole build suite...${DGREY}"
-wget -q --show-progress ${GITHUB}/s2-install-guacamole.sh -O s2-install-guacamole.sh
-wget -q --show-progress ${GITHUB}/s3-install-nginx.sh -O s3-install-nginx.sh
-wget -q --show-progress ${GITHUB}/s4a-install-tls-self-signed-nginx.sh -O s4a-install-tls-self-signed-nginx.sh
-wget -q --show-progress ${GITHUB}/s4b-install-tls-letsencrypt-nginx.sh -O s4b-install-tls-letsencrypt-nginx.sh
+sudo wget -q --show-progress ${GITHUB}/s2-install-guacamole.sh -O s2-install-guacamole.sh
+sudo wget -q --show-progress ${GITHUB}/s3-install-nginx.sh -O s3-install-nginx.sh
+sudo wget -q --show-progress ${GITHUB}/s4a-install-tls-self-signed-nginx.sh -O s4a-install-tls-self-signed-nginx.sh
+sudo wget -q --show-progress ${GITHUB}/s4b-install-tls-letsencrypt-nginx.sh -O s4b-install-tls-letsencrypt-nginx.sh
 
 # Download the Guacamole optional feature scripts
-wget -q --show-progress ${GITHUB}/guac-features/add-auth-duo.sh -O add-auth-duo.sh
-wget -q --show-progress ${GITHUB}/guac-features/add-auth-ldap.sh -O add-auth-ldap.sh
-wget -q --show-progress ${GITHUB}/guac-features/add-auth-totp.sh -O add-auth-totp.sh
-wget -q --show-progress ${GITHUB}/guac-features/add-xtra-quickconnect.sh -O add-xtra-quickconnect.sh
-wget -q --show-progress ${GITHUB}/guac-features/add-xtra-histrecstor.sh -O add-xtra-histrecstor.sh
-wget -q --show-progress ${GITHUB}/guac-features/add-smtp-relay-o365.sh -O add-smtp-relay-o365.sh
-wget -q --show-progress ${GITHUB}/guac-features/add-tls-guac-daemon.sh -O add-tls-guac-daemon.sh
-wget -q --show-progress ${GITHUB}/guac-features/add-fail2ban.sh -O add-fail2ban.sh
-wget -q --show-progress ${GITHUB}/guac-man/backup-guac.sh -O backup-guac.sh
-wget -q --show-progress ${GITHUB}/upgrade-guac.sh -O upgrade-guac.sh
+sudo wget -q --show-progress ${GITHUB}/guac-features/add-auth-duo.sh -O add-auth-duo.sh
+sudo wget -q --show-progress ${GITHUB}/guac-features/add-auth-ldap.sh -O add-auth-ldap.sh
+sudo wget -q --show-progress ${GITHUB}/guac-features/add-auth-totp.sh -O add-auth-totp.sh
+sudo wget -q --show-progress ${GITHUB}/guac-features/add-xtra-quickconnect.sh -O add-xtra-quickconnect.sh
+sudo wget -q --show-progress ${GITHUB}/guac-features/add-xtra-histrecstor.sh -O add-xtra-histrecstor.sh
+sudo wget -q --show-progress ${GITHUB}/guac-features/add-smtp-relay-o365.sh -O add-smtp-relay-o365.sh
+sudo wget -q --show-progress ${GITHUB}/guac-features/add-tls-guac-daemon.sh -O add-tls-guac-daemon.sh
+sudo wget -q --show-progress ${GITHUB}/guac-features/add-fail2ban.sh -O add-fail2ban.sh
+sudo wget -q --show-progress ${GITHUB}/guac-man/backup-guac.sh -O backup-guac.sh
+sudo wget -q --show-progress ${GITHUB}/upgrade-guac.sh -O upgrade-guac.sh
 
 # Download the (customisable) dark theme & branding template
-wget -q --show-progress ${GITHUB}/branding.jar -O branding.jar
-chmod +x *.sh
+sudo wget -q --show-progress ${GITHUB}/branding.jar -O branding.jar
+sudo chmod +x *.sh
 
 # Pause here to optionally customise downloaded scripts before any actual install actions have began
 echo -e "${LYELLOW}Ctrl+Z now to exit now if you wish to customise s1-setup.sh options or create an unattended install."
