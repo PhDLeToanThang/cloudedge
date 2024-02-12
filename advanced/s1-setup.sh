@@ -7,7 +7,7 @@
 ##############################################
 
 # To install the latest code snapshot:
-# wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/s1-setup.sh sudo chmod +x s1-setup.sh && ./s1-setup.sh
+# wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/s1-setup.sh chmod +x s1-setup.sh && ./s1-setup.sh
 
 # s1-setup.sh is a central script that manages all inputs, options and sequences other included 'install' scripts.
 # s2-install-guacamole is the main guts of the whole build. This script downloads and builds Guacamole from source.
