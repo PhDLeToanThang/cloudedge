@@ -33,7 +33,7 @@ clear
 
 SENDER=$SUDO_USER
 SERVER=$(uname -n)
-# Below variables are automatically updated by the 1-setup.sh script with the respective values given at install (manually update if blank)
+# Below variables are automatically updated by the s1-setup.sh script with the respective values given at install (manually update if blank)
 LOCAL_DOMAIN=
 
 echo
