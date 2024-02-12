@@ -51,7 +51,7 @@ TLSNAME=$1
 TLSDAYS=$2
 TLSIP=$3
 
-# Below variables are automatically updated by the 1-setup.sh script with the respective values given at install (manually update if blank)
+# Below variables are automatically updated by the s1-setup.sh script with the respective values given at install (manually update if blank)
 CERT_COUNTRY=
 CERT_STATE=
 CERT_LOCATION=
