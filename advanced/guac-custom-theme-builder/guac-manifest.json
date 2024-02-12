@@ -6,7 +6,7 @@
         "smallIcon" : "images/logo-64.png",
         "largeIcon" : "images/logo-144.png",
         "translations" : [ 
-        "translations/en.json"
+        "translations/vi.json"
      ],
 
      "css" : [
