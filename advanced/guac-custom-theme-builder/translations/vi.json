@@ -5,7 +5,7 @@
     "APP" : {
 
         "NAME"    : "Cloud Edge vs IoT",
-        "VERSION" : "2023.4.2 - 1.5.0",
+        "VERSION" : "2024.2.12 - 1.5.4",
 
         "ACTION_ACKNOWLEDGE"        : "Chấp nhận",
         "ACTION_CANCEL"             : "Huỷ bỏ",
