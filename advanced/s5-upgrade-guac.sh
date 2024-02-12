@@ -1,14 +1,14 @@
 #!/bin/bash
-######################################################################################################################
+#############################################
 # Guacamole appliance upgrade script
 # For Ubuntu / Debian / Raspbian
-# David Harrop
-# April 2023
-#######################################################################################################################
+# Guacamole 1.5.4
+# Feb 2024
+############################################
 
-#######################################################################################################################
-# Script pre-flight checks and settings ###############################################################################
-#######################################################################################################################
+############################################
+# Script pre-flight checks and settings ####
+############################################
 
 clear
 
@@ -37,9 +37,9 @@ if [[ "$(find . -maxdepth 1 \( -name 'guacamole-*' -o -name 'mysql-connector-j-*
     exit 1
 fi
 
-#######################################################################################################################
-# Initial environment setup ###########################################################################################
-#######################################################################################################################
+###########################################
+# Initial environment setup ###############
+###########################################
 
 #Setup download and temp directory paths
 USER_HOME_DIR=$(eval echo ~${SUDO_USER})
@@ -67,7 +67,7 @@ GUAC_SOURCE_LINK="http://apache.org/dyn/closer.cgi?action=download&filename=guac
 # Install log Location
 INSTALL_LOG="${DOWNLOAD_DIR}/guacamole_${NEW_GUAC_VERSION}_upgrade.log"
 
-# Below variables are automatically updated by the 1-setup.sh script with the respective values given at install (manually update if blank)
+# Below variables are automatically updated by the s1-setup.sh script with the respective values given at install (manually update if blank)
 INSTALL_MYSQL=
 MYSQL_HOST=
 MYSQL_PORT=
@@ -79,12 +79,12 @@ MYSQL_ROOT_PWD=
 # Script branding header
 echo
 echo -e "${GREYB}Guacamole Appliance Auto Upgrade Script."
-echo -e "                             ${LGREEN}Powered by Itiligent"
+echo -e "                             ${LGREEN}Powered by ATCOM R&D"
 echo
 
-#######################################################################################################################
-# Start upgrade actions  ##############################################################################################
-#######################################################################################################################
+###########################################
+# Start upgrade actions  ##################
+###########################################
 
 apt-get upgrade -qq -y
 
