@@ -14,11 +14,14 @@ GITHUB="https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main"
 (2). **MFA** xác thực bằng chuẩn tOTP thông qua _SmartPhone Microsoft Authenticator App / Google Authenticator App_.
 
 (3). Làm việc tại nhà **(WFH)**: Chúng tôi cảm thấy điều này khiến chúng tôi khác biệt với các giải pháp máy tính từ xa khác và mang lại cho chúng tôi một số lợi thế nhất định:
-- An toàn được nâng cao.
 - Tiết kiệm chi phí hệ thống và vận hành khi có các vấn đề yêu cầu từ Thị trường hoặc Doanh Nghiệp.
 - Bảo mật đồng nhất giữa các hệ thống cấp phát quyền VPN/NAT Proxy/Cân bằng tải/Cloud Wi-Fi/Join Domain FQDN và GPO/LGPO/LDAP/ARMS/ADFS.
+  
+  ![image](https://github.com/PhDLeToanThang/guacamole/assets/106635733/dbc2342d-3eba-42c2-a3e7-ca64d632a74c)
+
 - Người dùng tiện lợi khi truy cập Web/Apps trong hệ thống nội bộ Doanh nghiệp thông qua Trình duyệt Web chuẩn HTML5 hoặc Mobile Apps.
 - Người quản trị có đầy đủ công cụ kiểm soát hệ thống vận hành từ xa như VPN/Proxy/LBC/Cloud Wi-Fi Monitoring.
+- Hệ thống có hỗ trợ Sao lưu, khôi phục, đồng bộ có mã hoá và quyét virus chống hầu hết các virus mã hoá giúp Dữ liệu hệ thống tại Doanh nghiệp an toàn được nâng cao hơn.
 
 (4). **Truy cập máy tính của bạn từ mọi nơi**: Vì ứng dụng Guacamole client là một ứng dụng web chuẩn HTML5, việc sử dụng máy tính của bạn không bị ràng buộc với bất kỳ thiết bị hoặc vị trí nào. 
 Miễn là bạn có quyền truy cập vào trình duyệt web, bạn có quyền truy cập vào máy của mình trên Private Cloud.
