@@ -17,7 +17,7 @@ GITHUB="https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main"
 - Tiết kiệm chi phí hệ thống và vận hành khi có các vấn đề yêu cầu từ Thị trường hoặc Doanh Nghiệp.
 - Bảo mật đồng nhất giữa các hệ thống cấp phát quyền VPN/NAT Proxy/Cân bằng tải/Cloud Wi-Fi/Join Domain FQDN và GPO/LGPO/LDAP/ARMS/ADFS.
   
-  ![image](https://github.com/PhDLeToanThang/guacamole/assets/106635733/dbc2342d-3eba-42c2-a3e7-ca64d632a74c)
+  ![image](https://github.com/PhDLeToanThang/guacamole/assets/106635733/5f7c2c95-2e9b-427e-b21e-e5e7c4d5260c)
 
 - Người dùng tiện lợi khi truy cập Web/Apps trong hệ thống nội bộ Doanh nghiệp thông qua Trình duyệt Web chuẩn HTML5 hoặc Mobile Apps.
 - Người quản trị có đầy đủ công cụ kiểm soát hệ thống vận hành từ xa như VPN/Proxy/LBC/Cloud Wi-Fi Monitoring.
