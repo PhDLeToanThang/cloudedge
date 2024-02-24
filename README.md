@@ -30,3 +30,5 @@ Miễn là bạn có quyền truy cập vào trình duyệt web, bạn có quy�
 Với cả Guacamole và hệ điều hành máy tính để bàn hoặc ứng dụng của bạn được lưu trữ trên đám mây cá nhân, bạn có thể kết hợp sự tiện lợi của Guacamole qua trình duyệt web với khả năng phục hồi và tính linh hoạt từ đám mây cá nhân ở Tổ chức của bạn.
 
 (6). **Tích hợp và chuyển đổi truy cập truyền thống Native Apps/ Windows Forms** sang Web Apps trên trình duyệt Web hoặc App Mobile.
+
+![CloudEdge2024 WFH](https://github.com/PhDLeToanThang/guacamole/assets/106635733/6354249b-072d-472f-aa8c-14f00b4bf510)
