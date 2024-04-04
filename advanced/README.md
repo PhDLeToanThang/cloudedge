@@ -1,4 +1,17 @@
-# Guacamole setup version 1.5.4: Updated 7.12.2023
+# Cài mới Guacamole version 1.5.4: Updated 2.2024
+Script guacamole 1.5.4 for Linux e.g: ubuntu 22.04 LTS OpenvSwitch 25Gbps, Tomcat 9.x PHP 8.x MySQL 5.x NGINX 1.8.x Certbot Let's Encrypt 2.x TLS 1.2/1.3
+
+1. Bước 1. Run: Download và chạy code cài guac Gõ lệnh trên thông qua màn PuTTy đã kết nối thành công tới ipv4 của Ubuntu 20.04:
+   
+wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/1-setup.sh
+
+- LƯU Ý: SSHD cần cài và cấu hình PPK và chặn dải ip4 trong local MNGT để không cho internet truy cập.
+
+2. Bước 2. Cấp quyền chạy và dùng lệnh chạy: 
+chmod +x 1-setup.sh && bash ./1-setup.sh
+
+
+# Muốn nâng cấp lên Guacamole version 1.5.4: Updated 7.12.2023
 Script guacamole 1.5.4 for Linux e.g: ubuntu 22.04 LTS OpenvSwitch 25Gbps, Tomcat 9.x PHP 8.x MySQL 5.x NGINX 1.8.x Certbot Let's Encrypt 2.x TLS 1.2/1.3
 
 1. Bước 1. Run: Download và chạy code cài guac Gõ lệnh trên thông qua màn PuTTy đã kết nối thành công tới ipv4 của Ubuntu 20.04:
