@@ -6,6 +6,7 @@ Script guacamole 1.5.4 for Linux e.g: ubuntu 22.04 LTS OpenvSwitch 25Gbps, Tomca
 wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/1-setup.sh
 
 - LƯU Ý: SSHD cần cài và cấu hình PPK và chặn dải ip4 trong local MNGT để không cho internet truy cập.
+- Tham khảo: https://thangletoan.wordpress.com/2023/09/29/cach-2-dung-puttygen-co-the-sinh-key-ppk-va-cau-hinh-public-key-bao-ve-ssh-cua-ubuntu-20-04/ 
 
 2. Bước 2. Cấp quyền chạy và dùng lệnh chạy: 
 chmod +x 1-setup.sh && bash ./1-setup.sh
