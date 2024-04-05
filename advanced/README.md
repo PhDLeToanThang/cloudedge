@@ -13,18 +13,23 @@ chmod +x 1-setup.sh && bash ./1-setup.sh
 
 ```mermaid
 graph TD
-    A[1. Cài đặt máy ảo Ubuntu 22.04 LTS] --> B[2. Cấu hình network netplan ens192]
+    0[0. Firewall Gateway]
+	0 --> G[3a. Thông qua Haproxy/Firewall Gateway]
+	G --> A[[1. Cài đặt máy ảo Ubuntu 22.04 LTS] --> B[2. Cấu hình network netplan ens192]
     B --> C[3. Truy cập trang wget guacamole/main/advanced/1-setup.sh]
     C --> D[4. Cài đặt và cấu hình gói phần mềm]
-    D --> E[5. Cấu hình Guacamole]
-    E --> F[6. Kích hoạt TOTP bằng MS Authenticator]
-
-    B --> G[3a. Thông qua Haproxy/Firewall Gateway]
-    G --> C
-
     D --> H[4a. Chọn Nginx Proxy]
     H --> I[4b. Tự phát hành và ký chứng chỉ cho DNS hosts local]
+	I --> E[5. Cấu hình Guacamole]
+	E --> F[6.1. Kích hoạt TOTP bằng MS Authenticator]
+	E --> M[6.2 Kích hoạt TOTP bằng Google/Citrix Authenticator]
+	E --> N[6.3 Kích hoạt TOTP/HOTP/ Fido2/HW token customizer]
+	
     H --> J[4c. Chọn Let's Encrypt với DNS công khai]
+	J --> K[5. Cấu hình Guacamole]
+    K --> L[6.1 Kích hoạt TOTP bằng MS Authenticator]
+    K --> M[6.2 Kích hoạt TOTP bằng Google/Citrix Authenticator]
+    K --> N[6.3 Kích hoạt TOTP/HOTP/ Fido2/HW token customizer]
 
     style A fill:#FFD700, stroke:#333, stroke-width:2px
     style B fill:#FFD700, stroke:#333, stroke-width:2px
@@ -36,6 +41,11 @@ graph TD
     style H fill:#FFD700, stroke:#333, stroke-width:2px
     style I fill:#FFD700, stroke:#333, stroke-width:2px
     style J fill:#FFD700, stroke:#333, stroke-width:2px
+	style K fill:#FFD700, stroke:#333, stroke-width:2px
+	style L fill:#FFD700, stroke:#333, stroke-width:2px
+	style M fill:#FFD700, stroke:#333, stroke-width:2px
+	style N fill:#FFD700, stroke:#333, stroke-width:2px
+	
 ```
 
 Hoặc sẽ có bản thiết kế chuyên sâu hơn:
