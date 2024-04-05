@@ -14,8 +14,8 @@ chmod +x 1-setup.sh && bash ./1-setup.sh
 ```mermaid
 graph TD
     0[0. Firewall Gateway]
-	0 --> G[3a. Thông qua Haproxy/Firewall Gateway]
-	G --> A[[1. Cài đặt máy ảo Ubuntu 22.04 LTS] --> B[2. Cấu hình network netplan ens192]
+	0 --> G[A. Thông qua Haproxy/Firewall Gateway]
+	G --> A[1. Cài đặt máy ảo Ubuntu 22.04 LTS] --> B[2. Cấu hình network netplan ens192]
     B --> C[3. Truy cập trang wget guacamole/main/advanced/1-setup.sh]
     C --> D[4. Cài đặt và cấu hình gói phần mềm]
     D --> H[4a. Chọn Nginx Proxy]
