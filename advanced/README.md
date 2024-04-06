@@ -9,7 +9,7 @@ wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/1-
 - Tham khảo: https://thangletoan.wordpress.com/2023/09/29/cach-2-dung-puttygen-co-the-sinh-key-ppk-va-cau-hinh-public-key-bao-ve-ssh-cua-ubuntu-20-04/ 
 
 2. Bước 2. Cấp quyền chạy và dùng lệnh chạy: 
-chmod +x 1-setup.sh && bash ./1-setup.sh
+bash 1-setup.sh
 
 ```mermaid
 graph TD
@@ -70,4 +70,4 @@ Guacamole chỉ hỗ trợ ssh-dss và ssh-rsa và cả hai đều đã bị t�
 Trong thời gian chờ đợi, giải pháp thay thế là thêm HostKeyAlgorithms +ssh-rsa vào cuối /etc/ssh/sshd_config trên máy Ubuntu và khởi động lại sshd.
 
 2. Bước 2. Cấp quyền chạy và dùng lệnh chạy: 
-chmod +x s1-setup.sh && bash ./s1-setup.sh
+bash s1-setup.sh
