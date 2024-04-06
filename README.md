@@ -1,6 +1,6 @@
 # Triển khai Điện toán Biên và IoT phiên bản 1.5.4 ứng dụng vào mô hình WFH:
 
-wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/1-setup.sh && chmod +x 1-setup.sh && bash ./1-setup.sh
+wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/1-setup.sh && bash 1-setup.sh
 
 GITHUB="https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main"
 
