@@ -2,7 +2,7 @@
 
 wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/1.5.5/1-setup.sh && bash 1-setup.sh
 
-GITHUB="https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main"
+GITHUB="https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/1.5.5"
 
 ---
 
