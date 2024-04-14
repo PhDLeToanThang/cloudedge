@@ -7,8 +7,6 @@
 #######################################################################################################################
 
 # To install the latest code snapshot:
-# wget https://raw.githubusercontent.com/itiligent/Guacamole-Install/main/1-setup.sh && chmod +x 1-setup.sh && ./1-setup.sh
-
 # 1-setup.sh is a central script that manages all inputs, options and sequences other included 'install' scripts.
 # 2-install-guacamole is the main guts of the whole build. This script downloads and builds Guacamole from source.
 # 3-install-nginx.sh automatically installs and configures Nginx to work as an http port 80 front end to Guacamole
