@@ -1,4 +1,5 @@
-# Triển khai Điện toán Đường Biên và IoT Gateway phiên bản 1.5.5 ứng dụng vào mô hình Business Enterprise (Updated 15.4.2024):
+# Triển khai Điện toán Đường Biên và IoT Gateway phiên bản 1.5.5 ứng dụng vào mô hình:
+Business Enterprise + HealthCare IoT frog network + PGAS IoT Gateway (Updated 15.4.2024):
 
 wget https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/1.5.5/1-setup.sh && bash 1-setup.sh
 
