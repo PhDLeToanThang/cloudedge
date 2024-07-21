@@ -70,8 +70,8 @@ Khi đó, hãy chọn Cho phép kết nối từ xa với máy tính này
 
 ## Phần 2. Cấu hình RAWeb cho một môi trường multi-user:
 
-- Bài viết: https://github.com/kimmknight/raweb  
-- Download bản mới nhất: https://github.com/kimmknight/raweb/archive/master.zip
+- Bài viết: https://github.com/kimmknight/raweb .
+- Download bản mới nhất: https://github.com/kimmknight/raweb/archive/master.zip .
 
 **RAWeb** cho phép những người dùng khác nhau xem các ứng dụng khác nhau bằng cách định cấu hình IIS và đặt một số quyền.
 
@@ -136,6 +136,7 @@ Chỉ cần thêm quyền Đọc cho TestUser trên Calculator.rdp và Chrome.rd
 ![image](https://github.com/user-attachments/assets/46bb0ae7-6cfa-4e2a-ac7a-5cd66588f913)
 
 Khi **TestUser** đăng nhập vào **RAWeb**, họ sẽ được nhắc **nhập thông tin xác thực** (hoặc thông tin xác thực của người dùng đã đăng nhập có thể được chuyển qua nếu một phần của miền). **TestUser** sẽ chỉ nhìn thấy các ứng dụng được chỉ định cho họ:
+
 ![image](https://github.com/user-attachments/assets/f1d7f3e0-d66b-4226-a25b-9dd352497fc4)
 
 Trong trường hợp này, TestApp không được hiển thị (như mong muốn).
@@ -182,27 +183,35 @@ Xác định vị trí tệp EXE hoặc tệp lối tắt cho ứng dụng của
 **5. Xác nhận chi tiết và nhấp vào Tạo... (HOST)**
 
 Bạn có thể thay đổi địa chỉ Máy chủ thành địa chỉ IP của máy tính chủ nếu sau này bạn gặp sự cố kết nối trên máy khách.
+
 ![image](https://github.com/user-attachments/assets/0680e2be-c979-4013-8ca1-9aa1f779e350)
 
 **6. Lưu tệp RDP (HOST) của bạn**
+
 ![image](https://github.com/user-attachments/assets/e872e934-ddfa-4230-b7dc-879264462b18)
 
 **7. Sao chép tệp RDP của bạn từ máy tính HOST sang máy tính CLIENT:**
+
 ![image](https://github.com/user-attachments/assets/1830a422-4c5c-402d-b2fc-7c8e40c421c3)
 
 **8. Mở tệp RDP (MÁY TRẠM)**
+
 ![image](https://github.com/user-attachments/assets/ad5fcdb0-0737-40ef-a716-1a83059b63d6)
 
 **9. Xác nhận mọi lời nhắc bảo mật (MÁY TRẠM):**
+
 ![image](https://github.com/user-attachments/assets/4e830f7c-dfde-423d-b4a8-da27fdd01390)
 
 **10. Nhập tên người dùng và mật khẩu để kết nối với máy tính HOST (MÁY TRẠM)**
+
 ![image](https://github.com/user-attachments/assets/8eeb054b-0946-4cf4-a6e9-cfce35bd79f7)
 
 **11. RemoteApp của bạn sẽ mở:**
+
 ![image](https://github.com/user-attachments/assets/eaaebca2-e560-4067-b454-7b3ed7b0ac60)
 
 ## Phần 4. Tạo RemoteApp với Cloud Edge:
+
 Tham khảo: https://guacamole.incubator.apache.org/doc/0.9.0/gug/configuring-guacamole.html 
 
 > **remote-app:**
@@ -210,17 +219,22 @@ Tham khảo: https://guacamole.incubator.apache.org/doc/0.9.0/gug/configuring-gu
 >  Windows requires a special notation for the names of remote applications. The names of remote applications must be prefixed with two vertical bars. For example, if you have created a remote application on your server for notepad.exe and have assigned it the name "notepad", you would set this parameter to: "||notepad".
 
 _ví dụ: Đặt tên cho Apps:
+
 ![image](https://github.com/user-attachments/assets/50aecfb3-7f9e-497b-b85e-f5528aad2a2c)
 
 Tham khảo: https://guacamole.apache.org/doc/gug/configuring-guacamole.html 
-Cấu hình Ứng dụng từ xa RemoteApp:
+
+**Cấu hình Ứng dụng từ xa RemoteApp:**
 -	Các phiên bản Windows gần đây cung cấp một tính năng gọi là RemoteApp cho phép sử dụng các ứng dụng riêng lẻ qua RDP mà không cung cấp quyền truy cập vào môi trường máy tính để bàn đầy đủ. Nếu máy chủ RDP của bạn đã bật và định cấu hình tính năng này, bạn có thể định cấu hình các kết nối Guacamole để sử dụng các ứng dụng riêng lẻ đó.
 Không thể gọi đồng thời nhiều phần mềm RemoteApps như: ||WinSCP||RvTool|Word||Excel||Unikey 
 Mà phải viết file Batch .bat gọi:
+```q
 “viết đoạn code file .bat để tôi load launch 3 file chạy cùng lúc trong remoteapps như: LOCalc , LOMath, WinSCP và có kiểm tra tình trạng đang chạy thì sẽ không load hoặc bỏ qua lệnh chạy”
-
+```
+```ai
 Một đoạn mã file .bat để tải và chạy ba ứng dụng cùng một lúc (LOCalc, LOMath, WinSCP) thông qua RemoteApps. Đồng thời, bạn muốn kiểm tra xem các ứng dụng đã được chạy hay chưa, và tránh tải lại nếu chúng đang chạy. Dưới đây là một ví dụ về cách bạn có thể thực hiện điều này:
 Ví du source code file .bat:
+```
 ```bat
 @echo off
 setlocal
@@ -266,6 +280,7 @@ if "%ERRORLEVEL%"=="0" (
 )
 endlocal
 ```
+
 ![image](https://github.com/user-attachments/assets/3abbcb99-ba4c-49d5-8cca-cb2766a99f11)
 
 - Dùng REmoteApp Tool 6x thêm Phần mềm Remote
@@ -277,6 +292,7 @@ endlocal
 ![image](https://github.com/user-attachments/assets/2f1033f3-80c8-4fc1-ac0c-30808abb7256)
 
 - Nếu muốn lưu ra file .rdp:
+
 ![image](https://github.com/user-attachments/assets/5722afa7-046c-4179-8801-c8fdb45ac997)
 
 ![image](https://github.com/user-attachments/assets/68516e03-bdae-47d2-a65c-f5c36fbfe62e)
@@ -286,10 +302,13 @@ endlocal
 ![image](https://github.com/user-attachments/assets/309fd736-acfc-4fa4-9b20-7ee3ec0d13fb)
 
 - Nếu đúp click để kiểm tra file .rdp
+
 ![image](https://github.com/user-attachments/assets/b0a3f721-2173-43ad-9a95-f2b34624d7ea)
 
 - Cấu hình trong RemoteApp của Guacamole:
+
 ![image](https://github.com/user-attachments/assets/2dd67470-5702-4703-95c5-f0a01d274614)
 
 - Và kết quả có nhiều phần mềm cùng chạy:
+
 ![image](https://github.com/user-attachments/assets/5a67ea4d-6b29-46a8-9d0b-7d945c8ac137)
