@@ -1,6 +1,7 @@
 # Hướng dẫn sử dụng RemoteApps và tích hợp Cloud Edge
 
-## Phần 1. Tạo và quản lý RemoteApps trên Win XP, 7, 8, 10,11 và Server: https://github.com/kimmknight/remoteapptool 
+## Phần 1. Tạo và quản lý RemoteApps trên Win XP, 7, 8, 10,11 và Server: 
+https://github.com/kimmknight/remoteapptool 
 
 1.	Với công nghệ Microsoft RemoteApp, bạn có thể sử dụng liền mạch một ứng dụng đang chạy trên một máy tính khác.
 1.	RemoteApp Tool là tiện ích cho phép bạn tạo/quản lý RemoteApps được lưu trữ trên Windows (7, 8, 10, XP và Server) cũng như tạo các tệp RDP và MSI cho máy khách.
