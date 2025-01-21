@@ -86,7 +86,7 @@ stdout_logfile=/var/log/cloud9/cloud9.out.log
 ```
 sudo /etc/init.d/supervisor restart
 ```
-Với Cloud9, AT.COM hy vọng các bạn có thêm 1 lựa chọn cho công cụ lập trình của mình trong bộ sưu tập DevOps và Agile-Scrum!
+Với Cloud9, Chúng tôi hy vọng các bạn có thêm 1 lựa chọn cho công cụ lập trình của mình trong bộ sưu tập DevOps và Agile-Scrum!
 
 # Phần 2. Mô hình quản lý và vị trí khai thác sử dụng Cloud9:
 
@@ -128,24 +128,35 @@ Nó cũng là nhiệm vụ hàng đầu hiện nay của cả nhóm (cho dựng 
 
 **(Mục đích: phân tích cơ hội, kế hoạch, các rủi ro trước khi ra quyết định triển khai dự án BOM /Mind-stone power)**
 
-(Zoom in: phóng to các bước thực hiện trong Quản lý dự án Phần Cứng, Triển khai hạ tầng DCV)
+![image](https://github.com/user-attachments/assets/206ee08f-1e9a-4571-bee7-dda85834efa4)
+
+*(Zoom in: phóng to các bước thực hiện trong Quản lý dự án Phần Cứng, Triển khai hạ tầng DCV)*
 
 #### Quy trình 2. Công đoạn quản lý phát triển DevOps phần mềm tổng thể:
 
+![image](https://github.com/user-attachments/assets/d2bdcece-4c09-46e6-a1ac-e25e65456117)
+
 #### Quy trình 3. Phân tích cấu trúc thiết lập và vận hành “Business Operation Structure Basic”:
+
+![image](https://github.com/user-attachments/assets/fb11fa04-8746-476a-8fb0-33551d4a7a54)
 
 - Xây dựng các sơ đồ tư duy, nhằm nâng cao nhận thức/ quy trình có tính quy luật cho triển khai hoặc giám sát vận hành:
 
-_Ví dụ: quy trình labs để tổ chức dịch vụ nâng cấp và vá lỗi Outlook người dùng cho MS Office 365 (liên quan tới IT Helpdesk vs troubleshooting)_
+![image](https://github.com/user-attachments/assets/518a3d22-9b92-4dfc-9a50-a13f8c54d986)
+
+*Ví dụ: quy trình labs để tổ chức dịch vụ nâng cấp và vá lỗi Outlook người dùng cho MS Office 365 (liên quan tới IT Helpdesk vs troubleshooting)*
 
 #### Quy trình 4. Lead PM trong công tác quản lý tiến độ, nhân sự, đầu việc và các phương thức xử lý dự án PMI:
-_(Tham khảo: PMI quản lý tiến độ, nhân sự, đầu công việc và dự toán chi phí)_
+
+![image](https://github.com/user-attachments/assets/d8225af4-59a1-4a90-ade1-1cfc35abde11)
+
+*(Tham khảo: PMI quản lý tiến độ, nhân sự, đầu công việc và dự toán chi phí)*
 
 #### Quy trình 5. Tập trung dữ liệu tại Cổng thông tin Quản lý đầu vào và xử lý dự án PMI:
 
-Ví dụ: http://pmi.company.vn (cổng thông tin PMI Demo trial)
+*Ví dụ: http://pmi.company.vn (cổng thông tin PMI Demo trial)*
 
-Mục đích:
+**Mục đích:**
 1. Theo dõi tiễn độ, Nhật ký công việc hàng ngày (Dashboard Today)
 1. Đầu công việc (Activity Stream)
 1. Nhân sự,
@@ -156,7 +167,7 @@ Mục đích:
 1. Tài liệu KB, Troubleshooting Case chia sẻ theo Khách hàng hoặc theo dự án Pipeline (Issues)
 
 #### Quy trình 6. Cập nhật dữ liệu vận hành các công cụ hạ tầng quản lý dịch vụ:
-(Các công cụ hạ tầng cho vận hành, quản lý Source code và quy trình sản xuất phần mềm):
+*(Các công cụ hạ tầng cho vận hành, quản lý Source code và quy trình sản xuất phần mềm)*
 
 1. ITIL (Quản lý các dịch vụ Helpdesk, chăm sóc HW/SW CNTT)
 1. ITSAM (Công cụ quản lý, check list, Document Check-in/out, Quản lý tài sản, Chế độ bảo hành, tài liệu theo dõi History Version nâng cấp HW/SW CNTT)
@@ -173,8 +184,7 @@ Hiện nay, Cổng thông tin Cloud9 này đã tích hợp cả 5 phần quản 
 hoặc DevSecOps như:
 1. GitEA (Github Agile scrum On-Prem)
  
-
-đáp ứng cho hơn chục loại ngôn ngữ lập trình như:
+Đáp ứng cho chục loại ngôn ngữ lập trình như:
 1. Visual Studio,
 1. Netbeans, 
 1. Eclipse, 
