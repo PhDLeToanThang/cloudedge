@@ -313,3 +313,16 @@ Nếu sau khi cấu hình đúng mà máy vẫn không boot vào USB, mà lại 
 *   **Tắt CSM:** Buộc máy chạy ở chế độ UEFI thuần túy.
 *   **Dùng EFI Shell:** Khi các cách trên không được, dùng lệnh `fsX: -> cd \EFI\BOOT -> BOOTIA32.EFI` để khởi động thủ công.
 
+Dựa trên: https://github.com/PhDLeToanThang/kms/tree/master 
+tìm ra key: 
+```
+Windows 8.1 Professional: GCRJD-8NW9H-F2CDX-CCM8D-9D6T9 
+Windows 10 Operating system edition KMS Client Setup Key
+Windows 10 Home: YTMG3-N6DKC-DKB77-7M9GH-8HVX7 
+Windows 10 Home Single Language: BT79Q-G7N6G-PGBYW-4YWX6-6F4BT
+Windows 10 IoT Enterprise: XQQYW-NFFMW-XJPBH-K8732-CKFFD
+Windows 10 Professional: W269N-WFGWX-YVC9B-4J6C9-T83GX 
+Upgrade to Windows 10 Pro: VK7JG-NPHTM-C97JM-9MPGT-3V66T 
+Upgrade to Windows 10 Pro: X3W8N-3WQCV-2MXDF-K77MK-7XMP6 
+Upgrade to Windows 10 Pro: W269N-WFGWX-YVC9B-4J6C9-T83GX
+```
