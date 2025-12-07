@@ -208,3 +208,111 @@ Với sự kiên nhẫn và tuân thủ các hướng dẫn chi tiết trong tà
 [111] Forgotten password for Windows 10 Intel ComputeStick. https://superuser.com/questions/1234210/forgotten-password-for-windows-10-intel-computestick.
 
 [115] Intel® Compute Stick STCK1A32WFC User Guide. https://asset.conrad.com/media10/add/160267/c1/-/en/001521710ML02/manual-1521710-intel-stk1aw32scr-mini-pc-stick-intel-atom-x5-atom-x5-z8300-4-x-144-ghz-2-gb-32-gb-microsoft-windows-10.pdf.
+
+---
+
+# Phần 2. Yêu cầu triển khai kỹ thuật Windows 8.1 32-bit
+
+>>> liên quan đến việc cài đặt Windows 8.1 32-bit qua USB trên một hệ thống có UEFI và có thể cần dùng đến EFI Shell. Đây là quy trình chi tiết từng bước để bạn thực hiện thành công.
+>>> Download windows 8.1 ISO: https://www.techworm.net/2023/03/download-windows-8-1-iso-files.html
+
+Vấn đề bạn gặp phải (có thể) là một số máy tính cũ hơn hoặc máy tính bảng có UEFI 32-bit, và khi tạo USB boot theo cách thông thường, máy không nhận. Dùng EFI Shell là cách "ép" máy chạy file cài đặt từ USB.
+
+Quá trình sẽ gồm 3 phần chính:
+1.  **Chuẩn bị và Tạo USB Boot đúng chuẩn UEFI 32-bit.**
+2.  **Vào BIOS/UEFI và Cấu hình Boot.**
+3.  **Sử dụng EFI Shell để khởi động USB (nếu cần).**
+
+---
+
+### **Phần 1: Tạo USB Boot Windows 8.1 32-bit chuẩn UEFI**
+
+Đây là bước quan trọng nhất. Nếu tạo USB sai, các bước sau sẽ vô nghĩa. Công cụ tốt nhất cho việc này là **Rufus**.
+
+**Bạn cần chuẩn bị:**
+*   Một chiếc USB dung lượng tối thiểu 4GB (nên dùng 8GB để chắc chắn).
+*   File ISO cài đặt Windows 8.1 32-bit.
+*   Một máy tính khác đang chạy tốt để tạo USB.
+
+**Các bước thực hiện:**
+
+1.  **Tải Rufus:** Truy cập trang chủ Rufus (rufus.ie) và tải phiên bản mới nhất.
+2.  **Chạy Rufus:** Nhấp chuột phải vào file Rufus và chọn "Run as administrator".
+3.  **Cấu hình Rufus:** Đây là bước then chốt, bạn cần cấu hình chính xác các thông số sau:
+    *   **Device:** Chọn đúng USB của bạn.
+    *   **Boot selection:** Nhấn vào nút `SELECT` và chọn file ISO Windows 8.1 32-bit của bạn.
+    *   **Partition scheme:** Chọn **GPT**. Đây là chuẩn phân vùng cho UEFI.
+    *   **Target system:** Rufus sẽ tự động đổi thành **UEFI (non CSM)**. Đây là chế độ chúng ta cần. (CSM là chế độ tương thích với BIOS cũ, chúng ta không dùng nó).
+    *   **Volume label:** Có thể để mặc định hoặc đổi tên tùy thích.
+    *   **File system:** Chọn **FAT32**. **Bắt buộc phải chọn FAT32** vì UEFI chỉ có thể đọc phân vùng định dạng FAT32 khi khởi động.
+    *   **Cluster size:** Để mặc định.
+
+    Hình ảnh cấu hình Rufus sẽ trông như thế này:
+    
+
+4.  **Bắt đầu tạo USB:** Nhấn nút `START`. Rufus sẽ cảnh báo rằng USB sẽ bị xóa sạch, bạn xác nhận `OK` và chờ quá trình hoàn tất.
+
+---
+
+### **Phần 2: Vào BIOS/UEFI và Cấu hình Boot**
+
+Sau khi có USB boot chuẩn UEFI, bạn hãy cắm nó vào máy tính cần cài đặt hệ điều hành.
+
+1.  **Khởi động máy và vào BIOS/UEFI:**
+    *   Bật nguồn máy tính.
+    *   Ngay khi xuất hiện logo của hãng (như Dell, HP, Lenovo, ASUS...), hãy liên tục nhấn phím để vào BIOS/UEFI. Thường là `F2`, `F10`, `F12`, `DEL` hoặc `ESC`. Bạn có thể tìm kiếm phím vào BIOS cho dòng máy của mình.
+
+2.  **Cấu hình các thiết lập quan trọng:**
+    *   **Tắt Secure Boot:** Tìm đến mục `Secure Boot` (thường nằm trong tab `Boot` hoặc `Security`) và **tắt nó đi (Disabled)**. Secure Boot có thể chặn việc khởi động từ các thiết bị không được ký số, kể cả USB cài đặt của bạn.
+    *   **Chọn chế độ Boot UEFI:** Tìm mục như `Boot Mode`, `Boot List Option` hoặc `CSM (Compatibility Support Module)`. Hãy chắc chắn rằng nó được đặt thành **UEFI Only** hoặc **UEFI**. Nếu có tùy chọn `CSM`, hãy **tắt (Disabled)** nó đi để buộc máy chỉ chạy ở chế độ UEFI.
+    *   **Thiết lập thứ tự khởi động (Boot Order):**
+        *   Tìm đến mục `Boot` hoặc `Boot Order`.
+        *   Đưa USB của bạn lên vị trí đầu tiên. Nó có thể được nhận diện với tên như `UEFI: USB Flash Drive`, `UEFI: Kingston...` hoặc tương tự.
+        *   Lưu lại thiết lập và thoát (thường là nhấn `F10` rồi chọn `Yes`).
+
+---
+
+### **Phần 3: Sử dụng EFI Shell để khởi động (Nếu máy không tự nhận USB)**
+
+Nếu sau khi cấu hình đúng mà máy vẫn không boot vào USB, mà lại hiện ra một menu boot, trong đó có tùy chọn **"EFI Shell"** hoặc **"Launch EFI Shell from filesystem device"**, thì đây chính là lúc bạn cần dùng đến nó.
+
+1.  **Chọn EFI Shell từ menu boot:** Khởi động lại máy, vào menu boot (thường bằng cách nhấn `F12`, `F10` hoặc `ESC` lúc开机). Chọn tùy chọn `EFI Shell`.
+
+2.  **Giao diện EFI Shell hiện ra:** Bạn sẽ thấy một màn hình dòng lệnh tương tự như `Shell>`. Bây giờ chúng ta sẽ điều hướng đến file cài đặt trên USB.
+
+3.  **Thực hiện các lệnh sau:**
+    *   **Xem các ổ đĩa:** Gõ lệnh `map` rồi nhấn Enter. Bạn sẽ thấy danh sách các thiết bị lưu trữ, USB của bạn thường là `fs0:` hoặc `fs1:`.
+        ```
+        Shell> map
+        fs0: Alias(s):HD0a1;BLK1:
+        fs1: Alias(s):HD1a1;BLK2:
+        fs2: Alias(s):CDROM;BLK0:
+        ... (các thiết bị khác)
+        ```
+    *   **Chuyển đến ổ USB:** Giả sử USB của bạn là `fs0:`. Gõ lệnh sau rồi nhấn Enter:
+        ```
+        Shell> fs0:
+        fs0:\>
+        ```
+    *   **Di chuyển đến thư mục Boot:** Đây là thư mục chứa file khởi động của Windows. Gõ lệnh:
+        ```
+        fs0:\> cd \EFI\BOOT
+        fs0:\EFI\BOOT>
+        ```
+    *   **Chạy file khởi động:** Vì bạn cài Windows **32-bit**, file khởi động cho UEFI 32-bit là `BOOTIA32.EFI`. Gõ tên file này rồi nhấn Enter.
+        ```
+        fs0:\EFI\BOOT> BOOTIA32.EFI
+        ```
+
+4.  **Khởi động cài đặt Windows:** Sau khi gõ lệnh trên, màn hình xanh của trình cài đặt Windows 8.1 sẽ xuất hiện. Giờ bạn có thể tiến hành cài đặt bình thường.
+
+### **Tóm tắt các điểm mấu chốt:**
+
+*   **Dùng Rufus:** Luôn dùng Rufus và cấu hình **GPT + UEFI (non CSM) + FAT32**.
+*   **Tắt Secure Boot:** Thường là bắt buộc khi cài đặt hệ điều hành mới.
+*   **Tắt CSM:** Buộc máy chạy ở chế độ UEFI thuần túy.
+*   **Dùng EFI Shell:** Khi các cách trên không được, dùng lệnh `fsX: -> cd \EFI\BOOT -> BOOTIA32.EFI` để khởi động thủ công.
+
+
+
+
