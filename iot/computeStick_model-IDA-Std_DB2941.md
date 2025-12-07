@@ -276,7 +276,7 @@ Sau khi có USB boot chuẩn UEFI, bạn hãy cắm nó vào máy tính cần c�
 
 Nếu sau khi cấu hình đúng mà máy vẫn không boot vào USB, mà lại hiện ra một menu boot, trong đó có tùy chọn **"EFI Shell"** hoặc **"Launch EFI Shell from filesystem device"**, thì đây chính là lúc bạn cần dùng đến nó.
 
-1.  **Chọn EFI Shell từ menu boot:** Khởi động lại máy, vào menu boot (thường bằng cách nhấn `F12`, `F10` hoặc `ESC` lúc开机). Chọn tùy chọn `EFI Shell`.
+1.  **Chọn EFI Shell từ menu boot:** Khởi động lại máy, vào menu boot (thường bằng cách nhấn `F12`, `F10` hoặc `ESC` lúc Bật nguồn ). Chọn tùy chọn `EFI Shell`.
 
 2.  **Giao diện EFI Shell hiện ra:** Bạn sẽ thấy một màn hình dòng lệnh tương tự như `Shell>`. Bây giờ chúng ta sẽ điều hướng đến file cài đặt trên USB.
 
@@ -312,7 +312,4 @@ Nếu sau khi cấu hình đúng mà máy vẫn không boot vào USB, mà lại 
 *   **Tắt Secure Boot:** Thường là bắt buộc khi cài đặt hệ điều hành mới.
 *   **Tắt CSM:** Buộc máy chạy ở chế độ UEFI thuần túy.
 *   **Dùng EFI Shell:** Khi các cách trên không được, dùng lệnh `fsX: -> cd \EFI\BOOT -> BOOTIA32.EFI` để khởi động thủ công.
-
-
-
 
