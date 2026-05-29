@@ -3,7 +3,7 @@
 # Guacamole appliance setup script
 # For Ubuntu / Debian / Raspbian
 # Le Toan Thang
-# Guacamole 1.5.5 April 2024
+# Guacamole 1.6.0 May 2026
 #######################################################################################################################
 
 # To install the latest code snapshot:
@@ -77,10 +77,10 @@ mkdir -p $DOWNLOAD_DIR
 mkdir -p $DB_BACKUP_DIR
 
 # GitHub download branch
-GITHUB="https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/1.5.5"
+GITHUB="https://raw.githubusercontent.com/PhDLeToanThang/cloudedge/refs/heads/main/1.6.0"
 
 # Version of Guacamole to install
-GUAC_VERSION="1.5.5"
+GUAC_VERSION="1.6.0"
 
 # MySQL Connector/J version to install
 MYSQLJCON="8.2.0"
@@ -88,7 +88,6 @@ MYSQLJCON_LINK="https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-
 
 # Set preferred Apache CDN download link
 GUAC_SOURCE_LINK="http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/${GUAC_VERSION}"
-
 
 # See https://mariadb.org/mariadb/all-releases/ for available versions.
 # Provide a specific MySQL version e.g. 11.1.2 or leave blank to use distro default MySQL packages.

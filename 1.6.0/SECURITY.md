@@ -7,6 +7,8 @@ currently being supported with security updates.
 
 | Version | Supported          | Link Install  |
 | ------- | ------------------ |---------------|
+| 1.6.0   | :white_check_mark: | sudo wget: https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/1.6.0/1-setup.sh && bash 1-setup.sh|
+|         |                    |               |
 | 1.5.5   | :white_check_mark: | sudo wget: https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/1.5.5/1-setup.sh && bash 1-setup.sh|
 |		  | 				   |               |
 | 1.5.4   | :white_check_mark: | sudo wget: https://raw.githubusercontent.com/PhDLeToanThang/guacamole/main/advanced/1-setup.sh && bash 1-setup.sh|

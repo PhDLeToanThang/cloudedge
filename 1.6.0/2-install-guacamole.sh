@@ -3,7 +3,7 @@
 # Guacamole main build script
 # For Ubuntu / Debian / Raspbian
 # Le Toan Thang
-# Guacamole 1.5.5 April 2024
+# Guacamole 1.6.0 May 2026
 #######################################################################################################################
 
 # Prepare text output colours

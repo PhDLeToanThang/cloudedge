@@ -2,8 +2,8 @@
 ####################################################
 # Add fail2ban restrictions to Guacamole
 # For Ubuntu / Debian / Raspbian
-# Guacamole 1.5.4
-# Feb 2024
+# Guacamole 1.6.0
+# May 2026
 #####################################################
 
 # Prepare text output colours

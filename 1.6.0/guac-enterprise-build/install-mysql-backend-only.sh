@@ -3,8 +3,8 @@
 # Guacamole MySQL backend install script. 
 # (For split DB and guacamole application layers.
 # For Ubuntu / Debian / Raspbian
-# Guacamole 1.5.4
-# Feb 2024
+# Guacamole 1.6.0
+# May 2026
 #####################################################
 
 # This script is for separating the Guacamole architecture into a scaled out three tiered system.
@@ -55,7 +55,7 @@ mkdir -p $DOWNLOAD_DIR
 chown -R $SUDO_USER:root $DOWNLOAD_DIR
 
 # Version of Guacamole auth jdbc database schema to use
-GUAC_VERSION="1.5.3"
+GUAC_VERSION="1.6.0"
 
 # Set preferred Apache CDN download link)
 GUAC_SOURCE_LINK="http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/${GUAC_VERSION}"

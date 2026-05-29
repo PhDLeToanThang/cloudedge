@@ -4,7 +4,7 @@
 # For Ubuntu / Debian / Raspbian
 # 3 of 4
 # Le Toan Thang
-# Guacamole 1.5.5 April 2024
+# Guacamole 1.6.0 May 2026
 #######################################################################################################################
 
 # If run as standalone and not from the main installer script, check the below variables are correct.

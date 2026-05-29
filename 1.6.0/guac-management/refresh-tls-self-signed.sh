@@ -2,8 +2,8 @@
 #######################################################################################################################
 # Create or refresh self signed TLS certificates for Nginx (or others)
 # For Ubuntu / Debian / Rasbpian
-# Gucamole 1.5.4
-# Feb 2024
+# Guacamole 1.6.0
+# May 2026
 #######################################################################################################################
 
 # If run with with no command arguments, the ${PROXY_SITE}, ${CERT_DAYS} & ${Default_IP) values used during the 

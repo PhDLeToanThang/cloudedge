@@ -2,8 +2,8 @@
 #######################################################################################################################
 # Add Duo (MFA) support to Guacamole
 # For Ubuntu / Debian / Raspbian
-# Guacamole 1.5.4
-# Feb 2024
+# Guacamole 1.6.0
+# May 2026
 #######################################################################################################################
 
 # If run as standalone and not from the main installer script, check the below variables are correct.

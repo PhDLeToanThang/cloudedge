@@ -4,7 +4,7 @@
 # For Ubuntu / Debian / Raspbian
 # 4a of 4
 # ATCOM
-# Guacamole 1.5.5 April 2024
+# Guacamole 1.6.0 May 2026
 #######################################################################################################################
 
 # This script can be run multiple times to either install or update TLS settings and certificates.

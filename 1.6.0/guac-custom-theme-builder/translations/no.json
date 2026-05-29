@@ -38,7 +38,7 @@
 
         "INFO_ACTIVE_USER_COUNT" : "Blir brukt av {USERS} {USERS, plural, one{user} other{users}}.",
 
-        "NAME" : "Cloud Edge vs IoT 2023.4.2 - 1.5.0",
+        "NAME" : "Cloud Edge vs IoT 2026.5.29 - 1.6.0",
 
         "TEXT_HISTORY_DURATION" : "{VALUE} {UNIT, select, second{{VALUE, plural, one{second} other{seconds}}} minute{{VALUE, plural, one{minute} other{minutes}}} hour{{VALUE, plural, one{hour} other{hours}}} day{{VALUE, plural, one{day} other{days}}} other{}}"
 

@@ -2,8 +2,8 @@
 ######################################################################################################################
 # Guacamole appliance mysql upgrade script
 # For Ubuntu / Debian / Raspbian
-# Guacamole 1.5.4
-# Feb 2024
+# Guacamole 1.6.0
+# May 2026
 #######################################################################################################################
 
 # The Guacamole schema have not been updated since late 2021, suggesting that its now quite mature and there will be
@@ -52,7 +52,7 @@ mkdir -p $DOWNLOAD_DIR
 chown -R $SUDO_USER:root $DOWNLOAD_DIR
 
 # Version of Guacamole to upgrade to. See https://guacamole.apache.org/releases/ for latest version info.
-NEW_GUAC_VERSION="1.5.3"
+NEW_GUAC_VERSION="1.6.0"
 
 # The currently installed Guacamole schema version is needed to evaluate the required schema upgrades.
 OLD_GUAC_VERSION="1.5.0"

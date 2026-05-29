@@ -3,7 +3,7 @@
 # Guacamole appliance upgrade script
 # For Ubuntu / Debian / Raspbian
 # ATCOM
-# Guacamole 1.5.5 April 2024
+# Guacamole 1.6.0 May 2026
 #######################################################################################################################
 
 #######################################################################################################################
@@ -50,7 +50,7 @@ mkdir -p $DOWNLOAD_DIR
 chown -R $SUDO_USER:root $DOWNLOAD_DIR
 
 # Version of Guacamole to upgrade to. See https://guacamole.apache.org/releases/ for latest version info.
-NEW_GUAC_VERSION="1.5.5"
+NEW_GUAC_VERSION="1.6.0"
 
 # MySQL Connector/J version. See https://dev.mysql.com/downloads/connector/j/ for latest version number.
 NEW_MYSQLJCON="8.2.0"
