@@ -1,0 +1,1055 @@
+{
+    
+    "NAME" : "Tiếng Việt",
+    
+    "APP" : {
+
+        "NAME"    : "Cloud Edge vs IoT Gateway",
+        "VERSION" : "2024.4.15 - 1.5.5",
+
+        "ACTION_ACKNOWLEDGE"        : "Chấp nhận",
+        "ACTION_CANCEL"             : "Huỷ bỏ",
+        "ACTION_CLONE"              : "Sao chép",
+        "ACTION_CONTINUE"           : "Tiếp tục",
+        "ACTION_DELETE"             : "Xoá",
+        "ACTION_DELETE_SESSIONS"    : "Ngắt phiên",
+        "ACTION_DOWNLOAD"           : "Tải xuống",
+        "ACTION_LOGIN"              : "Đăng nhập",
+        "ACTION_LOGIN_AGAIN"        : "Đăng nhập lại",
+        "ACTION_LOGOUT"             : "Đăng xuất",
+        "ACTION_MANAGE_CONNECTIONS" : "Kết nối",
+        "ACTION_MANAGE_PREFERENCES" : "Cấu hình",
+        "ACTION_MANAGE_SETTINGS"    : "Cài đặt",
+        "ACTION_MANAGE_SESSIONS"    : "Phiên hoạt động",
+        "ACTION_MANAGE_USERS"       : "Người dùng",
+        "ACTION_MANAGE_USER_GROUPS" : "Các nhóm",
+        "ACTION_NAVIGATE_BACK"      : "Quay lại",
+        "ACTION_NAVIGATE_HOME"      : "Trang chủ",
+        "ACTION_PAUSE"              : "Tạm dừng",
+        "ACTION_PLAY"               : "Chạy",
+        "ACTION_SAVE"               : "Lưu lại",
+        "ACTION_SEARCH"             : "Tìm kiếm",
+        "ACTION_SHARE"              : "Chia sẻ",
+        "ACTION_UPDATE_PASSWORD"    : "Cập nhật mật khẩu",
+        "ACTION_VIEW_HISTORY"       : "Lịch sử",
+        "ACTION_VIEW_RECORDING"     : "Xem",
+
+        "DIALOG_HEADER_ERROR" : "Lỗi",
+
+        "ERROR_PAGE_UNAVAILABLE"  : "Đã xảy ra lỗi và hành động này không thể hoàn tất. Nếu sự cố vẫn tiếp diễn, vui lòng thông báo cho quản trị viên hệ thống của bạn hoặc kiểm tra nhật ký hệ thống của bạn.",
+        "ERROR_PASSWORD_BLANK"    : "Mật khẩu của bạn không được để trống.",
+        "ERROR_PASSWORD_MISMATCH" : "Mật khẩu đã cung cấp không khớp.",
+        
+        "FIELD_HEADER_PASSWORD"       : "Mật khẩu:",
+        "FIELD_HEADER_PASSWORD_AGAIN" : "Nhập lại Mật khẩu:",
+
+        "FIELD_PLACEHOLDER_FILTER" : "Bộ lọc",
+
+        "FORMAT_DATE_TIME_PRECISE" : "yyyy-MM-dd HH:mm:ss",
+
+        "INFO_ACTIVE_USER_COUNT" : "Currently in use by {USERS} {USERS, plural, one{user} other{users}}.",
+        "INFO_LOGGED_OUT"        : "Bạn đã được đăng xuất.",
+
+        "TEXT_ANONYMOUS_USER"   : "Ẩn danh",
+        "TEXT_HISTORY_DURATION" : "{VALUE} {UNIT, select, second{{VALUE, plural, one{second} other{seconds}}} minute{{VALUE, plural, one{minute} other{minutes}}} hour{{VALUE, plural, one{hour} other{hours}}} day{{VALUE, plural, one{day} other{days}}} other{}}",
+        "TEXT_UNTRANSLATED" : "{MESSAGE}"
+
+    },
+
+    "CLIENT" : {
+
+        "ACTION_ACKNOWLEDGE"               : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CANCEL"                    : "@:APP.ACTION_CANCEL",
+        "ACTION_CLEAR_CLIENT_MESSAGES"     : "Clear",
+        "ACTION_CLEAR_COMPLETED_TRANSFERS" : "Xoá",
+        "ACTION_CONTINUE"                  : "@:APP.ACTION_CONTINUE",
+        "ACTION_DISCONNECT"                : "Ngừng kết nối",
+        "ACTION_LOGOUT"                    : "@:APP.ACTION_LOGOUT",
+        "ACTION_NAVIGATE_BACK"             : "@:APP.ACTION_NAVIGATE_BACK",
+        "ACTION_NAVIGATE_HOME"             : "@:APP.ACTION_NAVIGATE_HOME",
+        "ACTION_RECONNECT"                 : "Kết nối lại",
+        "ACTION_SAVE_FILE"                 : "@:APP.ACTION_SAVE",
+        "ACTION_SHARE"                     : "@:APP.ACTION_SHARE",
+        "ACTION_UPLOAD_FILES"              : "Đẩy Files lên",
+
+        "DIALOG_HEADER_CONNECTING"       : "Đang kết nối",
+        "DIALOG_HEADER_CONNECTION_ERROR" : "Kết nối lỗi",
+        "DIALOG_HEADER_DISCONNECTED"     : "Đã ngừng kết nối",
+
+        "ERROR_CLIENT_201"     : "Kết nối này đã bị đóng vì máy chủ bận. Vui lòng chờ một vài phút và thử lại.",
+        "ERROR_CLIENT_202"     : "Máy chủ Cloud đã đóng kết nối vì máy tính từ xa mất quá nhiều thời gian để phản hồi. Vui lòng thử lại hoặc liên hệ với quản trị viên hệ thống của bạn.",
+        "ERROR_CLIENT_203"     : "Máy chủ từ xa đã gặp lỗi và đã đóng kết nối. Vui lòng thử lại hoặc liên hệ với quản trị viên hệ thống của bạn.",
+        "ERROR_CLIENT_207"     : "Máy chủ từ xa hiện không thể truy cập được. Nếu sự cố vẫn tiếp diễn, vui lòng thông báo cho quản trị viên hệ thống của bạn hoặc kiểm tra nhật ký hệ thống của bạn.",
+        "ERROR_CLIENT_208"     : "Máy chủ để bàn từ xa hiện không khả dụng. Nếu sự cố vẫn tiếp diễn, vui lòng thông báo cho quản trị viên hệ thống của bạn hoặc kiểm tra nhật ký hệ thống của bạn.",
+        "ERROR_CLIENT_209"     : "Máy chủ từ xa đã đóng kết nối vì nó xung đột với kết nối khác. Vui lòng thử lại sau.",
+        "ERROR_CLIENT_20A"     : "Máy chủ từ xa đã đóng kết nối vì nó không hoạt động. Nếu điều này không hợp lý, vui lòng thông báo cho quản trị viên hệ thống của bạn hoặc kiểm tra cài đặt hệ thống của bạn.",
+        "ERROR_CLIENT_20B"     : "Máy chủ từ xa đã buộc đóng kết nối. Nếu điều này không mong muốn hoặc không mong muốn, vui lòng thông báo cho quản trị viên hệ thống của bạn hoặc kiểm tra nhật ký hệ thống của bạn.",
+        "ERROR_CLIENT_301"     : "Đăng nhập không thành công. Vui lòng kết nối và thử lại.",
+        "ERROR_CLIENT_303"     : "Máy chủ từ xa đã từ chối quyền truy cập vào kết nối này. Nếu bạn cần quyền truy cập, vui lòng yêu cầu quản trị viên hệ thống cấp quyền truy cập tài khoản của bạn hoặc kiểm tra cài đặt hệ thống của bạn.",
+        "ERROR_CLIENT_308"     : "Máy chủ Cloud đã đóng kết nối vì không có phản hồi nào từ trình duyệt của bạn. Điều này thường do sự cố mạng, chẳng hạn như tín hiệu không dây hoặc mạng bị chậm hãy kiểm tra mạng của bạn và thử lại.",
+        "ERROR_CLIENT_31D"     : "Máy chủ Cloud đang từ chối truy cập từ kết nối này vì giới hạn cho việc sử dụng kết nối đồng thời bởi một người dùng đã kết nối trước đó. Vui lòng đóng một hoặc nhiều kết nối và thử lại.",
+        "ERROR_CLIENT_DEFAULT" : "Đã xảy ra lỗi nội bộ trong máy chủ Cloud và kết nối đã bị ngừng. Nếu sự cố vẫn tiếp diễn, vui lòng thông báo cho quản trị viên hệ thống của bạn hoặc kiểm tra Log hệ thống của bạn.",
+
+        "ERROR_TUNNEL_201"     : "Máy chủ Cloud đã từ chối kết nối này vì có quá nhiều kết nối đồng thời đang hoạt động. Vui lòng đợi một vài phút và thử lại.",
+        "ERROR_TUNNEL_202"     : "Kết nối đã bị đóng vì máy chủ mất quá nhiều thời gian để phản hồi. Điều này thường do sự cố mạng, chẳng hạn như tín hiệu không dây hoặc tốc độ mạng quá chậm. Vui lòng kiểm tra kết nối mạng của bạn và thử lại hoặc liên hệ quản trị viên hệ thống của bạn.",
+        "ERROR_TUNNEL_203"     : "Máy chủ gặp phải lỗi và đã đóng kết nối. Vui lòng thử lại hoặc liên hệ với quản trị viên hệ thống của bạn.",
+        "ERROR_TUNNEL_204"     : "Kết nối được yêu cầu không tồn tại. Vui lòng kiểm tra tên kết nối và thử lại.",
+        "ERROR_TUNNEL_205"     : "Kết nối này hiện đang được sử dụng và không được phép truy cập đồng thời vào kết nối này. Vui lòng thử lại sau.",
+        "ERROR_TUNNEL_207"     : "Máy chủ Cloud hiện không thể truy cập được. Vui lòng kiểm tra mạng của bạn và thử lại.",
+        "ERROR_TUNNEL_208"     : "Máy chủ Cloud không chấp nhận kết nối. Vui lòng kiểm tra mạng của bạn và thử lại.",
+        "ERROR_TUNNEL_301"     : "Bạn không được phép truy cập kết nối này vì bạn chưa đăng nhập. Vui lòng đăng nhập và thử lại.",
+        "ERROR_TUNNEL_303"     : "Bạn không có quyền truy cập kết nối này. Nếu bạn yêu cầu quyền truy cập, vui lòng yêu cầu quản trị viên hệ thống của bạn thêm danh sách người dùng được phép hoặc kiểm tra cài đặt hệ thống của bạn.",
+        "ERROR_TUNNEL_308"     : "Máy chủ Cloud đã đóng kết nối vì không có phản hồi nào từ trình duyệt của bạn. Điều này thường do sự cố mạng, chẳng hạn như tín hiệu không dây hoặc mạng quá chậm hãy kiểm tra mạng của bạn và thử lại.",
+        "ERROR_TUNNEL_31D"     : "Máy chủ Cloud từ chối truy cập vào kết nối này vì giới hạn cho việc sử dụng kết nối đồng thời cho một người dùng cá nhân. Vui lòng đóng một hoặc nhiều kết nối và thử lại.",
+        "ERROR_TUNNEL_DEFAULT" : "Đã xảy ra lỗi nội bộ trong máy chủ Cloud và kết nối đã bị chấm dứt. Nếu sự cố vẫn tiếp diễn, vui lòng thông báo cho quản trị viên hệ thống của bạn hoặc kiểm tra log hệ thống của bạn.",
+
+        "ERROR_UPLOAD_100"     : "Truyền tệp không được hỗ trợ hoặc chưa được kích hoạt. Vui lòng liên hệ với quản trị viên hệ thống của bạn hoặc kiểm tra nhật ký hệ thống của bạn.",
+        "ERROR_UPLOAD_201"     : "Quá nhiều tệp hiện đang được chuyển. Vui lòng đợi cho các lần chuyển hiện tại hoàn tất và sau đó thử lại.",
+        "ERROR_UPLOAD_202"     : "Không thể chuyển tệp vì máy chủ từ xa mất quá nhiều thời gian để phản hồi. Vui lòng thử lại hoặc liên hệ với quản trị viên hệ thống của bạn.",
+        "ERROR_UPLOAD_203"     : "Máy chủ từ xa đã gặp phải lỗi trong quá trình truyền. Vui lòng thử lại hoặc liên hệ với quản trị viên hệ thống của bạn.",
+        "ERROR_UPLOAD_204"     : "Đích đến của quá trình chuyển tệp không tồn tại. Vui lòng kiểm tra xem đích đến có tồn tại không và thử lại.",
+        "ERROR_UPLOAD_205"     : "Đích đến cho việc truyền tệp hiện bị khóa. Vui lòng đợi mọi công việc đang thực hiện để hoàn tất và thử lại.",
+        "ERROR_UPLOAD_301"     : "Bạn không được phép tải tệp này lên vì bạn chưa đăng nhập. Vui lòng đăng nhập và thử lại.",
+        "ERROR_UPLOAD_303"     : "Bạn không có quyền tải lên tệp này. Nếu bạn cần quyền truy cập, vui lòng kiểm tra cài đặt hệ thống của bạn hoặc kiểm tra với quản trị viên hệ thống của bạn.",
+        "ERROR_UPLOAD_308"     : "Quá trình chuyển tệp đã bị ngừng. Điều này thường do các sự cố mạng, chẳng hạn như tín hiệu không dây hoặc tốc độ mạng rất chậm. Vui lòng kiểm tra mạng của bạn và thử lại.",
+        "ERROR_UPLOAD_31D"     : "Quá nhiều tệp hiện đang được chuyển. Vui lòng đợi cho quá trình chuyển hiện tại hoàn tất và sau đó thử lại.",
+        "ERROR_UPLOAD_DEFAULT" : "Đã xảy ra lỗi nội bộ trong máy chủ Cloud và kết nối đã bị ngừng. Nếu sự cố vẫn tiếp diễn, vui lòng thông báo cho quản trị viên hệ thống của bạn hoặc kiểm tra Log hệ thống của bạn.",
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "HELP_CLIPBOARD"           : "Văn bản đã sao chép hoặc cắt trong Cloud sẽ xuất hiện ở đây. Các thay đổi đối với văn bản bên dưới sẽ ảnh hưởng đến clipboard.",
+        "HELP_INPUT_METHOD_NONE"   : "Không có phương thức nhập liệu nào được sử dụng. Đầu vào bàn phím được chấp nhận từ kết nối với bàn phím vật lý.",
+        "HELP_INPUT_METHOD_OSK"    : "Hiển thị và chấp nhận đầu vào từ bàn phím ảo trên màn hình được tích hợp sẵn. Bàn phím ảo cho phép nhập các tổ hợp phím có thể không thể thực hiện được (Ctrl-Alt-Del).",
+        "HELP_INPUT_METHOD_TEXT"   : "Cho phép nhập văn bản bằng Bàn phím ảo dựa trên văn bản đã nhập. Dùng cho điện thoại di động thiếu bàn phím thực.",
+        "HELP_MOUSE_MODE"          : "Xác định vị trí chuột điều khiển từ xa liên quan đến kiểu chạm màn hình.",
+        "HELP_MOUSE_MODE_ABSOLUTE" : "Nhấn để nhấp chuột xảy ra tại vị trí chạm vào màn hình.",
+        "HELP_MOUSE_MODE_RELATIVE" : "Kéo để di chuyển con trỏ chuột và nhấn để nhấp. Nhấp chuột xảy ra tại vị trí của con trỏ.",
+        "HELP_SHARE_LINK"          : "Kết nối hiện tại đang được chia sẻ và có thể được truy cập bởi bất kỳ ai có {LINKS, plural, one{link} other{links}}:",
+
+        "INFO_ANONYMOUS_USER_COUNT" : "Ẩn danh{COUNT, plural, one{} other{ (#)}}",
+        "INFO_CONNECTION_SHARED"    : "Kết nối này đã được chia sẻ.",
+        "INFO_NO_FILE_TRANSFERS"    : "Không chuyển tập tin.",
+        "INFO_USER_COUNT"           : "{USERNAME}{COUNT, plural, one{} other{ (#)}}",
+
+        "NAME_INPUT_METHOD_NONE"   : "None",
+        "NAME_INPUT_METHOD_OSK"    : "On-screen keyboard",
+        "NAME_INPUT_METHOD_TEXT"   : "Nhập văn bản",
+        "NAME_KEY_CTRL"            : "Ctrl",
+        "NAME_KEY_ALT"             : "Alt",
+        "NAME_KEY_ESC"             : "Esc",
+        "NAME_KEY_TAB"             : "Tab",
+        "NAME_MOUSE_MODE_ABSOLUTE" : "Touchscreen",
+        "NAME_MOUSE_MODE_RELATIVE" : "Touchpad",
+
+        "SECTION_HEADER_CLIENT_MESSAGES" : "Tin nhắn",
+        "SECTION_HEADER_CLIPBOARD"       : "Clipboard",
+        "SECTION_HEADER_DEVICES"         : "Các thiết bị",
+        "SECTION_HEADER_DISPLAY"         : "Màn hình",
+        "SECTION_HEADER_FILE_TRANSFERS"  : "Chuyển tệp",
+        "SECTION_HEADER_INPUT_METHOD"    : "Điều khiển bằng bàn phím",
+        
+        "SECTION_HEADER_MOUSE_MODE"     : "Chế độ mô phỏng chuột",
+
+        "TEXT_ANONYMOUS_USER_JOINED"      : "Một người dùng ẩn danh đã tham gia kết nối.",
+        "TEXT_ANONYMOUS_USER_LEFT"        : "Một người dùng ẩn danh đã rời khỏi kết nối.",
+        "TEXT_ZOOM_AUTO_FIT"              : "Tự động vừa với cửa sổ trình duyệt",
+        "TEXT_CLIENT_STATUS_IDLE"         : "Trạng thái chờ.",
+        "TEXT_CLIENT_STATUS_CONNECTING"   : "Đang kết nối tới Cloud Edge vs IoT...",
+        "TEXT_CLIENT_STATUS_DISCONNECTED" : "Bạn đã bị mất kết nối.",
+        "TEXT_CLIENT_STATUS_UNSTABLE"     : "Đã kết nối với Cloud Edge vs IoT xuất hiện không ổn định.",
+        "TEXT_CLIENT_STATUS_WAITING"      : "Đã kết nối với Cloud Edge vs IoT. Chờ phản hồi...",
+        "TEXT_USER_JOINED"                : "{USERNAME} đã tham gia kết nối.",
+        "TEXT_USER_LEFT"                  : "{USERNAME} đã rời khỏi kết nối.",
+        "TEXT_RECONNECT_COUNTDOWN"        : "Kết nối lại trong {REMAINING} {REMAINING, plural, one{second} other{seconds}}...",
+        "TEXT_FILE_TRANSFER_PROGRESS"     : "{PROGRESS} {UNIT, select, b{B} kb{KB} mb{MB} gb{GB} other{}}",
+
+        "URL_OSK_LAYOUT" : "layouts/en-us-qwerty.json"
+
+    },
+
+    "COLOR_SCHEME" : {
+
+        "ACTION_CANCEL"       : "@:APP.ACTION_CANCEL",
+        "ACTION_HIDE_DETAILS" : "Ẩn",
+        "ACTION_SAVE"         : "@:APP.ACTION_SAVE",
+        "ACTION_SHOW_DETAILS" : "Hiển thị",
+
+        "FIELD_HEADER_BACKGROUND" : "Background",
+        "FIELD_HEADER_FOREGROUND" : "Foreground",
+
+        "FIELD_OPTION_CUSTOM" : "Tuỳ chỉnh...",
+
+        "SECTION_HEADER_DETAILS" : "Chi tiết:"
+
+    },
+
+    "DATA_SOURCE_DEFAULT" : {
+        "NAME" : "Default (XML)"
+    },
+
+    "FORM" : {
+
+        "FIELD_PLACEHOLDER_DATE" : "YYYY-MM-DD",
+        "FIELD_PLACEHOLDER_TIME" : "HH:MM:SS",
+
+        "HELP_SHOW_PASSWORD" : "Nhấp chuột để hiển thị mật khẩu",
+        "HELP_HIDE_PASSWORD" : "Nhấp chuột để ẩn mật khẩu"
+
+    },
+
+    "HOME" : {
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "INFO_ACTIVE_USER_COUNT" : "@:APP.INFO_ACTIVE_USER_COUNT",
+
+        "INFO_NO_RECENT_CONNECTIONS" : "Không có kết nối gần đây.",
+        
+        "PASSWORD_CHANGED" : "Mật khẩu đã được thay.",
+
+        "SECTION_HEADER_ALL_CONNECTIONS"    : "Tất cả các kết nối",
+        "SECTION_HEADER_RECENT_CONNECTIONS" : "Kết nối gần đây"
+
+    },
+
+    "LIST" : {
+
+        "TEXT_ANONYMOUS_USER" : "Ẩn danh"
+
+    },
+
+    "LOGIN": {
+
+        "ACTION_ACKNOWLEDGE" : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CONTINUE"    : "@:APP.ACTION_CONTINUE",
+        "ACTION_LOGIN"       : "@:APP.ACTION_LOGIN",
+
+        "DIALOG_HEADER_ERROR" : "@:APP.DIALOG_HEADER_ERROR",
+
+        "ERROR_INVALID_LOGIN" : "Đăng nhập không hợp lệ",
+
+        "FIELD_HEADER_USERNAME" : "Tên/email người dùng",
+        "FIELD_HEADER_PASSWORD" : "Mật khẩu"
+
+    },
+
+    "MANAGE_CONNECTION" : {
+
+        "ACTION_ACKNOWLEDGE"          : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CANCEL"               : "@:APP.ACTION_CANCEL",
+        "ACTION_CLONE"                : "@:APP.ACTION_CLONE",
+        "ACTION_DELETE"               : "@:APP.ACTION_DELETE",
+        "ACTION_SAVE"                 : "@:APP.ACTION_SAVE",
+
+        "DIALOG_HEADER_CONFIRM_DELETE" : "Xóa kết nối",
+        "DIALOG_HEADER_ERROR"          : "@:APP.DIALOG_HEADER_ERROR",
+
+        "FIELD_HEADER_LOCATION" : "Vị trí:",
+        "FIELD_HEADER_NAME"     : "Tên:",
+        "FIELD_HEADER_PROTOCOL" : "Giao thức:",
+
+        "FORMAT_HISTORY_START" : "@:APP.FORMAT_DATE_TIME_PRECISE",
+
+        "INFO_CONNECTION_DURATION_UNKNOWN" : "--",
+        "INFO_CONNECTION_ACTIVE_NOW"       : "Hoạt động hiện tại",
+        "INFO_CONNECTION_NOT_USED"         : "Kết nối này chưa được sử dụng.",
+
+        "SECTION_HEADER_EDIT_CONNECTION" : "Chỉnh sửa kết nối",
+        "SECTION_HEADER_HISTORY"         : "Lịch sử sử dụng",
+        "SECTION_HEADER_PARAMETERS"      : "Tham số",
+
+        "TABLE_HEADER_HISTORY_USERNAME"   : "Tên/email người dùng",
+        "TABLE_HEADER_HISTORY_START"      : "Thời gian bắt đầu",
+        "TABLE_HEADER_HISTORY_DURATION"   : "Thời lượng",
+        "TABLE_HEADER_HISTORY_REMOTEHOST" : "Điều khiển máy",
+
+        "TEXT_CONFIRM_DELETE"   : "Không thể khôi phục các kết nối sau khi chúng đã bị xóa. Bạn có chắc chắn muốn xóa kết nối này không?",
+        "TEXT_HISTORY_DURATION" : "@:APP.TEXT_HISTORY_DURATION"
+
+    },
+
+    "MANAGE_CONNECTION_GROUP" : {
+
+        "ACTION_ACKNOWLEDGE"   : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CANCEL"        : "@:APP.ACTION_CANCEL",
+        "ACTION_CLONE"         : "@:APP.ACTION_CLONE",
+        "ACTION_DELETE"        : "@:APP.ACTION_DELETE",
+        "ACTION_SAVE"          : "@:APP.ACTION_SAVE",
+
+        "DIALOG_HEADER_CONFIRM_DELETE" : "Xóa nhóm kết nối",
+        "DIALOG_HEADER_ERROR"          : "@:APP.DIALOG_HEADER_ERROR",
+
+        "FIELD_HEADER_LOCATION" : "Vị trí:",
+        "FIELD_HEADER_NAME"     : "Tên:",
+        "FIELD_HEADER_TYPE"     : "Kiểu:",
+
+        "NAME_TYPE_BALANCING"       : "Cân bằng tải",
+        "NAME_TYPE_ORGANIZATIONAL"  : "Tổ chức",
+
+        "SECTION_HEADER_EDIT_CONNECTION_GROUP" : "Chỉnh sửa nhóm kết nối",
+
+        "TEXT_CONFIRM_DELETE" : "Không thể khôi phục các nhóm kết nối sau khi chúng đã bị xóa. Bạn có chắc chắn muốn xóa nhóm kết nối này không?"
+
+    },
+
+    "MANAGE_SHARING_PROFILE" : {
+
+        "ACTION_ACKNOWLEDGE" : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CANCEL"      : "@:APP.ACTION_CANCEL",
+        "ACTION_CLONE"       : "@:APP.ACTION_CLONE",
+        "ACTION_DELETE"      : "@:APP.ACTION_DELETE",
+        "ACTION_SAVE"        : "@:APP.ACTION_SAVE",
+
+        "DIALOG_HEADER_CONFIRM_DELETE" : "Xóa hồ sơ chia sẻ",
+        "DIALOG_HEADER_ERROR"          : "@:APP.DIALOG_HEADER_ERROR",
+
+        "FIELD_HEADER_NAME"               : "Tên:",
+        "FIELD_HEADER_PRIMARY_CONNECTION" : "Kết nối chính:",
+
+        "SECTION_HEADER_EDIT_SHARING_PROFILE" : "Chỉnh sửa hồ sơ chia sẻ",
+        "SECTION_HEADER_PARAMETERS"           : "Thông số",
+
+        "TEXT_CONFIRM_DELETE" : "Không thể khôi phục hồ sơ chia sẻ sau khi chúng đã bị xóa. Bạn có chắc chắn muốn xóa hồ sơ chia sẻ này không?"
+
+    },
+
+    "MANAGE_USER" : {
+
+        "ACTION_ACKNOWLEDGE"   : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CANCEL"        : "@:APP.ACTION_CANCEL",
+        "ACTION_CLONE"         : "@:APP.ACTION_CLONE",
+        "ACTION_DELETE"        : "@:APP.ACTION_DELETE",
+        "ACTION_SAVE"          : "@:APP.ACTION_SAVE",
+
+        "DIALOG_HEADER_CONFIRM_DELETE" : "Xóa người dùng",
+        "DIALOG_HEADER_ERROR"          : "@:APP.DIALOG_HEADER_ERROR",
+
+        "ERROR_PASSWORD_MISMATCH" : "@:APP.ERROR_PASSWORD_MISMATCH",
+
+        "FIELD_HEADER_ADMINISTER_SYSTEM"             : "Hệ thống quản trị:",
+        "FIELD_HEADER_CHANGE_OWN_PASSWORD"           : "Tự thay đổi mật khẩu:",
+        "FIELD_HEADER_CREATE_NEW_USERS"              : "Tạo người dùng mới:",
+        "FIELD_HEADER_CREATE_NEW_USER_GROUPS"        : "Tạo nhóm người dùng mới:",
+        "FIELD_HEADER_CREATE_NEW_CONNECTIONS"        : "Tạo kết nối mới:",
+        "FIELD_HEADER_CREATE_NEW_CONNECTION_GROUPS"  : "Tạo nhóm kết nối mới:",
+        "FIELD_HEADER_CREATE_NEW_SHARING_PROFILES"   : "Tạo hồ sơ chia sẻ mới:",
+        "FIELD_HEADER_PASSWORD"                      : "@:APP.FIELD_HEADER_PASSWORD",
+        "FIELD_HEADER_PASSWORD_AGAIN"                : "@:APP.FIELD_HEADER_PASSWORD_AGAIN",
+        "FIELD_HEADER_USERNAME"                      : "Tên/email người dùng:",
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "HELP_NO_USER_GROUPS" : "Người dùng này hiện không thuộc về bất kỳ nhóm nào. Mở rộng phần này để thêm các nhóm.",
+
+        "INFO_READ_ONLY"                : "Rất tiếc, không thể chỉnh sửa tài khoản người dùng này.",
+        "INFO_NO_USER_GROUPS_AVAILABLE" : "Không có nhóm nào.",
+
+        "SECTION_HEADER_ALL_CONNECTIONS"     : "Tất cả kết nối",
+        "SECTION_HEADER_CONNECTIONS"         : "Kết nối",
+        "SECTION_HEADER_CURRENT_CONNECTIONS" : "Kết nối hiện tại",
+        "SECTION_HEADER_EDIT_USER"           : "Sửa người dùng",
+        "SECTION_HEADER_PERMISSIONS"         : "Quyền",
+        "SECTION_HEADER_USER_GROUPS"         : "Các nhóm",
+
+        "TEXT_CONFIRM_DELETE" : "Không thể khôi phục người dùng sau khi họ đã bị xóa. Bạn có chắc chắn muốn xóa người dùng này không?"
+
+    },
+
+    "MANAGE_USER_GROUP" : {
+
+        "ACTION_ACKNOWLEDGE"   : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CANCEL"        : "@:APP.ACTION_CANCEL",
+        "ACTION_CLONE"         : "@:APP.ACTION_CLONE",
+        "ACTION_DELETE"        : "@:APP.ACTION_DELETE",
+        "ACTION_SAVE"          : "@:APP.ACTION_SAVE",
+
+        "DIALOG_HEADER_CONFIRM_DELETE" : "Xóa nhóm",
+        "DIALOG_HEADER_ERROR"          : "@:APP.DIALOG_HEADER_ERROR",
+
+        "FIELD_HEADER_ADMINISTER_SYSTEM"             : "@:MANAGE_USER.FIELD_HEADER_ADMINISTER_SYSTEM",
+        "FIELD_HEADER_CHANGE_OWN_PASSWORD"           : "@:MANAGE_USER.FIELD_HEADER_CHANGE_OWN_PASSWORD",
+        "FIELD_HEADER_CREATE_NEW_USERS"              : "@:MANAGE_USER.FIELD_HEADER_CREATE_NEW_USERS",
+        "FIELD_HEADER_CREATE_NEW_USER_GROUPS"        : "@:MANAGE_USER.FIELD_HEADER_CREATE_NEW_USER_GROUPS",
+        "FIELD_HEADER_CREATE_NEW_CONNECTIONS"        : "@:MANAGE_USER.FIELD_HEADER_CREATE_NEW_CONNECTIONS",
+        "FIELD_HEADER_CREATE_NEW_CONNECTION_GROUPS"  : "@:MANAGE_USER.FIELD_HEADER_CREATE_NEW_CONNECTION_GROUPS",
+        "FIELD_HEADER_CREATE_NEW_SHARING_PROFILES"   : "@:MANAGE_USER.FIELD_HEADER_CREATE_NEW_SHARING_PROFILES",
+        "FIELD_HEADER_USER_GROUP_NAME"               : "Tên nhóm:",
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "HELP_NO_USER_GROUPS"        : "Nhóm này hiện không thuộc bất kỳ nhóm nào. Mở rộng phần này để thêm các nhóm.",
+        "HELP_NO_MEMBER_USER_GROUPS" : "Nhóm này hiện không chứa bất kỳ nhóm nào. Mở rộng phần này để thêm các nhóm.",
+        "HELP_NO_MEMBER_USERS"       : "Nhóm này hiện không chứa bất kỳ người dùng nào. Mở rộng phần này để thêm người dùng.",
+
+        "INFO_READ_ONLY"                : "Xin lỗi, nhưng nhóm này không thể được chỉnh sửa.",
+        "INFO_NO_USER_GROUPS_AVAILABLE" : "@:MANAGE_USER.INFO_NO_USER_GROUPS_AVAILABLE",
+        "INFO_NO_USERS_AVAILABLE"       : "Không có người dùng nào.",
+
+        "SECTION_HEADER_ALL_CONNECTIONS"     : "@:MANAGE_USER.SECTION_HEADER_ALL_CONNECTIONS",
+        "SECTION_HEADER_CONNECTIONS"         : "@:MANAGE_USER.SECTION_HEADER_CONNECTIONS",
+        "SECTION_HEADER_CURRENT_CONNECTIONS" : "@:MANAGE_USER.SECTION_HEADER_CURRENT_CONNECTIONS",
+        "SECTION_HEADER_EDIT_USER_GROUP"     : "Chỉnh sửa nhóm",
+        "SECTION_HEADER_MEMBER_USERS"        : "Người dùng thành viên",
+        "SECTION_HEADER_MEMBER_USER_GROUPS"  : "Nhóm Thành viên",
+        "SECTION_HEADER_PERMISSIONS"         : "@:MANAGE_USER.SECTION_HEADER_PERMISSIONS",
+        "SECTION_HEADER_USER_GROUPS"         : "Các nhóm gốc",
+
+        "TEXT_CONFIRM_DELETE" : "Không thể khôi phục các nhóm sau khi chúng đã bị xóa. Bạn có chắc chắn muốn xóa nhóm này?"
+
+    },
+
+    "PLAYER" : {
+
+        "ACTION_CANCEL" : "@:APP.ACTION_CANCEL",
+        "ACTION_PAUSE"  : "@:APP.ACTION_PAUSE",
+        "ACTION_PLAY"   : "@:APP.ACTION_PLAY",
+
+        "INFO_LOADING_RECORDING" : "Bản ghi của bạn hiện đang được tải. Vui lòng chờ...",
+        "INFO_SEEK_IN_PROGRESS"  : "Tìm đến vị trí được yêu cầu. Vui lòng chờ..."
+
+    },
+
+    "PROTOCOL_KUBERNETES" : {
+
+        "FIELD_HEADER_BACKSPACE"       : "gửi phím xoá lùi Backspace:",
+        "FIELD_HEADER_CA_CERT"         : "Giấy chứng nhận cơ quan cấp chứng chỉ:",
+        "FIELD_HEADER_CLIENT_CERT"     : "Chứng chỉ ứng dụng khách:",
+        "FIELD_HEADER_CLIENT_KEY"      : "Client key:",
+        "FIELD_HEADER_COLOR_SCHEME"    : "Bảng màu:",
+        "FIELD_HEADER_CONTAINER"       : "Tên vùng chứa:",
+        "FIELD_HEADER_CREATE_RECORDING_PATH"  : "Tự động tạo đường dẫn ghi âm:",
+        "FIELD_HEADER_CREATE_TYPESCRIPT_PATH" : "Tự động tạo đường dẫn bản thảo:",
+        "FIELD_HEADER_EXEC_COMMAND"    : "Lệnh (exec):",
+        "FIELD_HEADER_FONT_NAME"       : "Tên phông chữ:",
+        "FIELD_HEADER_FONT_SIZE"       : "Cỡ chữ:",
+        "FIELD_HEADER_HOSTNAME"        : "Tên máy chủ:",
+        "FIELD_HEADER_IGNORE_CERT"     : "Bỏ qua chứng chỉ máy chủ:",
+        "FIELD_HEADER_NAMESPACE"       : "Namespace:",
+        "FIELD_HEADER_POD"             : "Pod tên:",
+        "FIELD_HEADER_PORT"            : "Cổng:",
+        "FIELD_HEADER_READ_ONLY"       : "Chỉ đọc:",
+        "FIELD_HEADER_RECORDING_EXCLUDE_MOUSE"  : "Loại trừ chuột:",
+        "FIELD_HEADER_RECORDING_EXCLUDE_OUTPUT" : "Exclude graphics/streams:",
+        "FIELD_HEADER_RECORDING_INCLUDE_KEYS"   : "Bao gồm các sự kiện chính:",
+        "FIELD_HEADER_RECORDING_NAME"  : "Tên ghi âm:",
+        "FIELD_HEADER_RECORDING_PATH"  : "Đường dẫn ghi âm:",
+        "FIELD_HEADER_SCROLLBACK"      : "Maximum scrollback size:",
+        "FIELD_HEADER_TYPESCRIPT_NAME" : "Typescript name:",
+        "FIELD_HEADER_TYPESCRIPT_PATH" : "Typescript path:",
+        "FIELD_HEADER_USE_SSL"         : "Use SSL/TLS",
+
+        "FIELD_OPTION_BACKSPACE_EMPTY" : "",
+        "FIELD_OPTION_BACKSPACE_8"     : "Backspace (Ctrl-H)",
+        "FIELD_OPTION_BACKSPACE_127"   : "Delete (Ctrl-?)",
+
+        "FIELD_OPTION_COLOR_SCHEME_BLACK_WHITE" : "Black on white",
+        "FIELD_OPTION_COLOR_SCHEME_EMPTY"       : "",
+        "FIELD_OPTION_COLOR_SCHEME_GRAY_BLACK"  : "Gray on black",
+        "FIELD_OPTION_COLOR_SCHEME_GREEN_BLACK" : "Green on black",
+        "FIELD_OPTION_COLOR_SCHEME_WHITE_BLACK" : "White on black",
+
+        "FIELD_OPTION_FONT_SIZE_8"     : "8",
+        "FIELD_OPTION_FONT_SIZE_9"     : "9",
+        "FIELD_OPTION_FONT_SIZE_10"    : "10",
+        "FIELD_OPTION_FONT_SIZE_11"    : "11",
+        "FIELD_OPTION_FONT_SIZE_12"    : "12",
+        "FIELD_OPTION_FONT_SIZE_14"    : "14",
+        "FIELD_OPTION_FONT_SIZE_18"    : "18",
+        "FIELD_OPTION_FONT_SIZE_24"    : "24",
+        "FIELD_OPTION_FONT_SIZE_30"    : "30",
+        "FIELD_OPTION_FONT_SIZE_36"    : "36",
+        "FIELD_OPTION_FONT_SIZE_48"    : "48",
+        "FIELD_OPTION_FONT_SIZE_60"    : "60",
+        "FIELD_OPTION_FONT_SIZE_72"    : "72",
+        "FIELD_OPTION_FONT_SIZE_96"    : "96",
+        "FIELD_OPTION_FONT_SIZE_EMPTY" : "",
+
+        "NAME" : "Kubernetes",
+
+        "SECTION_HEADER_AUTHENTICATION" : "Authentication",
+        "SECTION_HEADER_BEHAVIOR"       : "Terminal behavior",
+        "SECTION_HEADER_CONTAINER"      : "Container",
+        "SECTION_HEADER_DISPLAY"        : "Display",
+        "SECTION_HEADER_RECORDING"      : "Screen Recording",
+        "SECTION_HEADER_TYPESCRIPT"     : "Typescript (Text Session Recording)",
+        "SECTION_HEADER_NETWORK"        : "Network"
+
+    },
+
+    "PROTOCOL_RDP" : {
+
+        "FIELD_HEADER_CLIENT_NAME"     : "Client name:",
+        "FIELD_HEADER_COLOR_DEPTH"     : "Color depth:",
+        "FIELD_HEADER_CONSOLE"         : "Administrator console:",
+        "FIELD_HEADER_CONSOLE_AUDIO"   : "Support audio in console:",
+        "FIELD_HEADER_CREATE_DRIVE_PATH" : "Automatically create drive:",
+        "FIELD_HEADER_CREATE_RECORDING_PATH" : "Automatically create recording path:",
+        "FIELD_HEADER_DISABLE_AUDIO"   : "Disable audio:",
+        "FIELD_HEADER_DISABLE_AUTH"    : "Disable authentication:",
+        "FIELD_HEADER_DISABLE_COPY"    : "Disable copying from remote desktop:",
+        "FIELD_HEADER_DISABLE_DOWNLOAD" : "Disable file download:",
+        "FIELD_HEADER_DISABLE_PASTE"   : "Disable pasting from client:",
+        "FIELD_HEADER_DISABLE_UPLOAD"   : "Disable file upload:",
+        "FIELD_HEADER_DOMAIN"          : "Domain:",
+        "FIELD_HEADER_DPI"             : "Resolution (DPI):",
+        "FIELD_HEADER_DRIVE_NAME"       : "Drive name:",
+        "FIELD_HEADER_DRIVE_PATH"       : "Drive path:",
+        "FIELD_HEADER_ENABLE_AUDIO_INPUT"         : "Enable audio input (microphone):",
+        "FIELD_HEADER_ENABLE_DESKTOP_COMPOSITION" : "Enable desktop composition (Aero):",
+        "FIELD_HEADER_ENABLE_DRIVE"               : "Enable drive:",
+        "FIELD_HEADER_ENABLE_FONT_SMOOTHING"      : "Enable font smoothing (ClearType):",
+        "FIELD_HEADER_ENABLE_FULL_WINDOW_DRAG"    : "Enable full-window drag:",
+        "FIELD_HEADER_ENABLE_MENU_ANIMATIONS"     : "Enable menu animations:",
+        "FIELD_HEADER_DISABLE_BITMAP_CACHING"     : "Disable bitmap caching:",
+        "FIELD_HEADER_DISABLE_OFFSCREEN_CACHING"  : "Disable off-screen caching:",
+        "FIELD_HEADER_DISABLE_GLYPH_CACHING"      : "Disable glyph caching:",
+        "FIELD_HEADER_ENABLE_PRINTING"            : "Enable printing:",
+        "FIELD_HEADER_ENABLE_SFTP"     : "Enable SFTP:",
+        "FIELD_HEADER_ENABLE_THEMING"             : "Enable theming:",
+        "FIELD_HEADER_ENABLE_TOUCH"               : "Enable multi-touch:",
+        "FIELD_HEADER_ENABLE_WALLPAPER"           : "Enable wallpaper:",
+        "FIELD_HEADER_FORCE_LOSSLESS"             : "Force lossless compression:",
+        "FIELD_HEADER_GATEWAY_DOMAIN"   : "Domain:",
+        "FIELD_HEADER_GATEWAY_HOSTNAME" : "Hostname:",
+        "FIELD_HEADER_GATEWAY_PASSWORD" : "Password:",
+        "FIELD_HEADER_GATEWAY_PORT"     : "Port:",
+        "FIELD_HEADER_GATEWAY_USERNAME" : "Username:",
+        "FIELD_HEADER_HEIGHT"          : "Height:",
+        "FIELD_HEADER_HOSTNAME"        : "Hostname:",
+        "FIELD_HEADER_IGNORE_CERT"     : "Ignore server certificate:",
+        "FIELD_HEADER_INITIAL_PROGRAM" : "Initial program:",
+        "FIELD_HEADER_LOAD_BALANCE_INFO" : "Load balance info/cookie:",
+        "FIELD_HEADER_NORMALIZE_CLIPBOARD" : "Line endings:",
+        "FIELD_HEADER_PASSWORD"        : "Password:",
+        "FIELD_HEADER_PORT"            : "Port:",
+        "FIELD_HEADER_PRINTER_NAME"    : "Redirected printer name:",
+        "FIELD_HEADER_PRECONNECTION_BLOB" : "Preconnection BLOB (VM ID):",
+        "FIELD_HEADER_PRECONNECTION_ID"   : "RDP source ID:",
+        "FIELD_HEADER_READ_ONLY"      : "Read-only:",
+        "FIELD_HEADER_RECORDING_EXCLUDE_MOUSE"  : "Exclude mouse:",
+        "FIELD_HEADER_RECORDING_EXCLUDE_OUTPUT" : "Exclude graphics/streams:",
+        "FIELD_HEADER_RECORDING_EXCLUDE_TOUCH"  : "Exclude touch events:",
+        "FIELD_HEADER_RECORDING_INCLUDE_KEYS"   : "Include key events:",
+        "FIELD_HEADER_RECORDING_NAME" : "Recording name:",
+        "FIELD_HEADER_RECORDING_PATH" : "Recording path:",
+        "FIELD_HEADER_RESIZE_METHOD" : "Resize method:",
+        "FIELD_HEADER_REMOTE_APP_ARGS" : "Parameters:",
+        "FIELD_HEADER_REMOTE_APP_DIR"  : "Working directory:",
+        "FIELD_HEADER_REMOTE_APP"      : "Program:",
+        "FIELD_HEADER_SECURITY"        : "Security mode:",
+        "FIELD_HEADER_SERVER_LAYOUT"   : "Keyboard layout:",
+        "FIELD_HEADER_SFTP_DIRECTORY"             : "Default upload directory:",
+        "FIELD_HEADER_SFTP_DISABLE_DOWNLOAD"      : "Disable file download:",
+        "FIELD_HEADER_SFTP_HOST_KEY"              : "Public host key (Base64):",
+        "FIELD_HEADER_SFTP_HOSTNAME"              : "Hostname:",
+        "FIELD_HEADER_SFTP_SERVER_ALIVE_INTERVAL" : "SFTP keepalive interval:",
+        "FIELD_HEADER_SFTP_PASSPHRASE"            : "Passphrase:",
+        "FIELD_HEADER_SFTP_PASSWORD"              : "Password:",
+        "FIELD_HEADER_SFTP_PORT"                  : "Port:",
+        "FIELD_HEADER_SFTP_PRIVATE_KEY"           : "Private key:",
+        "FIELD_HEADER_SFTP_ROOT_DIRECTORY"        : "File browser root directory:",
+        "FIELD_HEADER_SFTP_DISABLE_UPLOAD"        : "Disable file upload:",
+        "FIELD_HEADER_SFTP_USERNAME"              : "Username:",
+        "FIELD_HEADER_STATIC_CHANNELS" : "Static channel names:",
+        "FIELD_HEADER_TIMEZONE"        : "Time zone:",
+        "FIELD_HEADER_USERNAME"        : "Username:",
+        "FIELD_HEADER_WIDTH"           : "Width:",
+        "FIELD_HEADER_WOL_BROADCAST_ADDR" : "Broadcast address for WoL packet:",
+        "FIELD_HEADER_WOL_MAC_ADDR"       : "MAC address of the remote host:",
+        "FIELD_HEADER_WOL_SEND_PACKET"    : "Send WoL packet:",
+        "FIELD_HEADER_WOL_UDP_PORT"       : "UDP port for WoL packet: ",
+        "FIELD_HEADER_WOL_WAIT_TIME"      : "Host boot wait time:",
+
+        "FIELD_OPTION_NORMALIZE_CLIPBOARD_EMPTY"    : "",
+        "FIELD_OPTION_NORMALIZE_CLIPBOARD_PRESERVE" : "Preserve as-is",
+        "FIELD_OPTION_NORMALIZE_CLIPBOARD_UNIX"     : "Linux/Mac/Unix (LF)",
+        "FIELD_OPTION_NORMALIZE_CLIPBOARD_WINDOWS"  : "Windows (CRLF)",
+
+        "FIELD_OPTION_COLOR_DEPTH_16"    : "Low color (16-bit)",
+        "FIELD_OPTION_COLOR_DEPTH_24"    : "True color (24-bit)",
+        "FIELD_OPTION_COLOR_DEPTH_32"    : "True color (32-bit)",
+        "FIELD_OPTION_COLOR_DEPTH_8"     : "256 color",
+        "FIELD_OPTION_COLOR_DEPTH_EMPTY" : "",
+
+        "FIELD_OPTION_RESIZE_METHOD_DISPLAY_UPDATE" : "\"Display Update\" virtual channel (RDP 8.1+)",
+        "FIELD_OPTION_RESIZE_METHOD_EMPTY"          : "",
+        "FIELD_OPTION_RESIZE_METHOD_RECONNECT"      : "Reconnect",
+
+        "FIELD_OPTION_SECURITY_ANY"   : "Any",
+        "FIELD_OPTION_SECURITY_EMPTY" : "",
+        "FIELD_OPTION_SECURITY_NLA"   : "NLA (Network Level Authentication)",
+        "FIELD_OPTION_SECURITY_RDP"   : "RDP encryption",
+        "FIELD_OPTION_SECURITY_TLS"   : "TLS encryption",
+        "FIELD_OPTION_SECURITY_VMCONNECT" : "Hyper-V / VMConnect",
+
+        "FIELD_OPTION_SERVER_LAYOUT_DE_CH_QWERTZ" : "Swiss German (Qwertz)",
+        "FIELD_OPTION_SERVER_LAYOUT_DE_DE_QWERTZ" : "German (Qwertz)",
+        "FIELD_OPTION_SERVER_LAYOUT_EMPTY"        : "",
+        "FIELD_OPTION_SERVER_LAYOUT_EN_GB_QWERTY" : "UK English (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_EN_US_QWERTY" : "US English (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_ES_ES_QWERTY" : "Spanish (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_ES_LATAM_QWERTY" : "Latin American (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_FAILSAFE"     : "Unicode",
+        "FIELD_OPTION_SERVER_LAYOUT_FR_BE_AZERTY" : "Belgian French (Azerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_FR_CH_QWERTZ" : "Swiss French (Qwertz)",
+        "FIELD_OPTION_SERVER_LAYOUT_FR_FR_AZERTY" : "French (Azerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_HU_HU_QWERTZ" : "Hungarian (Qwertz)",
+        "FIELD_OPTION_SERVER_LAYOUT_IT_IT_QWERTY" : "Italian (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_JA_JP_QWERTY" : "Japanese (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_NO_NO_QWERTY" : "Norwegian (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_PL_PL_QWERTY" : "Polish (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_PT_BR_QWERTY" : "Portuguese Brazilian (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_SV_SE_QWERTY" : "Swedish (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_DA_DK_QWERTY" : "Danish (Qwerty)",
+        "FIELD_OPTION_SERVER_LAYOUT_TR_TR_QWERTY" : "Turkish-Q (Qwerty)",
+
+        "NAME" : "RDP",
+
+        "SECTION_HEADER_AUTHENTICATION"     : "Authentication",
+        "SECTION_HEADER_BASIC_PARAMETERS"   : "Basic Settings",
+        "SECTION_HEADER_CLIPBOARD"          : "Clipboard",
+        "SECTION_HEADER_DEVICE_REDIRECTION" : "Device Redirection",
+        "SECTION_HEADER_DISPLAY"            : "Display",
+        "SECTION_HEADER_GATEWAY"            : "Remote Desktop Gateway",
+        "SECTION_HEADER_LOAD_BALANCING"     : "Load Balancing",
+        "SECTION_HEADER_NETWORK"            : "Network",
+        "SECTION_HEADER_PERFORMANCE"        : "Performance",
+        "SECTION_HEADER_PRECONNECTION_PDU"  : "Preconnection PDU / Hyper-V",
+        "SECTION_HEADER_RECORDING"          : "Screen Recording",
+        "SECTION_HEADER_REMOTEAPP"          : "RemoteApp",
+        "SECTION_HEADER_SFTP"               : "SFTP",
+        "SECTION_HEADER_WOL"                : "Wake-on-LAN (WoL)"
+
+    },
+
+    "PROTOCOL_SSH" : {
+
+        "FIELD_HEADER_BACKSPACE"    : "Backspace key sends:",
+        "FIELD_HEADER_COLOR_SCHEME" : "Color scheme:",
+        "FIELD_HEADER_COMMAND"      : "Execute command:",
+        "FIELD_HEADER_CREATE_RECORDING_PATH" : "Automatically create recording path:",
+        "FIELD_HEADER_CREATE_TYPESCRIPT_PATH" : "Automatically create typescript path:",
+        "FIELD_HEADER_DISABLE_COPY"  : "Disable copying from terminal:",
+        "FIELD_HEADER_DISABLE_PASTE" : "Disable pasting from client:",
+        "FIELD_HEADER_FONT_NAME"     : "Font name:",
+        "FIELD_HEADER_FONT_SIZE"     : "Font size:",
+        "FIELD_HEADER_ENABLE_SFTP"   : "Enable SFTP:",
+        "FIELD_HEADER_HOST_KEY"      : "Public host key (Base64):",
+        "FIELD_HEADER_HOSTNAME"      : "Hostname:",
+        "FIELD_HEADER_LOCALE"        : "Language/Locale ($LANG):",
+        "FIELD_HEADER_USERNAME"      : "Username:",
+        "FIELD_HEADER_PASSWORD"      : "Password:",
+        "FIELD_HEADER_PASSPHRASE"    : "Passphrase:",
+        "FIELD_HEADER_PORT"          : "Port:",
+        "FIELD_HEADER_PRIVATE_KEY"   : "Private key:",
+        "FIELD_HEADER_SCROLLBACK"    : "Maximum scrollback size:",
+        "FIELD_HEADER_READ_ONLY"     : "Read-only:",
+        "FIELD_HEADER_RECORDING_EXCLUDE_MOUSE"  : "Exclude mouse:",
+        "FIELD_HEADER_RECORDING_EXCLUDE_OUTPUT" : "Exclude graphics/streams:",
+        "FIELD_HEADER_RECORDING_INCLUDE_KEYS"   : "Include key events:",
+        "FIELD_HEADER_RECORDING_NAME" : "Recording name:",
+        "FIELD_HEADER_RECORDING_PATH" : "Recording path:",
+        "FIELD_HEADER_SERVER_ALIVE_INTERVAL" : "Server keepalive interval:",
+        "FIELD_HEADER_SFTP_DISABLE_DOWNLOAD" : "Disable file download:",
+        "FIELD_HEADER_SFTP_ROOT_DIRECTORY"   : "File browser root directory:",
+        "FIELD_HEADER_SFTP_DISABLE_UPLOAD"   : "Disable file upload:",
+        "FIELD_HEADER_TERMINAL_TYPE"   : "Terminal type:",
+        "FIELD_HEADER_TIMEZONE"        : "Time zone ($TZ):",
+        "FIELD_HEADER_TYPESCRIPT_NAME" : "Typescript name:",
+        "FIELD_HEADER_TYPESCRIPT_PATH" : "Typescript path:",
+        "FIELD_HEADER_WOL_BROADCAST_ADDR" : "Broadcast address for WoL packet:",
+        "FIELD_HEADER_WOL_MAC_ADDR"       : "MAC address of the remote host:",
+        "FIELD_HEADER_WOL_SEND_PACKET"    : "Send WoL packet:",
+        "FIELD_HEADER_WOL_UDP_PORT"       : "UDP port for WoL packet:",
+        "FIELD_HEADER_WOL_WAIT_TIME"      : "Host boot wait time:",
+
+        "FIELD_OPTION_BACKSPACE_EMPTY" : "",
+        "FIELD_OPTION_BACKSPACE_8"     : "Backspace (Ctrl-H)",
+        "FIELD_OPTION_BACKSPACE_127"   : "Delete (Ctrl-?)",
+
+        "FIELD_OPTION_COLOR_SCHEME_BLACK_WHITE" : "Black on white",
+        "FIELD_OPTION_COLOR_SCHEME_EMPTY"       : "",
+        "FIELD_OPTION_COLOR_SCHEME_GRAY_BLACK"  : "Gray on black",
+        "FIELD_OPTION_COLOR_SCHEME_GREEN_BLACK" : "Green on black",
+        "FIELD_OPTION_COLOR_SCHEME_WHITE_BLACK" : "White on black",
+
+        "FIELD_OPTION_FONT_SIZE_8"     : "8",
+        "FIELD_OPTION_FONT_SIZE_9"     : "9",
+        "FIELD_OPTION_FONT_SIZE_10"    : "10",
+        "FIELD_OPTION_FONT_SIZE_11"    : "11",
+        "FIELD_OPTION_FONT_SIZE_12"    : "12",
+        "FIELD_OPTION_FONT_SIZE_14"    : "14",
+        "FIELD_OPTION_FONT_SIZE_18"    : "18",
+        "FIELD_OPTION_FONT_SIZE_24"    : "24",
+        "FIELD_OPTION_FONT_SIZE_30"    : "30",
+        "FIELD_OPTION_FONT_SIZE_36"    : "36",
+        "FIELD_OPTION_FONT_SIZE_48"    : "48",
+        "FIELD_OPTION_FONT_SIZE_60"    : "60",
+        "FIELD_OPTION_FONT_SIZE_72"    : "72",
+        "FIELD_OPTION_FONT_SIZE_96"    : "96",
+        "FIELD_OPTION_FONT_SIZE_EMPTY" : "",
+
+        "FIELD_OPTION_TERMINAL_TYPE_ANSI"           : "ansi",
+        "FIELD_OPTION_TERMINAL_TYPE_EMPTY"          : "",
+        "FIELD_OPTION_TERMINAL_TYPE_LINUX"          : "linux",
+        "FIELD_OPTION_TERMINAL_TYPE_VT100"          : "vt100",
+        "FIELD_OPTION_TERMINAL_TYPE_VT220"          : "vt220",
+        "FIELD_OPTION_TERMINAL_TYPE_XTERM"          : "xterm",
+        "FIELD_OPTION_TERMINAL_TYPE_XTERM_256COLOR" : "xterm-256color",
+
+        "NAME" : "SSH",
+
+        "SECTION_HEADER_AUTHENTICATION" : "Authentication",
+        "SECTION_HEADER_BEHAVIOR"       : "Terminal behavior",
+        "SECTION_HEADER_CLIPBOARD"      : "Clipboard",
+        "SECTION_HEADER_DISPLAY"        : "Display",
+        "SECTION_HEADER_NETWORK"        : "Network",
+        "SECTION_HEADER_RECORDING"      : "Screen Recording",
+        "SECTION_HEADER_SESSION"        : "Session / Environment",
+        "SECTION_HEADER_TYPESCRIPT"     : "Typescript (Text Session Recording)",
+        "SECTION_HEADER_SFTP"           : "SFTP",
+        "SECTION_HEADER_WOL"            : "Wake-on-LAN (WoL)"
+
+    },
+
+    "PROTOCOL_TELNET" : {
+
+        "FIELD_HEADER_BACKSPACE"      : "Backspace key sends:",
+        "FIELD_HEADER_COLOR_SCHEME"   : "Color scheme:",
+        "FIELD_HEADER_CREATE_RECORDING_PATH" : "Automatically create recording path:",
+        "FIELD_HEADER_CREATE_TYPESCRIPT_PATH" : "Automatically create typescript path:",
+        "FIELD_HEADER_DISABLE_COPY"   : "Disable copying from terminal:",
+        "FIELD_HEADER_DISABLE_PASTE"  : "Disable pasting from client:",
+        "FIELD_HEADER_FONT_NAME"      : "Font name:",
+        "FIELD_HEADER_FONT_SIZE"      : "Font size:",
+        "FIELD_HEADER_HOSTNAME"       : "Hostname:",
+        "FIELD_HEADER_LOGIN_FAILURE_REGEX" : "Login failure regular expression:",
+        "FIELD_HEADER_LOGIN_SUCCESS_REGEX" : "Login success regular expression:",
+        "FIELD_HEADER_USERNAME"       : "Username:",
+        "FIELD_HEADER_USERNAME_REGEX" : "Username regular expression:",
+        "FIELD_HEADER_PASSWORD"       : "Password:",
+        "FIELD_HEADER_PASSWORD_REGEX" : "Password regular expression:",
+        "FIELD_HEADER_PORT"           : "Port:",
+        "FIELD_HEADER_READ_ONLY"      : "Read-only:",
+        "FIELD_HEADER_RECORDING_EXCLUDE_MOUSE"  : "Exclude mouse:",
+        "FIELD_HEADER_RECORDING_EXCLUDE_OUTPUT" : "Exclude graphics/streams:",
+        "FIELD_HEADER_RECORDING_INCLUDE_KEYS"   : "Include key events:",
+        "FIELD_HEADER_RECORDING_NAME" : "Recording name:",
+        "FIELD_HEADER_RECORDING_PATH" : "Recording path:",
+        "FIELD_HEADER_SCROLLBACK"     : "Maximum scrollback size:",
+        "FIELD_HEADER_TERMINAL_TYPE"   : "Terminal type:",
+        "FIELD_HEADER_TYPESCRIPT_NAME" : "Typescript name:",
+        "FIELD_HEADER_TYPESCRIPT_PATH" : "Typescript path:",
+        "FIELD_HEADER_WOL_BROADCAST_ADDR" : "Broadcast address for WoL packet:",
+        "FIELD_HEADER_WOL_MAC_ADDR"       : "MAC address of the remote host:",
+        "FIELD_HEADER_WOL_SEND_PACKET"    : "Send WoL packet:",
+        "FIELD_HEADER_WOL_UDP_PORT"       : "UDP port for WoL packet:",
+        "FIELD_HEADER_WOL_WAIT_TIME"      : "Host boot wait time:",
+
+        "FIELD_OPTION_BACKSPACE_EMPTY" : "",
+        "FIELD_OPTION_BACKSPACE_8"     : "Backspace (Ctrl-H)",
+        "FIELD_OPTION_BACKSPACE_127"   : "Delete (Ctrl-?)",
+
+        "FIELD_OPTION_COLOR_SCHEME_BLACK_WHITE" : "Black on white",
+        "FIELD_OPTION_COLOR_SCHEME_EMPTY"       : "",
+        "FIELD_OPTION_COLOR_SCHEME_GRAY_BLACK"  : "Gray on black",
+        "FIELD_OPTION_COLOR_SCHEME_GREEN_BLACK" : "Green on black",
+        "FIELD_OPTION_COLOR_SCHEME_WHITE_BLACK" : "White on black",
+
+        "FIELD_OPTION_FONT_SIZE_8"     : "8",
+        "FIELD_OPTION_FONT_SIZE_9"     : "9",
+        "FIELD_OPTION_FONT_SIZE_10"    : "10",
+        "FIELD_OPTION_FONT_SIZE_11"    : "11",
+        "FIELD_OPTION_FONT_SIZE_12"    : "12",
+        "FIELD_OPTION_FONT_SIZE_14"    : "14",
+        "FIELD_OPTION_FONT_SIZE_18"    : "18",
+        "FIELD_OPTION_FONT_SIZE_24"    : "24",
+        "FIELD_OPTION_FONT_SIZE_30"    : "30",
+        "FIELD_OPTION_FONT_SIZE_36"    : "36",
+        "FIELD_OPTION_FONT_SIZE_48"    : "48",
+        "FIELD_OPTION_FONT_SIZE_60"    : "60",
+        "FIELD_OPTION_FONT_SIZE_72"    : "72",
+        "FIELD_OPTION_FONT_SIZE_96"    : "96",
+        "FIELD_OPTION_FONT_SIZE_EMPTY" : "",
+
+        "FIELD_OPTION_TERMINAL_TYPE_ANSI"           : "ansi",
+        "FIELD_OPTION_TERMINAL_TYPE_EMPTY"          : "",
+        "FIELD_OPTION_TERMINAL_TYPE_LINUX"          : "linux",
+        "FIELD_OPTION_TERMINAL_TYPE_VT100"          : "vt100",
+        "FIELD_OPTION_TERMINAL_TYPE_VT220"          : "vt220",
+        "FIELD_OPTION_TERMINAL_TYPE_XTERM"          : "xterm",
+        "FIELD_OPTION_TERMINAL_TYPE_XTERM_256COLOR" : "xterm-256color",
+
+        "NAME" : "Telnet",
+
+        "SECTION_HEADER_AUTHENTICATION" : "Authentication",
+        "SECTION_HEADER_BEHAVIOR"       : "Terminal behavior",
+        "SECTION_HEADER_CLIPBOARD"      : "Clipboard",
+        "SECTION_HEADER_DISPLAY"        : "Display",
+        "SECTION_HEADER_RECORDING"      : "Screen Recording",
+        "SECTION_HEADER_TYPESCRIPT"     : "Typescript (Text Session Recording)",
+        "SECTION_HEADER_NETWORK"        : "Network",
+        "SECTION_HEADER_WOL"            : "Wake-on-LAN (WoL)"
+
+    },
+
+    "PROTOCOL_VNC" : {
+
+        "FIELD_HEADER_AUDIO_SERVERNAME" : "Audio server name:",
+        "FIELD_HEADER_CLIPBOARD_ENCODING" : "Encoding:",
+        "FIELD_HEADER_COLOR_DEPTH"      : "Color depth:",
+        "FIELD_HEADER_CREATE_RECORDING_PATH" : "Automatically create recording path:",
+        "FIELD_HEADER_CURSOR"           : "Cursor:",
+        "FIELD_HEADER_DEST_HOST"        : "Destination host:",
+        "FIELD_HEADER_DEST_PORT"        : "Destination port:",
+        "FIELD_HEADER_DISABLE_COPY"     : "Disable copying from remote desktop:",
+        "FIELD_HEADER_DISABLE_PASTE"    : "Disable pasting from client:",
+        "FIELD_HEADER_ENABLE_AUDIO"     : "Enable audio:",
+        "FIELD_HEADER_ENABLE_SFTP"      : "Enable SFTP:",
+        "FIELD_HEADER_FORCE_LOSSLESS"   : "Force lossless compression:",
+        "FIELD_HEADER_HOSTNAME"         : "Hostname:",
+        "FIELD_HEADER_USERNAME"         : "Username:",
+        "FIELD_HEADER_PASSWORD"         : "Password:",
+        "FIELD_HEADER_PORT"             : "Port:",
+        "FIELD_HEADER_READ_ONLY"        : "Read-only:",
+        "FIELD_HEADER_RECORDING_EXCLUDE_MOUSE"  : "Exclude mouse:",
+        "FIELD_HEADER_RECORDING_EXCLUDE_OUTPUT" : "Exclude graphics/streams:",
+        "FIELD_HEADER_RECORDING_INCLUDE_KEYS"   : "Include key events:",
+        "FIELD_HEADER_RECORDING_NAME" : "Recording name:",
+        "FIELD_HEADER_RECORDING_PATH" : "Recording path:",
+        "FIELD_HEADER_SFTP_DIRECTORY"             : "Default upload directory:",
+        "FIELD_HEADER_SFTP_DISABLE_DOWNLOAD"      : "Disable file download:",
+        "FIELD_HEADER_SFTP_HOST_KEY"              : "Public host key (Base64):",
+        "FIELD_HEADER_SFTP_HOSTNAME"              : "Hostname:",
+        "FIELD_HEADER_SFTP_SERVER_ALIVE_INTERVAL" : "SFTP keepalive interval:",
+        "FIELD_HEADER_SFTP_PASSPHRASE"            : "Passphrase:",
+        "FIELD_HEADER_SFTP_PASSWORD"              : "Password:",
+        "FIELD_HEADER_SFTP_PORT"                  : "Port:",
+        "FIELD_HEADER_SFTP_PRIVATE_KEY"           : "Private key:",
+        "FIELD_HEADER_SFTP_ROOT_DIRECTORY"        : "File browser root directory:",
+        "FIELD_HEADER_SFTP_DISABLE_UPLOAD"        : "Disable file upload:",
+        "FIELD_HEADER_SFTP_USERNAME"              : "Username:",
+        "FIELD_HEADER_SWAP_RED_BLUE"    : "Swap red/blue components:",
+        "FIELD_HEADER_WOL_BROADCAST_ADDR" : "Broadcast address for WoL packet:",
+        "FIELD_HEADER_WOL_MAC_ADDR"       : "MAC address of the remote host:",
+        "FIELD_HEADER_WOL_SEND_PACKET"    : "Send WoL packet:",
+        "FIELD_HEADER_WOL_UDP_PORT"       : "UDP port for WoL packet:",
+        "FIELD_HEADER_WOL_WAIT_TIME"      : "Host boot wait time:",
+
+        "FIELD_OPTION_COLOR_DEPTH_8"     : "256 color",
+        "FIELD_OPTION_COLOR_DEPTH_16"    : "Low color (16-bit)",
+        "FIELD_OPTION_COLOR_DEPTH_24"    : "True color (24-bit)",
+        "FIELD_OPTION_COLOR_DEPTH_32"    : "True color (32-bit)",
+        "FIELD_OPTION_COLOR_DEPTH_EMPTY" : "",
+
+        "FIELD_OPTION_CURSOR_EMPTY"  : "",
+        "FIELD_OPTION_CURSOR_LOCAL"  : "Local",
+        "FIELD_OPTION_CURSOR_REMOTE" : "Remote",
+
+        "FIELD_OPTION_CLIPBOARD_ENCODING_CP1252"    : "CP1252",
+        "FIELD_OPTION_CLIPBOARD_ENCODING_EMPTY"     : "",
+        "FIELD_OPTION_CLIPBOARD_ENCODING_ISO8859_1" : "ISO 8859-1",
+        "FIELD_OPTION_CLIPBOARD_ENCODING_UTF_8"     : "UTF-8",
+        "FIELD_OPTION_CLIPBOARD_ENCODING_UTF_16"    : "UTF-16",
+
+        "NAME" : "VNC",
+
+        "SECTION_HEADER_AUDIO"          : "Audio",
+        "SECTION_HEADER_AUTHENTICATION" : "Authentication",
+        "SECTION_HEADER_CLIPBOARD"      : "Clipboard",
+        "SECTION_HEADER_DISPLAY"        : "Display",
+        "SECTION_HEADER_NETWORK"        : "Network",
+        "SECTION_HEADER_RECORDING"      : "Screen Recording",
+        "SECTION_HEADER_REPEATER"       : "VNC Repeater",
+        "SECTION_HEADER_SFTP"           : "SFTP",
+        "SECTION_HEADER_WOL"            : "Wake-on-LAN (WoL)"
+
+    },
+
+    "SETTINGS" : {
+
+        "SECTION_HEADER_SETTINGS" : "Cài đặt"
+
+    },
+
+    "SETTINGS_CONNECTION_HISTORY" : {
+
+        "ACTION_DOWNLOAD"       : "@:APP.ACTION_DOWNLOAD",
+        "ACTION_SEARCH"         : "@:APP.ACTION_SEARCH",
+        "ACTION_VIEW_RECORDING" : "@:APP.ACTION_VIEW_RECORDING",
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "FILENAME_HISTORY_CSV" : "history.csv",
+
+        "FORMAT_DATE" : "@:APP.FORMAT_DATE_TIME_PRECISE",
+
+        "HELP_CONNECTION_HISTORY" : "Lịch sử hồ sơ cho các kết nối trong quá khứ được liệt kê ở đây và có thể được sắp xếp bằng cách nhấp vào các tiêu đề cột.Để tìm kiếm các bản ghi cụ thể, hãy nhập chuỗi bộ lọc và nhấp Tìm kiếm. Chỉ các bản ghi khớp với chuỗi bộ lọc được cung cấp mới được liệt kê.",
+
+        "INFO_CONNECTION_DURATION_UNKNOWN" : "--",
+        "INFO_NO_HISTORY"                  : "Không tìm thấy bản ghi",
+
+        "TABLE_HEADER_SESSION_CONNECTION_NAME" : "Tên kết nối",
+        "TABLE_HEADER_SESSION_DURATION"        : "Khoảng thời gian",
+        "TABLE_HEADER_SESSION_LOGS"            : "Nhật ký",
+        "TABLE_HEADER_SESSION_REMOTEHOST"      : "Điều khiển máy",
+        "TABLE_HEADER_SESSION_STARTDATE"       : "Thời gian bắt đầu",
+        "TABLE_HEADER_SESSION_USERNAME"        : "Tên/email người dùng",
+
+        "TEXT_HISTORY_DURATION" : "@:APP.TEXT_HISTORY_DURATION"
+
+    },
+
+    "SETTINGS_CONNECTIONS" : {
+
+        "ACTION_ACKNOWLEDGE"          : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_NEW_CONNECTION"       : "Kết nối mới",
+        "ACTION_NEW_CONNECTION_GROUP" : "Nhóm mới",
+        "ACTION_NEW_SHARING_PROFILE"  : "Hồ sơ chia sẻ mới",
+
+        "DIALOG_HEADER_ERROR" : "@:APP.DIALOG_HEADER_ERROR",
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "HELP_CONNECTIONS"   : "Nhấp vào ô dấu cộng hoặc nhấn vào Kết nối bên dưới để quản lý kết nối đó. Tùy thuộc vào cấp truy cập của bạn, các kết nối có thể được thêm vào và xóa, và các thuộc tính của chúng (giao thức, tên máy chủ, cổng, vv) có thể được thay đổi.",
+        
+        "INFO_ACTIVE_USER_COUNT" : "@:APP.INFO_ACTIVE_USER_COUNT",
+
+        "SECTION_HEADER_CONNECTIONS"     : "Kết nối"
+
+    },
+
+    "SETTINGS_PREFERENCES" : {
+
+        "ACTION_ACKNOWLEDGE"        : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CANCEL"             : "@:APP.ACTION_CANCEL",
+        "ACTION_UPDATE_PASSWORD"    : "@:APP.ACTION_UPDATE_PASSWORD",
+
+        "DIALOG_HEADER_ERROR"    : "@:APP.DIALOG_HEADER_ERROR",
+
+        "ERROR_PASSWORD_BLANK"    : "@:APP.ERROR_PASSWORD_BLANK",
+        "ERROR_PASSWORD_MISMATCH" : "@:APP.ERROR_PASSWORD_MISMATCH",
+
+        "FIELD_HEADER_LANGUAGE"           : "Ngôn ngữ hiển thị:",
+        "FIELD_HEADER_PASSWORD"           : "Mật khẩu:",
+        "FIELD_HEADER_PASSWORD_OLD"       : "Mật khẩu đang dùng:",
+        "FIELD_HEADER_PASSWORD_NEW"       : "Mật khẩu mới:",
+        "FIELD_HEADER_PASSWORD_NEW_AGAIN" : "Xác nhận lại Mật khẩu mới:",
+        "FIELD_HEADER_TIMEZONE"           : "Múi giờ:",
+        "FIELD_HEADER_USERNAME"           : "Tên/email người dùng:",
+        
+        "HELP_DEFAULT_INPUT_METHOD" : "Phương thức nhập mặc định xác định cách điều khiển bàn phím. Việc thay đổi cài đặt này có thể cần thiết khi sử dụng thiết bị di động hoặc khi nhập qua IME. Cài đặt này có thể được ghi đè trên cơ sở mỗi kết nối trong Cloud Edge vs IoT menu.",
+        "HELP_DEFAULT_MOUSE_MODE"   : "Chế độ mô phỏng chuột mặc định xác định cách chuột điều khiển từ xa sẽ hoạt động trong các kết nối mới liên quan. Cài đặt này có thể được ghi đè trên cơ sở mỗi kết nối mới với Cloud Edge vs IoT menu.",
+        "HELP_INPUT_METHOD_NONE"    : "@:CLIENT.HELP_INPUT_METHOD_NONE",
+        "HELP_INPUT_METHOD_OSK"     : "@:CLIENT.HELP_INPUT_METHOD_OSK",
+        "HELP_INPUT_METHOD_TEXT"    : "@:CLIENT.HELP_INPUT_METHOD_TEXT",
+        "HELP_LOCALE"               : "Chọn ngôn ngữ khác bên dưới để thay đổi ngôn ngữ của tất cả văn bản trong Cloud Computing. Các lựa chọn trên sẽ tùy thuộc vào ngôn ngữ nào được cài đặt.",
+        "HELP_MOUSE_MODE_ABSOLUTE"  : "@:CLIENT.HELP_MOUSE_MODE_ABSOLUTE",
+        "HELP_MOUSE_MODE_RELATIVE"  : "@:CLIENT.HELP_MOUSE_MODE_RELATIVE",
+        "HELP_UPDATE_PASSWORD"      : "Nếu bạn muốn thay đổi mật khẩu, hãy nhập mật khẩu hiện tại của bạn và mật khẩu mới mong muốn bên dưới, và nhấp vào Cập nhật mật khẩu. Thay đổi sẽ có hiệu lực ngay lập tức.",
+
+        "INFO_PASSWORD_CHANGED" : "Mật khẩu đã được thay đổi.",
+
+        "NAME_INPUT_METHOD_NONE" : "@:CLIENT.NAME_INPUT_METHOD_NONE",
+        "NAME_INPUT_METHOD_OSK"  : "@:CLIENT.NAME_INPUT_METHOD_OSK",
+        "NAME_INPUT_METHOD_TEXT" : "@:CLIENT.NAME_INPUT_METHOD_TEXT",
+
+        "SECTION_HEADER_DEFAULT_INPUT_METHOD" : "Phương thức nhập mặc định",
+        "SECTION_HEADER_DEFAULT_MOUSE_MODE"   : "Chế độ mô phỏng chuột mặc định",
+        "SECTION_HEADER_UPDATE_PASSWORD"      : "Đổi mật khẩu"
+
+    },
+
+    "SETTINGS_USERS" : {
+
+        "ACTION_ACKNOWLEDGE"   : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_NEW_USER"      : "Người dùng mới",
+
+        "DIALOG_HEADER_ERROR" : "@:APP.DIALOG_HEADER_ERROR",
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "FORMAT_DATE" : "@:APP.FORMAT_DATE_TIME_PRECISE",
+
+        "HELP_USERS" : "Nhấp vào tên người dùng bên dưới để quản lý hoặc bấm Người dùng mới. Tùy thuộc vào quyền truy cập của bạn, người dùng có thể được thêm, xóa và mật khẩu của họ có thể tự thay đổi.",
+
+        "SECTION_HEADER_USERS"       : "Người dùng",
+
+        "TABLE_HEADER_FULL_NAME"   : "Họ và tên đầy đủ",
+        "TABLE_HEADER_LAST_ACTIVE" : "Hoạt động gần nhất",
+        "TABLE_HEADER_ORGANIZATION" : "Tên Tổ chức",
+        "TABLE_HEADER_USERNAME"    : "Tên/email người dùng"
+
+    },
+
+    "SETTINGS_USER_GROUPS" : {
+
+        "ACTION_ACKNOWLEDGE"    : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_NEW_USER_GROUP" : "Nhóm mới",
+
+        "DIALOG_HEADER_ERROR" : "@:APP.DIALOG_HEADER_ERROR",
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "FORMAT_DATE" : "@:APP.FORMAT_DATE_TIME_PRECISE",
+
+        "HELP_USER_GROUPS" : "Nhấp hoặc nhấn vào một nhóm bên dưới để quản lý nhóm đó. Tùy thuộc vào cấp truy cập của bạn, các nhóm có thể được thêm và xóa, đồng thời có thể thay đổi người dùng và nhóm thành viên của họ.",
+
+        "SECTION_HEADER_USER_GROUPS" : "Các nhóm",
+
+        "TABLE_HEADER_USER_GROUP_NAME" : "Tên nhóm"
+
+    },
+
+    "SETTINGS_SESSIONS" : {
+        
+        "ACTION_ACKNOWLEDGE" : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CANCEL"      : "@:APP.ACTION_CANCEL",
+        "ACTION_DELETE"      : "Xoá phiên",
+        
+        "DIALOG_HEADER_CONFIRM_DELETE" : "Xác nhận xoá phiên",
+        "DIALOG_HEADER_ERROR"          : "@:APP.DIALOG_HEADER_ERROR",
+        
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+        
+        "FORMAT_STARTDATE" : "@:APP.FORMAT_DATE_TIME_PRECISE",
+
+        "HELP_SESSIONS" : "Tất cả các phiên kết nối Cloud hiện đang hoạt động được liệt kê ở đây. Nếu bạn muốn ngừng một hoặc nhiều phiên, hãy chọn hộp bên cạnh phiên đó và bấm Xoá phiên. Việc hủy một phiên sẽ ngắt kết nối ngay lập tức người dùng khỏi kết nối được liên kết.",
+        
+        "INFO_NO_SESSIONS" : "không có phiên nào hoạt động",
+
+        "SECTION_HEADER_SESSIONS" : "Phiên hoạt động",
+        
+        "TABLE_HEADER_SESSION_CONNECTION_NAME" : "Tên kết nối",
+        "TABLE_HEADER_SESSION_REMOTEHOST"      : "Điều khiển máy",
+        "TABLE_HEADER_SESSION_STARTDATE"       : "Hoạt động từ",
+        "TABLE_HEADER_SESSION_USERNAME"        : "Tên/email người dùng",
+        
+        "TEXT_CONFIRM_DELETE" : "Bạn có chắc chắn muốn ngừng tất cả các phiên đã chọn không? Người dùng sử dụng các phiên này sẽ bị ngắt kết nối ngay lập tức."
+
+    },
+
+    "USER_ATTRIBUTES" : {
+
+        "FIELD_HEADER_GUAC_EMAIL_ADDRESS"       : "Địa chỉ Email:",
+        "FIELD_HEADER_GUAC_FULL_NAME"           : "Tên đầy đủ:",
+        "FIELD_HEADER_GUAC_ORGANIZATION"        : "Tên tổ chức:",
+        "FIELD_HEADER_GUAC_ORGANIZATIONAL_ROLE" : "Vai trò quyền hạn:"
+
+    },
+
+    "USER_MENU" : {
+
+        "ACTION_LOGOUT"             : "@:APP.ACTION_LOGOUT",
+        "ACTION_MANAGE_CONNECTIONS" : "@:APP.ACTION_MANAGE_CONNECTIONS",
+        "ACTION_MANAGE_PREFERENCES" : "@:APP.ACTION_MANAGE_PREFERENCES",
+        "ACTION_MANAGE_SESSIONS"    : "@:APP.ACTION_MANAGE_SESSIONS",
+        "ACTION_MANAGE_SETTINGS"    : "@:APP.ACTION_MANAGE_SETTINGS",
+        "ACTION_MANAGE_USERS"       : "@:APP.ACTION_MANAGE_USERS",
+        "ACTION_MANAGE_USER_GROUPS" : "@:APP.ACTION_MANAGE_USER_GROUPS",
+        "ACTION_NAVIGATE_HOME"      : "@:APP.ACTION_NAVIGATE_HOME",
+        "ACTION_VIEW_HISTORY"       : "@:APP.ACTION_VIEW_HISTORY"
+
+    }
+
+}
