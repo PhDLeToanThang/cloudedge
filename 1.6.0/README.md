@@ -16,7 +16,9 @@ Dưới đây là bảng so sánh chi tiết giữa hai phiên bản về tính 
 | Bảo mật Multi-Factor | Duo Web SDK phiên bản cũ | Cập nhật tích hợp lên Duo v4 SDK |
 
 ------------------------------
-## Các thay đổi mới chi tiết trên Guacamole 1.6.0## 1. Cải tiến hiệu năng và công nghệ cốt lõi
+## Các thay đổi mới chi tiết trên Guacamole 1.6.0
+
+## 1. Cải tiến hiệu năng và công nghệ cốt lõi
 
 * Tối ưu hóa đồ họa: Tốc độ phản hồi giao diện màn hình được nâng cao nhờ cơ chế xử lý render mới trên guacd, giảm tải băng thông và độ trễ đồ họa đáng kể. [2, 3] 
 * Hỗ trợ FreeRDP 3: Cho phép tương thích tốt hơn với các hệ điều hành Windows đời mới và sửa đổi kiến trúc kênh truyền tải dữ liệu (Virtual Channel). [3] 
