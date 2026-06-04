@@ -298,17 +298,31 @@ case "${1:-}" in
             /etc/guacamole/lib/mysql-connector-java.jar
         log_info "MySQL Connector/J upgraded"
 
-        # 3h: Download optional extensions (TOTP, Duo, LDAP, QuickConnect, HistRec)
-        log_info "3h. Download optional extensions ..."
-        for EXT in guacamole-auth-totp guacamole-auth-duo guacamole-auth-ldap \
-                   guacamole-auth-quickconnect guacamole-history-recording-storage; do
-            wget -q --show-progress -O "${EXT}-${GUAC_VERSION}.tar.gz" \
-                "${GUAC_SOURCE_LINK}/binary/${EXT}-${GUAC_VERSION}.tar.gz" 2>/dev/null || continue
-            tar -xzf "${EXT}-${GUAC_VERSION}.tar.gz"
-            rm -f "/etc/guacamole/extensions/${EXT}-"*.jar
-            mv -f "${EXT}-${GUAC_VERSION}/${EXT}-${GUAC_VERSION}.jar" /etc/guacamole/extensions/ 2>/dev/null || true
-            log_info "  Installed ${EXT}"
+        # 3h: Upgrade optional extensions that already exist (never install NEW ones)
+        EXISTING_EXTS=()
+        for JAR in /etc/guacamole/extensions/*.jar; do
+            BASENAME=$(basename "$JAR")
+            for KNOWN in guacamole-auth-totp guacamole-auth-duo guacamole-auth-ldap \
+                         guacamole-auth-quickconnect guacamole-history-recording-storage; do
+                if echo "$BASENAME" | grep -q "$KNOWN"; then
+                    EXISTING_EXTS+=("$KNOWN")
+                    break
+                fi
+            done
         done
+        if [[ ${#EXISTING_EXTS[@]} -gt 0 ]]; then
+            log_info "3h. Upgrade extensions da cai: ${EXISTING_EXTS[*]}"
+            for EXT in "${EXISTING_EXTS[@]}"; do
+                wget -q --show-progress -O "${EXT}-${GUAC_VERSION}.tar.gz" \
+                    "${GUAC_SOURCE_LINK}/binary/${EXT}-${GUAC_VERSION}.tar.gz" 2>/dev/null || continue
+                tar -xzf "${EXT}-${GUAC_VERSION}.tar.gz"
+                rm -f "/etc/guacamole/extensions/${EXT}-"*.jar
+                mv -f "${EXT}-${GUAC_VERSION}/${EXT}-${GUAC_VERSION}.jar" /etc/guacamole/extensions/ 2>/dev/null || true
+                log_info "  Upgraded ${EXT}"
+            done
+        else
+            log_info "3h. Khong co extension nao de nang cap (bo qua)"
+        fi
 
         # 3i: Download and compile guacamole-server
         log_info "3i. Build Guacamole Server tu source ..."
@@ -369,10 +383,22 @@ case "${1:-}" in
             log_info "Khong co file backup database. Bo qua restore."
         fi
 
-        # 3l: Set permissions
-        chown -R daemon:daemon /etc/guacamole 2>/dev/null || true
-        chmod -R 664 /etc/guacamole/extensions/*.jar 2>/dev/null || true
+        # 3l: Set permissions (auto-detect Tomcat user)
+        TOMCAT_USER="tomcat"
+        if id "tomcat" &>/dev/null; then
+            TOMCAT_USER="tomcat"
+        elif id "tomcat9" &>/dev/null; then
+            TOMCAT_USER="tomcat9"
+        elif id "daemon" &>/dev/null; then
+            TOMCAT_USER="daemon"
+        fi
+        TOMCAT_GROUP=$(id -gn "${TOMCAT_USER}" 2>/dev/null || echo "tomcat")
+        chown -R "${TOMCAT_USER}:${TOMCAT_GROUP}" /etc/guacamole 2>/dev/null || true
+        chmod 755 /etc/guacamole 2>/dev/null || true
         chmod 664 /etc/guacamole/guacamole.war 2>/dev/null || true
+        chmod 664 /etc/guacamole/extensions/*.jar 2>/dev/null || true
+        chmod 664 /etc/guacamole/lib/*.jar 2>/dev/null || true
+        log_info "Permissions set: user=${TOMCAT_USER}, group=${TOMCAT_GROUP}"
 
         # 3m: Start services
         log_info "Khoi dong lai services ..."

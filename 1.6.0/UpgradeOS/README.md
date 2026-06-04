@@ -35,7 +35,7 @@ Ubuntu 20.04 LTS ────→ Ubuntu 22.04 LTS ────→ Ubuntu 24.04 L
 | 0 | Kiểm tra hệ thống hiện tại | 10 phút | Thủ công |
 | 1 | Backup + nâng OS 20.04 → 22.04 | 30–60 phút | `20.04-to-22.04/Upgrade_OS_from_20.04_to_22.04LTS.sh` (Phase 1) |
 | 2 | Rebuild Guacamole + dependencies cho 22.04 | 20–40 phút | `Upgrade_OS_from_20.04_to_22.04LTS.sh --after-os-upgrade` |
-| 3 | Nâng tiếp 22.04 → 24.04 (tùy chọn) | 30–60 phút | `do-release-upgrade` thủ công + `--after-os-upgrade` |
+| 3 | Nâng tiếp 22.04 → 24.04 (tùy chọn) | 30–60 phút | `22.04-to-24.04/Upgrade_OS_from_22.04_to_24.04_LTS.sh` + `--after-os-upgrade` |
 
 ---
 
@@ -141,6 +141,8 @@ Script sẽ tự động:
 4. Chạy `do-release-upgrade` lên Ubuntu 22.04
 5. Hỏi xác nhận **Reboot**
 
+> **⚠️ Extension:** `--after-os-upgrade` chỉ cập nhật extension **đã có** trong hệ thống, không tự động cài mới. Tránh lỗi `Property required` như Duo/LDAP.
+
 Sau reboot, kiểm tra:
 ```bash
 lsb_release -a
@@ -189,82 +191,17 @@ tail -50 /opt/backup/guacamole-backup-*/upgrade-os-guac.log
 
 > **Lưu ý:** Chỉ thực hiện sau khi đã hoàn tất Phase 2 (22.04 + Guacamole 1.6.0 ổn định).
 
-### Bước 1: Kiểm tra tương thích
+Quy trình này đã được tự động hóa bởi script riêng trong thư mục [`22.04-to-24.04/`](22.04-to-24.04/README.md). Chi tiết tham khảo tại đó.
+
+### Tóm tắt nhanh
 
 ```bash
-# Kiểm tra OS hiện tại
-lsb_release -a     # => Ubuntu 22.04 LTS
+# Phase 1: Backup + Nâng OS (chạy trên 22.04)
+cd /path/to/UpgradeOS/22.04-to-24.04/
+sudo bash Upgrade_OS_from_22.04_to_24.04_LTS.sh
 
-# Kiểm tra disk space (cần ≥ 15 GB cho 24.04)
-df -h /
-
-# Kiểm tra có bản nâng cấp không
-sudo do-release-upgrade -c
-```
-
-### Bước 2: Backup thủ công (QUAN TRỌNG)
-
-```bash
-# Backup Guacamole
-BACKUP_DIR="/opt/backup/guacamole-pre-24.04-$(date +%Y%m%d-%H%M%S)"
-mkdir -p "$BACKUP_DIR"
-cp -rp /etc/guacamole "${BACKUP_DIR}/guacamole-etc"
-cp -rp /var/lib/tomcat9/webapps "${BACKUP_DIR}/tomcat-webapps"
-cp -rp /etc/nginx "${BACKUP_DIR}/nginx"
-mysqldump --databases guacamole_db > "${BACKUP_DIR}/guacamole_db.sql"
-dpkg --get-selections > "${BACKUP_DIR}/packages.list"
-
-# Lưu symlink để --after-os-upgrade tìm thấy
-ln -sf "$BACKUP_DIR" /opt/backup/guacamole-latest
-echo "Backup hoàn tất: ${BACKUP_DIR}"
-```
-
-### Bước 3: Nâng OS 22.04 → 24.04
-
-```bash
-# Cập nhật packages hiện tại
-sudo apt update && sudo apt upgrade -y
-
-# Dùng screen để giữ phiên
-sudo apt install -y screen
-screen -S upgrade-24-04
-
-# Nâng cấp OS
-sudo do-release-upgrade
-```
-
-Quá trình này sẽ:
-- Tải packages mới cho Ubuntu 24.04 (Noble Numbat)
-- Hỏi xác nhận nhiều lần
-- Tự động reboot (hoặc yêu cầu reboot thủ công)
-- Thời gian: 30–60 phút tùy tốc độ mạng và CPU
-
-### Bước 4: Rebuild Guacamole cho 24.04
-
-Sau khi reboot vào 24.04:
-
-```bash
-# Kiểm tra OS
-lsb_release -a    # => Ubuntu 24.04 LTS
-
-# Chạy rebuild Guacamole cho OS mới
-sudo bash /path/to/UpgradeOS/20.04-to-22.04/Upgrade_OS_from_20.04_to_22.04LTS.sh --after-os-upgrade
-```
-
-### Bước 5: Kiểm tra toàn bộ
-
-```bash
-# Kiểm tra version
-lsb_release -a
-cat /var/lib/tomcat9/webapps/guacamole/guacamole-common-js/modules/Version.js | grep API_VERSION
-
-# Kiểm tra services
-systemctl status guacd --no-pager
-systemctl status tomcat9 --no-pager
-systemctl status mysql --no-pager
-
-# Kiểm tra Web UI
-curl -I http://localhost:8080/guacamole
+# Sau reboot vào 24.04, Phase 2: Rebuild Guacamole
+sudo bash Upgrade_OS_from_22.04_to_24.04_LTS.sh --after-os-upgrade
 ```
 
 ---
@@ -399,14 +336,18 @@ sudo systemctl restart guacd tomcat9 mysql
 UpgradeOS/
 ├── README.md                                    # Hướng dẫn tổng thể (file này)
 ├── 20.04-to-22.04/                              # Script & tài liệu cho 20.04 → 22.04
+│   ├── README.md                                # (tham khảo script --help)
 │   └── Upgrade_OS_from_20.04_to_22.04LTS.sh     # Script backup + upgrade OS + Guacamole
 ├── 22.04-to-24.04/                              # Script & tài liệu cho 22.04 → 24.04
-│   └── (dành cho script nâng cấp sau này)
+│   ├── README.md                                # Hướng dẫn chi tiết nâng OS
+│   └── Upgrade_OS_from_22.04_to_24.04_LTS.sh    # Script tự động backup + upgrade + rebuild
 └── common/                                      # Công cụ dùng chung
     └── (scripts, templates, utilities dùng chung)
 ```
 
-### Cấu trúc backup (tạo tự động khi chạy script)
+### Cấu trúc backup
+
+**Khi chạy `20.04-to-22.04/Upgrade_OS_from_20.04_to_22.04LTS.sh` → backup tại:**
 
 ```
 /opt/backup/guacamole-backup-YYYYMMDD-HHMMSS/
@@ -421,6 +362,22 @@ UpgradeOS/
 ├── guacamole_db.sql            # MySQL database dump
 ├── packages.list               # List of installed packages
 └── upgrade-os-guac.log         # Installation log
+```
+
+**Khi chạy `22.04-to-24.04/Upgrade_OS_from_22.04_to_24.04_LTS.sh` → backup tại:**
+
+```
+/opt/backup/guacamole-pre-24.04-YYYYMMDD-HHMMSS/
+├── guacamole-etc/              # /etc/guacamole/
+├── tomcat-webapps/             # Tomcat webapps
+├── nginx/                      # Nginx config
+├── letsencrypt/                # Let's Encrypt certs
+├── ssl/                        # SSL certs
+├── extensions/                 # JAR extensions
+├── lib/                        # JAR libs
+├── guacamole_db.sql            # MySQL dump
+├── packages.list               # dpkg list
+└── upgrade-os-2404.log         # Log file
 ```
 
 ---
