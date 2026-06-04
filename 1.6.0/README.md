@@ -144,3 +144,59 @@ Trong thời gian chờ đợi, giải pháp thay thế là thêm HostKeyAlgorit
 
 2. Bước 2. Cấp quyền chạy và dùng lệnh chạy: 
 bash s1-setup.sh
+
+
+---
+
+
+# Cài mới Guacamole version 1.6.0: Updated 6.2026
+Script guacamole 1.6.0 for Linux e.g: Ubuntu 20.04 LTS / 22.04 LTS / 24.04 LTS, Tomcat 9.x, MySQL 8.x, NGINX 1.24.x, Certbot Let's Encrypt 2.x, TLS 1.2/1.3
+
+### Hỗ trợ phiên bản Ubuntu
+
+| Phiên bản | Mã | Kernel | Trạng thái |
+|-----------|-----|--------|------------|
+| 20.04 LTS | Focal Fossa | 5.4 | Legacy (cần nâng OS trước) |
+| 22.04 LTS | Jammy Jellyfish | 5.15 | Khuyến nghị |
+| 24.04 LTS | Noble Numbat | 6.8 | Hỗ trợ đầy đủ |
+
+### Bước 1: Tải script
+
+```bash
+wget https://raw.githubusercontent.com/PhDLeToanThang/cloudedge/main/1-setup.sh
+```
+
+> **LƯU Ý BẢO MẬT SSHD:**
+> - SSHD cần cài và cấu hình PPK (PuTTY Private Key) trước khi chạy script.
+> - Chặn dải IPv4 trong local MNGT để không cho internet truy cập trực tiếp.
+> - Tham khảo: [Hướng dẫn cấu hình Public Key cho SSH](https://thangletoan.wordpress.com/2023/09/29/cach-2-dung-puttygen-co-the-sinh-key-ppk-va-cau-hinh-public-key-bao-ve-ssh-cua-ubuntu-20-04/)
+
+### Bước 2: Cấp quyền và chạy
+
+```bash
+chmod +x 1-setup.sh && sudo bash 1-setup.sh
+```
+
+Script sẽ yêu cầu nhập:
+- MySQL database password cho Guacamole
+- Cấu hình Duo TFA / LDAP (có thể bỏ qua nếu không dùng)
+- Tên miền cho Let's Encrypt SSL (nếu có)
+
+### Bước 3: Kiểm tra
+
+```bash
+# Kiểm tra service
+systemctl status guacd tomcat9 nginx --no-pager
+
+# Truy cập Web UI
+curl -I http://localhost:8080/guacamole
+```
+
+### Nâng cấp OS (tùy chọn)
+
+Sau khi cài mới, bạn có thể nâng cấp OS lên phiên bản cao hơn bằng script trong thư mục [`UpgradeOS/`](UpgradeOS/README.md):
+
+| Hướng | Script | Ghi chú |
+|-------|--------|---------|
+| 20.04 → 22.04 | `UpgradeOS/20.04-to-22.04/Upgrade_OS_from_20.04_to_22.04LTS.sh` | Backup + upgrade OS + rebuild Guac |
+| 22.04 → 24.04 | `UpgradeOS/22.04-to-24.04/Upgrade_OS_from_22.04_to_24.04_LTS.sh` | Backup + do-release-upgrade + rebuild |

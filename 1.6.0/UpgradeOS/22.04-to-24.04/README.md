@@ -207,13 +207,37 @@ sudo bash Upgrade_OS_from_22.04_to_24.04_LTS.sh --help
 
 ## 7. Xử lý sự cố & Rollback
 
-### SSH bị ngắt trong lúc nâng OS
+### dpkg lock sau reboot — Process "noble" còn sót
+
+Sau khi `do-release-upgrade` hoàn tất và reboot, process `noble` (Ubuntu release upgrader) có thể vẫn giữ lock dpkg:
+
+```
+Waiting for cache lock: Could not get lock /var/lib/dpkg/lock-frontend.
+It is held by process 2722 (noble)...
+```
+
+**Xử lý:**
 
 ```bash
-# Reconnect và reattach screen
-ssh user@server
-screen -r upgrade-2404
+# 1. Kiểm tra process
+ps aux | grep noble
+
+# 2. Kill process còn sót
+sudo kill <PID>
+
+# 3. Dọn lock
+sudo rm -f /var/lib/dpkg/lock-frontend
+sudo rm -f /var/lib/dpkg/lock
+
+# 4. Cấu hình packages dang dở
+sudo dpkg --configure -a
+sudo apt-get install -f -y
+
+# 5. Chạy lại Phase 2
+sudo bash Upgrade_OS_from_22.04_to_24.04_LTS.sh --after-os-upgrade
 ```
+
+> **Khuyến nghị:** Nếu không gấp, đợi 2-3 phút sau reboot cho process `noble` tự thoát.
 
 ### Guacamole không chạy sau Phase 2
 

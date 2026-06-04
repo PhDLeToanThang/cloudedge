@@ -372,7 +372,7 @@ case "${1:-}" in
         if [[ -n "$BACKUP_DIR" && -f "${BACKUP_DIR}/guacamole_db.sql" ]]; then
             log_info "Tim thay backup tu Phase 1: ${BACKUP_DIR}/guacamole_db.sql"
             read -p "Restore database tu file backup? (yes/NO): " RESTORE_DB
-            if [[ "$RESTORE_DB" == "yes" ]]; then
+            if [[ "$RESTORE_DB" == "yes" || "$RESTORE_DB" == "y" || "$RESTORE_DB" == "Y" ]]; then
                 GUAC_DB="${GUAC_DB:-guacamole_db}"
                 log_info "Restoring database ..."
                 mysql -u root -D "$GUAC_DB" < "${BACKUP_DIR}/guacamole_db.sql" 2>/dev/null || \
@@ -476,7 +476,7 @@ case "${1:-}" in
 
         if [[ -f "${RESTORE_PATH}/guacamole_db.sql" ]]; then
             read -p "Restore database tu file backup? (yes/NO): " RESTORE_DB
-            if [[ "$RESTORE_DB" == "yes" ]]; then
+            if [[ "$RESTORE_DB" == "yes" || "$RESTORE_DB" == "y" || "$RESTORE_DB" == "Y" ]]; then
                 GUAC_DB="${GUAC_DB:-guacamole_db}"
                 mysql -u root -D "$GUAC_DB" < "${RESTORE_PATH}/guacamole_db.sql" 2>/dev/null && \
                 log_info "Database restored." || \
@@ -643,7 +643,7 @@ print_section "Buoc 2: Nang cap Ubuntu ${CURRENT_OS_VERSION} len 22.04 LTS"
 log_warn "Dam bao ban da backup du lieu quan trong truoc khi nang cap OS!"
 echo
 read -p "Ban co chac muon tiep tuc nang cap OS? (yes/NO): " CONFIRM_OS
-if [[ "$CONFIRM_OS" != "yes" ]]; then
+if [[ "$CONFIRM_OS" != "yes" && "$CONFIRM_OS" != "y" && "$CONFIRM_OS" != "Y" && "$CONFIRM_OS" != "YES" ]]; then
     log_info "Da huy nang cap OS. Backup van duoc giu tai: ${BACKUP_DIR}"
     exit 0
 fi
@@ -677,7 +677,7 @@ log_info "Khoi dong lai he thong sau khi nang cap OS ..."
 log_warn "SAU KHI REBOOT, chay lai script nay voi tham so --after-os-upgrade"
 echo
 read -p "Reboot ngay bay gio? (yes/NO): " REBOOT_NOW
-if [[ "$REBOOT_NOW" == "yes" ]]; then
+if [[ "$REBOOT_NOW" == "yes" || "$REBOOT_NOW" == "y" || "$REBOOT_NOW" == "Y" || "$REBOOT_NOW" == "YES" ]]; then
     reboot
 fi
 exit 0

@@ -312,7 +312,7 @@ case "${1:-}" in
 
         if [[ -f "${RESTORE_PATH}/guacamole_db.sql" ]]; then
             read -p "Restore database? (yes/NO): " RESTORE_DB
-            if [[ "$RESTORE_DB" == "yes" ]]; then
+            if [[ "$RESTORE_DB" == "yes" || "$RESTORE_DB" == "y" || "$RESTORE_DB" == "Y" ]]; then
                 GUAC_DB="${GUAC_DB:-guacamole_db}"
                 mysql -u root -D "$GUAC_DB" < "${RESTORE_PATH}/guacamole_db.sql" 2>/dev/null && \
                 log_info "Database restored." || log_error "Restore database that bai"
@@ -454,7 +454,7 @@ print_section "Buoc 2: Nang cap Ubuntu 22.04 LTS len 24.04 LTS"
 log_warn "DAM BAO BAN DA SNAPSHOT VM TRUOC KHI TIEP TUC!"
 echo
 read -p "Ban co chac muon nang OS len 24.04 LTS? (yes/NO): " CONFIRM_OS
-if [[ "$CONFIRM_OS" != "yes" ]]; then
+if [[ "$CONFIRM_OS" != "yes" && "$CONFIRM_OS" != "y" && "$CONFIRM_OS" != "Y" && "$CONFIRM_OS" != "YES" ]]; then
     log_info "Da huy. Backup van duoc giu tai: ${BACKUP_DIR}"
     exit 0
 fi
@@ -484,7 +484,7 @@ log_info "Hoan thanh nang OS. Chuan bi reboot ..."
 log_warn "SAU KHI REBOOT, chay: sudo bash $0 --after-os-upgrade"
 echo
 read -p "Reboot ngay bay gio? (yes/NO): " REBOOT_NOW
-if [[ "$REBOOT_NOW" == "yes" ]]; then
+if [[ "$REBOOT_NOW" == "yes" || "$REBOOT_NOW" == "y" || "$REBOOT_NOW" == "Y" || "$REBOOT_NOW" == "YES" ]]; then
     reboot
 fi
 exit 0
