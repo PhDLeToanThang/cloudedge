@@ -26,6 +26,7 @@ GREYB='\033[1;37m'
 LRED='\033[0;91m'
 LGREEN='\033[0;92m'
 LYELLOW='\033[0;93m'
+LCYAN='\033[0;96m'
 NC='\033[0m'
 
 if [[ $EUID -ne 0 ]]; then
@@ -45,8 +46,129 @@ USER_HOME_DIR=$(eval echo ~${SUDO_USER:-root})
 DOWNLOAD_DIR=/tmp/guac-upgrade
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+APT_RETRIES=3
+APT_DELAY=10
+
+# Alternative mirrors list (fallback if default mirror fails)
+UBUNTU_MIRRORS=(
+    "http://archive.ubuntu.com/ubuntu"
+    "http://us.archive.ubuntu.com/ubuntu"
+    "http://security.ubuntu.com/ubuntu"
+)
+
 #######################################################################################################################
-# Helper functions
+# Network & retry helper functions
+#######################################################################################################################
+
+force_apt_ipv4() {
+    local CONF="/etc/apt/apt.conf.d/99force-ipv4"
+    if [[ ! -f "$CONF" ]]; then
+        echo 'Acquire::ForceIPv4 "true";' > "$CONF"
+        log_info "Da force IPv4 cho apt"
+    fi
+}
+
+check_network() {
+    log_info "Kiem tra ket noi mang va DNS..."
+    local test_host="archive.ubuntu.com"
+
+    if command -v host &>/dev/null; then
+        host "$test_host" &>/dev/null
+    elif command -v nslookup &>/dev/null; then
+        nslookup "$test_host" &>/dev/null
+    elif command -v dig &>/dev/null; then
+        dig "$test_host" +short &>/dev/null
+    else
+        getent hosts "$test_host" &>/dev/null
+    fi
+
+    if [[ $? -ne 0 ]]; then
+        log_warn "Khong the phan giai DNS cho ${test_host}"
+        log_warn "Kiem tra /etc/resolv.conf hoac chay:"
+        echo -e "  ${LCYAN}sudo systemctl restart systemd-resolved${NC}"
+        echo -e "  ${LCYAN}echo 'nameserver 8.8.8.8' | sudo tee /etc/resolv.conf${NC}"
+        return 1
+    fi
+
+    if ! ping -c 1 -W 5 "$test_host" &>/dev/null; then
+        log_warn "Khong the ping ${test_host} (co the bi chan ICMP)"
+        # Try TCP connectivity via timeout
+        if command -v curl &>/dev/null; then
+            curl -s --connect-timeout 5 "http://${test_host}" &>/dev/null || {
+                log_warn "Khong the ket noi HTTP den ${test_host}"
+                return 1
+            }
+        fi
+    fi
+
+    log_info "Mang va DNS OK"
+    return 0
+}
+
+fix_apt_sources() {
+    log_info "Kiem tra va sua apt sources (chuyen IPv4, bo qua mirror bi loi)..."
+    force_apt_ipv4
+
+    # Detect fastest reachable mirror
+    local best_mirror=""
+    for mirror in "${UBUNTU_MIRRORS[@]}"; do
+        if curl -s --connect-timeout 5 "${mirror}/dists/jammy/Release" &>/dev/null; then
+            best_mirror="$mirror"
+            log_info "Mirror OK: ${mirror}"
+            break
+        fi
+    done
+
+    if [[ -z "$best_mirror" ]]; then
+        log_warn "Khong co mirror nao reachable. Se thu archive.ubuntu.com mac dinh."
+        best_mirror="http://archive.ubuntu.com/ubuntu"
+    fi
+
+    # Update sources.list to use the best mirror if current fails
+    local current_mirror
+    current_mirror=$(grep -oP 'deb\s+\Khttp://[^/]+/ubuntu' /etc/apt/sources.list 2>/dev/null | head -1)
+    if [[ -n "$current_mirror" && "$current_mirror" != "$best_mirror" ]]; then
+        log_warn "Mirror hien tai (${current_mirror}) khong kha dung."
+        log_info "Chuyen sang mirror: ${best_mirror}"
+        sed -i "s|${current_mirror}|${best_mirror}|g" /etc/apt/sources.list
+        sed -i "s|${current_mirror}|${best_mirror}|g" /etc/apt/sources.list.d/*.list 2>/dev/null || true
+    fi
+}
+
+apt_retry() {
+    local cmd=("$@")
+    local n=0
+    while [[ $n -lt $APT_RETRIES ]]; do
+        if "${cmd[@]}"; then
+            return 0
+        fi
+        ((n++))
+        if [[ $n -lt $APT_RETRIES ]]; then
+            log_warn "apt failed (attempt ${n}/${APT_RETRIES}). Retry in ${APT_DELAY}s..."
+            sleep "$APT_DELAY"
+            # Fix DNS/sources before retry
+            check_network || true
+            fix_apt_sources
+        fi
+    done
+    log_error "apt failed after ${APT_RETRIES} attempts."
+    return 1
+}
+
+apt_update_safe() {
+    apt_retry apt update -qq
+}
+
+apt_install_safe() {
+    apt_retry apt install -y --fix-missing "$@"
+}
+
+apt_upgrade_safe() {
+    apt_retry apt upgrade -y -qq
+}
+
+#######################################################################################################################
+# Helper functions (must be defined before use)
 #######################################################################################################################
 
 log_info()  { echo -e "${LGREEN}[INFO]${GREY}  $(date '+%Y-%m-%d %H:%M:%S') - $1${NC}"; }
@@ -76,6 +198,10 @@ detect_tomcat() {
     fi
     echo "$tc"
 }
+
+# Run pre-flight network checks
+check_network || log_warn "Network check failed. Script will try to continue."
+force_apt_ipv4
 
 #######################################################################################################################
 # Mode dispatch: checked BEFORE default backup/OS-upgrade flow
@@ -115,13 +241,12 @@ case "${1:-}" in
 
         # 3a: Update packages
         log_info "3a. Cap nhat he thong packages ..."
-        apt update -qq && apt upgrade -y -qq
-        check_success "apt update/upgrade that bai"
+        apt_update_safe && apt_upgrade_safe
 
         # 3b: Install Tomcat if missing
         if ! systemctl list-units --type=service 2>/dev/null | grep -q "${TOMCAT_VERSION}"; then
             log_warn "Tomcat chua duoc cai. Cai tomcat9 ..."
-            apt install -y tomcat9 tomcat9-admin tomcat9-common tomcat9-user
+            apt_install_safe tomcat9 tomcat9-admin tomcat9-common tomcat9-user
             TOMCAT_VERSION="tomcat9"
         fi
 
@@ -132,12 +257,11 @@ case "${1:-}" in
 
         # 3d: Install OS dependencies for Guacamole
         log_info "3d. Cai dependencies cho Guacamole ${GUAC_VERSION} ..."
-        apt install -y build-essential libcairo2-dev libjpeg-turbo8-dev libpng-dev \
-                       libtool-bin libossp-uuid-dev libavcodec-dev libavutil-dev \
-                       libswscale-dev freerdp2-dev libpango1.0-dev libssh2-1-dev \
-                       libtelnet-dev libvncserver-dev libwebsockets-dev libpulse-dev \
-                       libssl-dev libvorbis-dev libwebp-dev libsdl2-dev
-        check_success "Cai dependencies that bai"
+        apt_install_safe build-essential libcairo2-dev libjpeg-turbo8-dev libpng-dev \
+                         libtool-bin libossp-uuid-dev libavcodec-dev libavutil-dev \
+                         libswscale-dev freerdp2-dev libpango1.0-dev libssh2-1-dev \
+                         libtelnet-dev libvncserver-dev libwebsockets-dev libpulse-dev \
+                         libssl-dev libvorbis-dev libwebp-dev libsdl2-dev
 
         cd "$DOWNLOAD_DIR"
 
@@ -343,11 +467,21 @@ case "${1:-}" in
         exit 0
         ;;
 
+    --fix-network)
+        print_section "Fix Network & Apt"
+        check_network || true
+        fix_apt_sources
+        echo -e "${LGREEN}Network check & fix hoan tat.${NC}"
+        echo -e "Thu lai: ${LCYAN}sudo apt update${NC}"
+        exit 0
+        ;;
+
     --help|-h)
         echo "Usage:"
         echo "  sudo bash $0                              # Phase 1: backup + upgrade OS"
         echo "  sudo bash $0 --after-os-upgrade            # Phase 2: sau reboot, upgrade Guacamole"
         echo "  sudo bash $0 --restore-backup /path        # Restore tu backup"
+        echo "  sudo bash $0 --fix-network                 # Kiem tra & sua DNS/mirror"
         echo "  sudo bash $0 --help                        # Hien thi tro giup"
         exit 0
         ;;
@@ -490,13 +624,11 @@ fi
 
 # 2a: Update all current packages
 log_info "2a. Cap nhat packages hien tai ..."
-apt update -qq && apt upgrade -y -qq
-check_success "apt update/upgrade that bai"
+apt_update_safe && apt_upgrade_safe
 
 # 2b: Install update-manager-core
 log_info "2b. Cai dat update-manager-core ..."
-apt install -y update-manager-core
-check_success "Cai dat update-manager-core that bai"
+apt_install_safe update-manager-core
 
 # 2c: Ensure Prompt=normal in release-upgrades
 log_info "2c. Cau hinh /etc/update-manager/release-upgrades ..."
