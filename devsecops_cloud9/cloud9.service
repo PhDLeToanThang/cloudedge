@@ -1,0 +1,36 @@
+[Unit]
+Description=Cloud9 Web IDE
+Documentation=https://github.com/c9/core
+After=network.target nginx.service
+Wants=nginx.service
+
+[Service]
+Type=simple
+User=cloud9
+Group=cloud9
+WorkingDirectory=/opt/c9sdk
+
+ExecStart=/home/cloud9/.nvm/versions/node/v16.20.2/bin/node \
+  /opt/c9sdk/server.js \
+  -l 127.0.0.1 \
+  -p 8181 \
+  -w /home/cloud9/workspace \
+  -a admin:changeme \
+  --packed
+
+Restart=always
+RestartSec=15
+
+Environment=NODE_ENV=production
+Environment=NODE_PATH=/opt/c9sdk/node_modules
+Environment=C9_WORKSPACE=/home/cloud9/workspace
+
+NoNewPrivileges=true
+ProtectSystem=full
+PrivateTmp=true
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
